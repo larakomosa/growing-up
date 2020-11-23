@@ -88,4 +88,37 @@ choresRouter.post('/assigned', (req, res) => {
     });
 });
 
+// DELETE - remove a single chore from assigned DB
+choresRouter.delete('/assigned/:Id', (req, res) => {
+  const choresId = req.params.Id;
+  const queryText = `DELETE FROM "assigned" WHERE "id"=$1;`;
+
+  pool
+    .query(queryText, [choresId])
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
+// PUT - updates completion status on a specific chore
+choresRouter.put('/assigned/:Id', (req, res) => {
+  const choresId = req.params.Id;
+  // const status = req.body;
+  const queryText = `UPDATE "assigned" SET "completion_status"=true WHERE "id"=$1;`;
+
+  pool
+    .query(queryText, [choresId])
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = choresRouter;

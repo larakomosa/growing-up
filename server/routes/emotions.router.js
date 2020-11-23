@@ -17,18 +17,27 @@ emotionsRouter.get('/', (req, res) => {
     });
 });
 
-emotionsRouter.post('/', (req, res) => {
-  const emotions = req.body;
-  const queryText = `INSERT INTO "emotions" ("date", "child_id", "feelings", "sleep", "anxiety", "comment") 
-    VALUES (CURRENT_TIMESTAMP, $1, $2,$3,$4,$5);`;
+emotionsRouter.get('/notes', (req, res) => {
+  const queryText = 'SELECT * FROM "parentNotes" ORDER BY "id" DESC;';
 
-  const queryArray = [
-    emotions.child_id,
-    emotions.feelings,
-    emotions.sleep,
-    emotions.anxiety,
-    emotions.comment,
-  ];
+  pool
+    .query(queryText)
+    .then((dbResponse) => {
+      console.log(dbResponse);
+      res.send(dbResponse.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
+emotionsRouter.post('/notes', (req, res) => {
+  const notes = req.body;
+  const queryText = `INSERT INTO "parentNotes" ("child_id", "admin_id", "message") 
+    VALUES ($1, $2,$3)`;
+
+  const queryArray = [notes.child_id, notes.admin_id, notes.message];
 
   pool
     .query(queryText, queryArray)
