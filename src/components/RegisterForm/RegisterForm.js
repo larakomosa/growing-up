@@ -6,7 +6,14 @@ class RegisterForm extends Component {
   state = {
     username: '',
     password: '',
+    page_role_id: ''
   };
+
+  componentDidMount() {
+    this.props.dispatch({
+      type: 'GET_ROLES',
+    });
+  }
 
   registerUser = (event) => {
     event.preventDefault();
@@ -16,8 +23,10 @@ class RegisterForm extends Component {
       payload: {
         username: this.state.username,
         password: this.state.password,
+        page_role_id: this.state.page_role_id,
       },
     });
+    console.log(this.state.username, this.state.username,this.state.page_role_id)
   }; // end registerUser
 
   handleInputChangeFor = (propertyName) => (event) => {
@@ -59,7 +68,20 @@ class RegisterForm extends Component {
             />
           </label>
         </div>
-        <div>
+        <div> 
+          <label htmlFor="role">
+            Choese Role:
+            <select onChange={this.handleInputChangeFor('page_role_id')} required>
+              <option value="">Select a Role</option>
+              {this.props.store.roles.map((item, index) => {
+                return (
+                  <option key={index} value={item.id}>
+                    {item.page_role}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
           <input className="btn" type="submit" name="submit" value="Register" />
         </div>
       </form>

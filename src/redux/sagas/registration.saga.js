@@ -22,8 +22,19 @@ function* registerUser(action) {
   }
 }
 
+function* rolesForRegistration(action) {
+  try {
+    const response = yield axios.get('/api/roles');
+    yield put({ type: 'SET_ROLES', payload: response.data });
+  } catch (err) {
+    console.log(err);
+    yield put({ type: 'REGISTRATION_FAILED' });
+  }
+}
+
 function* registrationSaga() {
   yield takeLatest('REGISTER', registerUser);
+  yield takeLatest('GET_ROLES', rolesForRegistration);
 }
 
 export default registrationSaga;

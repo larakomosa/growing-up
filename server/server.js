@@ -15,6 +15,7 @@ const rewardsRouter = require('./routes/rewards.router');
 const bankRouter = require('./routes/bank.router');
 const assignedRouter = require('./routes/assigned.router');
 const storeRouter = require('./routes/store.router');
+const rolesRouter = require('./routes/roles.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -35,6 +36,7 @@ app.use('/api/rewards', rewardsRouter);
 app.use('/api/bank', bankRouter);
 app.use('/api/assigned', assignedRouter);
 app.use('/api/store', storeRouter);
+app.use('/api/roles', rolesRouter);
 
 // Serve static files
 app.use(express.static('build'));

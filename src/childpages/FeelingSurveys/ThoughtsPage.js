@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 class ThoughtsPage extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.history.push('/dashboard'); //moves user to next page
+    this.props.history.push('/childhome'); //moves user to next page
   };
 
   render() {

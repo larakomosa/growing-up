@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LogOutButton from '../LogOutButton/LogOutButton';
-import WelcomePage from '../WelcomePage/WelcomePage';
+import LogOutButton from '../../components/LogOutButton/LogOutButton';
+import WelcomePage from '../../childpages/WelcomePage/WelcomePage';
+import AdminWelcomePage from '../../adminpages/AdminWelcomePage/AdminWelcomePage';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class UserPage extends Component {
@@ -13,9 +14,7 @@ class UserPage extends Component {
         {this.props.store.user.page_role_id === 4 ? (
           <WelcomePage />
         ) : (
-          <div>
-            <h3>Your Employees</h3>
-          </div>
+      <AdminWelcomePage />
         )}
       </div>
     );
