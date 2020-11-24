@@ -19,6 +19,10 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import FeelingPage from '../FeelingSurveys/FeelingPage';
+import SleepPage from '../FeelingSurveys/SleepPage';
+import AnxietyPage from '../FeelingSurveys/AnxietyPage';
+import ThoughtsPage from '../FeelingSurveys/ThoughtsPage';
 
 import './App.css';
 
@@ -92,6 +96,10 @@ class App extends Component {
               component={LandingPage}
               authRedirect="/user"
             />
+            <ProtectedRoute exact path="/feeling" component={FeelingPage} />
+            <ProtectedRoute exact path="/sleep" component={SleepPage} />
+            <ProtectedRoute exact path="/anxiety" component={AnxietyPage} />
+            <ProtectedRoute exact path="/thoughts" component={ThoughtsPage} />
 
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

@@ -44,7 +44,6 @@ assignedRouter.post('/', (req, res) => {
     VALUES ($1, $2,false);`;
 
   const queryArray = [assigned.child_id, assigned.chore_id];
-
   pool
     .query(queryText, queryArray)
     .then((dbResponse) => {
@@ -88,4 +87,5 @@ assignedRouter.put('/:Id', (req, res) => {
       res.sendStatus(500);
     });
 });
+
 module.exports = assignedRouter;
