@@ -24,10 +24,10 @@ let loginLinkData = {
   }
 
  if (props.store.user.page_role_id === 4) {
-  return (<div>
-   <AppBar/> <LogOutButton className="log-in" /></div>
+  return (<div><AppBar/></div>
   );
-        }else if(props.store.user.page_role_id === 5){  return (<div><AdminAppBar/> <LogOutButton className="log-in" /></div>         
+        }else if(props.store.user.page_role_id === 5){  
+  return (<div><AdminAppBar/></div>         
     )}else{  return (
       <h2>hello</h2>
 

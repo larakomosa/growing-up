@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import HomeIcon from '@material-ui/icons/Home';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -12,6 +13,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,6 +45,16 @@ const ChildAppBar = props => {
     setAuth(event.target.checked);
   };
 
+  const handleHome = (pageURL) => {
+    history.push(pageURL)
+  };
+  
+  const handleLog = (pageURL) => {
+    props.dispatch({ type: 'LOGOUT' })
+    history.push(pageURL)
+  };
+
+
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -59,6 +71,15 @@ const ChildAppBar = props => {
           <Typography className={classes.title} variant="h5" noWrap>
             Material-UI
           </Typography>
+             <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={() => handleMenuClick('/user')}
+                color="inherit"
+              >
+                <HomeIcon />
+              </IconButton>
           <IconButton aria-label="display more actions" onClick= {handleMenu} edge="end" color="inherit">
             <MenuIcon />
           </IconButton>
@@ -79,6 +100,7 @@ const ChildAppBar = props => {
               >
                 <MenuItem onClick={() => handleMenuClick('/childchores')}>Chores</MenuItem>
                 <MenuItem onClick={() => handleMenuClick('/childrewards')}>Rewards</MenuItem>
+                <MenuItem onClick={() => handleLog('/user')}>LogOut</MenuItem>
               </Menu>
         </Toolbar>
       </AppBar>
@@ -86,4 +108,8 @@ const ChildAppBar = props => {
   );
 }
 
-export default withRouter(ChildAppBar);
+const mapStoreToProps = (store) => ({
+  store,
+});
+
+export default connect(mapStoreToProps)(withRouter(ChildAppBar));

@@ -45,6 +45,7 @@ const Nav = (props) => {
     </div>
   );
         }else if(props.store.user.page_role_id === 5){  return (
+          
     <div className="nav">
       <Link to="/home">
         <h2 className="nav-title">Adult</h2>

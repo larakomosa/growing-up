@@ -9,8 +9,9 @@ class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
   render() {
     return (
+  
       <div>
-        <LogOutButton className="log-in" />
+            <LogOutButton/>
         {this.props.store.user.page_role_id === 4 ? (
           <WelcomePage />
         ) : (
