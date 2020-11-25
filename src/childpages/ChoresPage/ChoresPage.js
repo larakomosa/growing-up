@@ -2,32 +2,32 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
+import AssignedList from '../../components/AssignedList/AssignedList.js';
 
 class ChoresPage extends Component {
+  componentDidMount() {
+    this.props.dispatch({
+      type: 'GET_ASSIGNED',
+    });
+    console.log ('dispatch')
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.history.push('/childrewards'); //moves user to next page
-  };
-
+  }
   render() {
     return (
       <div>
-        <h2>Home/Chores Page</h2>
-        <Button
-          variant="outlined"
-          color="primary"
-          type="submit"
-          size="small"
-          onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
-        >
-          See Rewards!
-        </Button>
+        <AssignedList />
+        <div className="footer"> </div>
       </div>
     );
   }
 }
-const mapStoreToProps = (store) => ({
+
+const mapStateToProps = (store) => ({
   store,
 });
 
-export default connect(mapStoreToProps)(withRouter(ChoresPage));
+export default connect(mapStateToProps)(ChoresPage);

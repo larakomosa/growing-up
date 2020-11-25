@@ -34,13 +34,14 @@ choresRouter.get('/', (req, res) => {
 
 choresRouter.post('/', (req, res) => {
   const chores = req.body;
-  const queryText = `INSERT INTO "chores" ("chore", "category_id", "coin_value", "description") 
-    VALUES ($1, $2,$3,$4);`;
+  const queryText = `INSERT INTO "chores" ("chore", "category_id", "coin_value","image", "description") 
+    VALUES ($1, $2,$3,$4, $5);`;
 
   const queryArray = [
     chores.chore,
     chores.category_id,
     chores.coin_value,
+    chores.image,
     chores.description,
   ];
 

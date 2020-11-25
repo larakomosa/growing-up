@@ -20,14 +20,14 @@ ORDER BY "assigned".id`;
     });
 });
 
-assignedRouter.get('/:id', (req, res) => {
-  const queryText = `SELECT "chores".chore, "chores".coin_value,  "category".icon, "chores".description FROM "chores"
+assignedRouter.get('/child', (req, res) => {
+  const queryText = `SELECT "chores".chore, "assigned".id , "chores".coin_value, "category".icon, "chores".description FROM "chores"
 JOIN "assigned" ON "assigned".chore_id = "chores".id
 JOIN "category" ON "chores".category_id = "category".id
 WHERE "assigned".child_id = $1`;
 
   pool
-    .query(queryText, [req.params.id])
+    .query(queryText, [req.user.id])
     .then((dbResponse) => {
       console.log(dbResponse);
       res.send(dbResponse.rows);

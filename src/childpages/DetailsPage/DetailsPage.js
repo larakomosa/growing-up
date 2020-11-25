@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
-import RewardsList from '../../components/RewardsList/RewardsList.js';
+import Selected from '../../components/Selected/Selected';
 
-class RewardsPage extends Component {
+class DetailsPage extends Component {
 
   render() {
     return (
       <div>
-        <RewardsList />
+        <Selected />
         <div className="footer"> </div>
       </div>
     );
@@ -19,4 +19,4 @@ const mapStateToProps = (store) => ({
   store,
 });
 
-export default connect(mapStateToProps)(RewardsPage);
+export default connect(mapStateToProps)(DetailsPage);

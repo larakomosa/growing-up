@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 class FeelingPage extends Component {
   state = {
@@ -39,13 +40,13 @@ class FeelingPage extends Component {
             <label>
               <FormControlLabel
                 control={<Radio color="primary" />}
-                label="1"
-                labelPlacement="top"
+                label = "1"
+                labelPlacement="top" 
                 type="radio"
                 value="1"
                 checked={this.state.feeling === '1'}
                 onChange={this.handleOptionChange}
-              />
+              />   
             </label>
             <label>
               <FormControlLabel

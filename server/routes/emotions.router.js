@@ -43,7 +43,7 @@ emotionsRouter.post('/', (req, res) => {
 
 emotionsRouter.post('/notes', (req, res) => {
   const notes = req.body;
-  const queryText = `INSERT INTO "emotions" ("child_id", "admin_id", "message") 
+  const queryText = `INSERT INTO "parentNotes" ("child_id", "admin_id", "message") 
     VALUES ($1, $2,$3)`;
 
   const queryArray = [notes.child_id, notes.admin_id, notes.message];
@@ -59,34 +59,12 @@ emotionsRouter.post('/notes', (req, res) => {
     });
 });
 
-emotionsRouter.post('/sarah', (req, res) => {
-  const emotions = req.body;
-  const queryText = `INSERT INTO "tester" ("message", "time") 
-    VALUES ($1, CURRENT_TIMESTAMP);`;
-
-  const queryArray = [
-    emotions.message
-  ];
-
-  pool
-    .query(queryText, queryArray)
-    .then((dbResponse) => {
-      res.sendStatus(201);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.sendStatus(500);
-    });
-});
-
-
-
-
 emotionsRouter.get('/notes', (req, res) => {
-  const queryText = 'SELECT * FROM "parentNotes" ORDER BY "id" DESC;';
+console.log('hi', req.user.id)
+const queryText = `SELECT * FROM "parentNotes" WHERE "child_id" = $1 ORDER BY "id" DESC;` 
 
   pool
-    .query(queryText)
+    .query(queryText, [req.user.id])
     .then((dbResponse) => {
       console.log(dbResponse);
       res.send(dbResponse.rows);
