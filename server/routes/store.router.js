@@ -22,7 +22,7 @@ ORDER BY "store".id`;
 
 storeRouter.get('/:child', (req, res) => {
 
-const queryText = `SELECT "store".id, "rewards".reward, "rewards".coin_price, "rewards".image FROM "rewards"
+const queryText = `SELECT "store".id, "rewards".id, "rewards".reward, "rewards".coin_price, "rewards".image FROM "rewards"
 JOIN "store" ON "store".reward_id = "rewards".id 
 JOIN "user" ON "store".child_id = "user".id  
 WHERE "user".id = $1
@@ -40,7 +40,24 @@ ORDER BY "store".id`;
     });
 });
 
+storeRouter.get('/details/:id', (req, res) => {
 
+const queryText = `SELECT "store".id, "rewards".id, "rewards".reward, "rewards".coin_price, "rewards".image FROM "rewards"
+JOIN "store" ON "store".reward_id = "rewards".id 
+JOIN "user" ON "store".child_id = "user".id  
+WHERE "store".id = $1`
+
+pool
+    .query(queryText, [req.params.id])
+    .then((dbResponse) => {
+      console.log(dbResponse);
+      res.send(dbResponse.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus('Server Side 1 Movie Error', 500);
+    });
+});
 
 storeRouter.post('/', (req, res) => {
   const store = req.body;

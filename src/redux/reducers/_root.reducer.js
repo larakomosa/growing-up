@@ -5,6 +5,7 @@ import roles from './roles.reducer';
 import note from './note.reducer';
 import assigned from './assigned.reducer';
 import rewards from './rewards.reducer';
+import selected from './selected.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   roles,
   note,
   assigned,
-  rewards
+  rewards,
+  selected
 });
 
 export default rootReducer;

@@ -27,12 +27,14 @@ import AnxietyPage from '../../childpages/FeelingSurveys/AnxietyPage';
 import ThoughtsPage from '../../childpages/FeelingSurveys/ThoughtsPage';
 import ChoresPage from '../../childpages/ChoresPage/ChoresPage';
 import RewardsPage from '../../childpages/RewardsPage/RewardsPage';
+import DetailsPage from '../../childpages/DetailsPage/DetailsPage';
 
 import AddChoresPage from '../../adminpages/ChoresPage/ChoresPage';
 import AssignPage from '../../adminpages/AssignPage/AssignPage';
 import EmotionsPage from '../../adminpages/EmotionsPage/EmotionsPage';
 import AddRewardsPage from '../../adminpages/RewardsPage/RewardsPage';
 import StorePage from '../../adminpages/StorePage/StorePage';
+
 
 import './App.css';
 
@@ -119,6 +121,7 @@ class App extends Component {
             <ProtectedRoute exact path="/adminrewards" component={AddRewardsPage} />
             <ProtectedRoute exact path="/adminstore" component={StorePage} />
             <ProtectedRoute exact path="/adminemotions" component={EmotionsPage} />
+             <ProtectedRoute exact path= "/details/:id" component={DetailsPage} />
         
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
