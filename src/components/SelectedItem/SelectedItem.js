@@ -4,16 +4,16 @@ import { withRouter } from 'react-router-dom'; //brought in to access page linki
 import Divider from '@material-ui/core/Divider';
 
 class SelectedItem extends Component {
-    componentDidMount() {
+  componentDidMount() {
     this.props.dispatch({
       type: 'GET_SELECTED',
       payload: this.props.match.params.id,
     });
   }
-  
+
   handleHome = (event) => {
     event.preventDefault();
-    this.props.history.push('/adminrewards'); //moves user back to home page
+    this.props.history.push('/details'); //moves user back to home page
   };
 
   render() {
@@ -21,8 +21,10 @@ class SelectedItem extends Component {
       //bootstrap is used to format page so poster and description are side by side
       //movie details are accessed from store using "selected" reducer
       <div className="row">
-        <div className="image col-4">
+        <h2> hi </h2>
+        <div className="div">
           <img
+            className="image1"
             src={this.props.store.selected.image}
             class="rounded"
             alt={this.props.store.selected.description}

@@ -40,24 +40,29 @@ class RewardListItem extends Component {
           >
             <h3>{this.props.item.reward}</h3>
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography
+            className="image"
+            variant="body2"
+            color="textSecondary"
+            component="p"
+          >
             <img
               src={this.props.item.image}
               class="rounded"
               alt={this.props.item.description}
             />
           </Typography>
-           <Typography variant="body2" color="textSecondary" component="p">
-              <h3>{this.props.item.coin_price}</h3>
+          <Typography variant="body2" color="textSecondary" component="p">
+            <h3>{this.props.item.coin_price}</h3>
           </Typography>
-           <Button
-              variant="outlined"
+          <Button
+            variant="outlined"
             color="primary"
             type="submit"
             size="small"
-            onClick={() => this.handleClick (this.props.item.id)}//upon click, function is triggers to direct user to targeted detail page.
+            onClick={() => this.handleClick(this.props.item.id)} //upon click, function is triggers to direct user to targeted detail page.
           >
-            <h4>Finished</h4>
+            <h4>More Deets</h4>
           </Button>
         </CardContent>
       </Card>

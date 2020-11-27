@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 import AssignedListItem from '../../components/AssignedListItem/AssignedListItem.js';
+import '../../components/AssignedListItem/AssignedListItem.css';
 
 class AssignedList extends Component {
   componentDidMount() {

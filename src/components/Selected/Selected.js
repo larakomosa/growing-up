@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 //import stylings
-import SelectedItem from '../SelectedItem/SelectedItem';
+
+import SelectedItem from '../../components/SelectedItem/SelectedItem.js';
+import '../SelectedItem/SelectedItem.css';
+// import SelectedItem from '../SelectedItem/SelectedItem';
 import Divider from '@material-ui/core/Divider';
 
 class Selected extends Component {
@@ -20,9 +23,9 @@ class Selected extends Component {
       <div>
         {this.props.store.selected.reward}
         <SelectedItem />
-          <Divider />
-        </div>
-    )
+        <Divider />
+      </div>
+    );
   }
 }
 

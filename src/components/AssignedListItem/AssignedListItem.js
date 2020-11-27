@@ -18,9 +18,12 @@ class AssignedListItem extends Component {
     });
   }
   handleClick = (id) => {
-    console.log("id", this.props.item.id)
-        this.props.dispatch({ type: 'UPDATE_ASSIGNED' , payload: this.props.item.id });
-    alert('working!')
+    console.log('id', this.props.item.id);
+    this.props.dispatch({
+      type: 'UPDATE_ASSIGNED',
+      payload: this.props.item.id,
+    });
+    alert('working!');
   };
 
   render() {
@@ -40,22 +43,27 @@ class AssignedListItem extends Component {
           >
             <h3>{this.props.item.chore}</h3>
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography
+            className="image"
+            variant="body2"
+            color="textSecondary"
+            component="p"
+          >
             <img
               src={this.props.item.icon}
               class="rounded"
               alt={this.props.item.description}
             />
           </Typography>
-           <Typography variant="body2" color="textSecondary" component="p">
-              <h3>{this.props.item.coin_value}</h3>
+          <Typography variant="body2" color="textSecondary" component="p">
+            <h3>{this.props.item.coin_value}</h3>
           </Typography>
-           <Button
-              variant="outlined"
+          <Button
+            variant="outlined"
             color="primary"
             type="submit"
             size="small"
-            onClick={() => this.handleClick (this.props.item.id)}//upon click, function is triggers to direct user to targeted detail page.
+            onClick={() => this.handleClick(this.props.item.id)} //upon click, function is triggers to direct user to targeted detail page.
           >
             <h4>Finished</h4>
           </Button>
