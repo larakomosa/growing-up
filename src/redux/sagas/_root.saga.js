@@ -6,6 +6,7 @@ import noteSaga from './note.saga';
 import assignedSaga from './assigned.saga';
 import rewardsSaga from './rewards.saga';
 import selectedSaga from './selected.saga';
+import surveySaga from './survey.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -23,5 +24,6 @@ export default function* rootSaga() {
     assignedSaga(),
     rewardsSaga(),
     selectedSaga(),
+    surveySaga(),
   ]);
 }

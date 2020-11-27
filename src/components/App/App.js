@@ -28,13 +28,13 @@ import ThoughtsPage from '../../childpages/FeelingSurveys/ThoughtsPage';
 import ChoresPage from '../../childpages/ChoresPage/ChoresPage';
 import RewardsPage from '../../childpages/RewardsPage/RewardsPage';
 import DetailsPage from '../../childpages/DetailsPage/DetailsPage';
+import GoodbyePage from '../../childpages/GoodbyePage/GoodbyePage';
 
 import AddChoresPage from '../../adminpages/ChoresPage/ChoresPage';
 import AssignPage from '../../adminpages/AssignPage/AssignPage';
 import EmotionsPage from '../../adminpages/EmotionsPage/EmotionsPage';
 import AddRewardsPage from '../../adminpages/RewardsPage/RewardsPage';
 import StorePage from '../../adminpages/StorePage/StorePage';
-
 
 import './App.css';
 
@@ -52,6 +52,8 @@ class App extends Component {
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />
+
+            <Route exact path="/goodbye" component={GoodbyePage} />
 
             {/* Visiting localhost:3000/about will show the about page. */}
             <Route
@@ -114,15 +116,31 @@ class App extends Component {
             <ProtectedRoute exact path="/anxiety" component={AnxietyPage} />
             <ProtectedRoute exact path="/thoughts" component={ThoughtsPage} />
             <ProtectedRoute exact path="/childchores" component={ChoresPage} />
-            <ProtectedRoute exact path="/childrewards" component={RewardsPage} />
+            <ProtectedRoute
+              exact
+              path="/childrewards"
+              component={RewardsPage}
+            />
 
-            <ProtectedRoute exact path="/adminchores" component={AddChoresPage} />
+            <ProtectedRoute
+              exact
+              path="/adminchores"
+              component={AddChoresPage}
+            />
             <ProtectedRoute exact path="/adminassign" component={AssignPage} />
-            <ProtectedRoute exact path="/adminrewards" component={AddRewardsPage} />
+            <ProtectedRoute
+              exact
+              path="/adminrewards"
+              component={AddRewardsPage}
+            />
             <ProtectedRoute exact path="/adminstore" component={StorePage} />
-            <ProtectedRoute exact path="/adminemotions" component={EmotionsPage} />
-             <ProtectedRoute exact path= "/details/:id" component={DetailsPage} />
-        
+            <ProtectedRoute
+              exact
+              path="/adminemotions"
+              component={EmotionsPage}
+            />
+            <ProtectedRoute exact path="/details/:id" component={DetailsPage} />
+
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
           </Switch>

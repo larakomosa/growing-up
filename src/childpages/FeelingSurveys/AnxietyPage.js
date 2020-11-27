@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 class AnxietyPage extends Component {
   state = {
@@ -13,39 +14,40 @@ class AnxietyPage extends Component {
 
   handleOptionChange = (changeEvent) => {
     this.setState({
-      feeling: changeEvent.target.value,
+      anxiety: changeEvent.target.value,
     });
   }; //feeling value is changed to targeted radio button
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.feeling === '') {
+    if (this.state.anxiety === '') {
       //doesn't allow user to advance to next page without selecting radio button
       alert('Please select a number that indicates how you are feeling');
     } else {
       this.props.dispatch({
-        type: 'ADD_FEELING', //sending information to index.js to be stored locally
-        payload: parseInt(this.state.feeling),
+        type: 'ADD_ANXIETY', //sending information to index.js to be stored locally
+        payload: parseInt(this.state.anxiety),
       });
-    this.props.history.push('/thoughts');
-  }};
+      this.props.history.push('/thoughts');
+    }
+  };
 
   render() {
     return (
       <div>
-        <h2>How are you feeling today?</h2>
+        <h2>How anxious are you?</h2>
         <div className="container">
           <form>
             <label>
               <FormControlLabel
                 control={<Radio color="primary" />}
-                label = "1"
-                labelPlacement="top" 
+                label="1"
+                labelPlacement="top"
                 type="radio"
                 value="1"
-                checked={this.state.feeling === '1'}
+                checked={this.state.anxiety === '1'}
                 onChange={this.handleOptionChange}
-              />   
+              />
             </label>
             <label>
               <FormControlLabel
@@ -54,7 +56,7 @@ class AnxietyPage extends Component {
                 labelPlacement="top"
                 type="radio"
                 value="2"
-                checked={this.state.feeling === '2'}
+                checked={this.state.anxiety === '2'}
                 onChange={this.handleOptionChange}
               />
             </label>
@@ -65,7 +67,7 @@ class AnxietyPage extends Component {
                 labelPlacement="top"
                 type="radio"
                 value="3"
-                checked={this.state.feeling === '3'}
+                checked={this.state.anxiety === '3'}
                 onChange={this.handleOptionChange}
               />
             </label>
@@ -76,7 +78,7 @@ class AnxietyPage extends Component {
                 labelPlacement="top"
                 type="radio"
                 value="4"
-                checked={this.state.feeling === '4'}
+                checked={this.state.anxiety === '4'}
                 onChange={this.handleOptionChange}
               />
             </label>
@@ -87,7 +89,7 @@ class AnxietyPage extends Component {
                 labelPlacement="top"
                 type="radio"
                 value="5"
-                checked={this.state.feeling === '5'}
+                checked={this.state.anxiety === '5'}
                 onChange={this.handleOptionChange}
               />
             </label>
@@ -98,7 +100,7 @@ class AnxietyPage extends Component {
                 labelPlacement="top"
                 type="radio"
                 value="6"
-                checked={this.state.feeling === '6'}
+                checked={this.state.anxiety === '6'}
                 onChange={this.handleOptionChange}
               />
             </label>

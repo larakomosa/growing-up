@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../../components/LogOutButton/LogOutButton';
-import WelcomePage from '../../childpages/WelcomePage/WelcomePage';
+import FeelingPage from '../../childpages/FeelingSurveys/FeelingPage';
 import AdminWelcomePage from '../../adminpages/AdminWelcomePage/AdminWelcomePage';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class UserPage extends Component {
-    componentDidMount() {
+  componentDidMount() {
     //"GETS" movies on page load
     this.props.dispatch({
       type: 'GET_NOTE',
@@ -15,13 +15,12 @@ class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
   render() {
     return (
-  
       <div>
-            <LogOutButton/>
+        <LogOutButton />
         {this.props.store.user.page_role_id === 4 ? (
-          <WelcomePage />
+          <FeelingPage />
         ) : (
-      <AdminWelcomePage />
+          <AdminWelcomePage />
         )}
       </div>
     );

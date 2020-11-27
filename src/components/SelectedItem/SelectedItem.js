@@ -13,7 +13,7 @@ class SelectedItem extends Component {
 
   handleHome = (event) => {
     event.preventDefault();
-    this.props.history.push('/details'); //moves user back to home page
+    this.props.history.push('/childrewards'); //moves user back to home page
   };
 
   render() {
