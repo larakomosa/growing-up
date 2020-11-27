@@ -25,6 +25,8 @@ import FeelingPage from '../../childpages/FeelingSurveys/FeelingPage';
 import SleepPage from '../../childpages/FeelingSurveys/SleepPage';
 import AnxietyPage from '../../childpages/FeelingSurveys/AnxietyPage';
 import ThoughtsPage from '../../childpages/FeelingSurveys/ThoughtsPage';
+
+import WelcomePage from '../../childpages/WelcomePage/WelcomePage';
 import ChoresPage from '../../childpages/ChoresPage/ChoresPage';
 import RewardsPage from '../../childpages/RewardsPage/RewardsPage';
 import DetailsPage from '../../childpages/DetailsPage/DetailsPage';
@@ -115,6 +117,11 @@ class App extends Component {
             <ProtectedRoute exact path="/sleep" component={SleepPage} />
             <ProtectedRoute exact path="/anxiety" component={AnxietyPage} />
             <ProtectedRoute exact path="/thoughts" component={ThoughtsPage} />
+            <ProtectedRoute
+              exact
+              path="/childwelcome"
+              component={WelcomePage}
+            />
             <ProtectedRoute exact path="/childchores" component={ChoresPage} />
             <ProtectedRoute
               exact

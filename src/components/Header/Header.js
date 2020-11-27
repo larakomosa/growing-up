@@ -1,8 +1,9 @@
 import React from 'react';
 import './Header.css';
 import Nav from '../Nav/Nav';
-import AppBar from '../AppBar/AppBar'
-import AdminAppBar from '../AdminAppBar/AdminAppBar'
+import AppBar from '../AppBar/AppBar';
+import AdminAppBar from '../AdminAppBar/AdminAppBar';
+import AppBarHome from '../AppBarHome/AppBarHome';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import { connect } from 'react-redux';
 import LogOutButton from '../../components/LogOutButton/LogOutButton';
@@ -13,7 +14,7 @@ import LogOutButton from '../../components/LogOutButton/LogOutButton';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 const Header = (props) => {
-let loginLinkData = {
+  let loginLinkData = {
     path: '/login',
     text: 'Login / Register',
   };
@@ -23,20 +24,25 @@ let loginLinkData = {
     loginLinkData.text = 'Home';
   }
 
- if (props.store.user.page_role_id === 4) {
-  return (<div><AppBar/></div>
-  );
-        }else if(props.store.user.page_role_id === 5){  
-  return (<div><AdminAppBar/></div>         
-    )}else{  return (
-      <h2>hello</h2>
-
-
-    )}
-  
-  
-  
-  
+  if (props.store.user.page_role_id === 4) {
+    return (
+      <div>
+        <AppBar />
+      </div>
+    );
+  } else if (props.store.user.page_role_id === 5) {
+    return (
+      <div>
+        <AdminAppBar />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <AppBarHome />
+      </div>
+    );
   }
+};
 
 export default connect(mapStoreToProps)(Header);

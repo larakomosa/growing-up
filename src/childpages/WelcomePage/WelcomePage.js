@@ -4,15 +4,15 @@ import { withRouter } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
 class WelcomePage extends Component {
-componentDidMount() {
+  componentDidMount() {
     //"GETS" movies on page load
     this.props.dispatch({
       type: 'GET_NOTE',
     });
-    console.log ('dispatch)')
+    console.log('dispatch)');
   }
 
-handleSubmit = (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.props.history.push('/feeling'); //moves user to next page
   };
@@ -20,7 +20,7 @@ handleSubmit = (event) => {
   render() {
     return (
       <div>
-        <h2>Hi  {this.props.store.user.username} Welcome!</h2>
+        <h2>Hi {this.props.store.user.username} Welcome!</h2>
         <h3>{this.props.store.note.message}</h3>
         <Button
           variant="outlined"
@@ -29,7 +29,7 @@ handleSubmit = (event) => {
           size="small"
           onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
         >
-          Take Emotions Survey!
+          See Chores
         </Button>
       </div>
     );

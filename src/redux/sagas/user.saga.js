@@ -24,8 +24,27 @@ function* fetchUser() {
   }
 }
 
+function* getUsers(action) {
+  console.log('made it to user saga', action);
+  try {
+    console.log('selected', action);
+    const selected = yield axios.get(`/api/user/list`);
+    yield put({
+      type: 'SET_USERS',
+      payload: selected.data,
+    });
+  } catch (err) {
+    console.log(err);
+    yield put({
+      type: 'SET_ERROR',
+      payload: 'Could not get Movie Details!!!',
+    });
+  }
+}
+
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
+  yield takeLatest('GET_USERS', getUsers);
 }
 
 export default userSaga;

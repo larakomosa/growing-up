@@ -34,25 +34,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ChildAppBar = (props) => {
+const AppBarHome = (props) => {
   const { history } = props;
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
-
-  const handleHome = (pageURL) => {
-    history.push(pageURL);
-  };
-
-  const handleLog = (pageURL) => {
-    props.dispatch({ type: 'LOGOUT' });
-    history.push(pageURL);
-  };
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -74,7 +61,7 @@ const ChildAppBar = (props) => {
             aria-label="account of current user"
             aria-controls="menu-appbar"
             aria-haspopup="true"
-            onClick={() => handleMenuClick('/childwelcome')}
+            onClick={() => handleMenuClick('/home')}
             color="inherit"
           >
             <HomeIcon />
@@ -102,13 +89,9 @@ const ChildAppBar = (props) => {
             open={open}
             onClose={() => handleMenuClick(null)}
           >
-            <MenuItem onClick={() => handleMenuClick('/childchores')}>
-              Chores
+            <MenuItem onClick={() => handleMenuClick('/login')}>
+              Log In
             </MenuItem>
-            <MenuItem onClick={() => handleMenuClick('/childrewards')}>
-              Rewards
-            </MenuItem>
-            <MenuItem onClick={() => handleLog('/goodbye')}>LogOut</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>
@@ -120,4 +103,4 @@ const mapStoreToProps = (store) => ({
   store,
 });
 
-export default connect(mapStoreToProps)(withRouter(ChildAppBar));
+export default connect(mapStoreToProps)(withRouter(AppBarHome));
