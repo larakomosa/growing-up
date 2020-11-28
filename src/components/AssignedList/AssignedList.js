@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
+
 import { withRouter } from 'react-router-dom';
 import AssignedListItem from '../../components/AssignedListItem/AssignedListItem.js';
 import '../../components/AssignedListItem/AssignedListItem.css';
@@ -12,13 +14,22 @@ class AssignedList extends Component {
       type: 'GET_ASSIGNED',
     });
   }
+
   render() {
     const htmlArray = this.props.store.assigned.map((item, index) => {
       return <AssignedListItem key={index} item={item} />;
     });
     return (
-      <div className="assigned">
-        <div className="row">{htmlArray}</div>
+      <div className="container">
+        <Grid
+          container
+          spacing={2}
+          align="center"
+          justify="center"
+          alignItems="center"
+        >
+          {htmlArray}
+        </Grid>
       </div>
     );
   }

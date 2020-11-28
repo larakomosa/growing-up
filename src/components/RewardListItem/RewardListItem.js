@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-// import axios from 'axios';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-
-//import stylings
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import { Button } from '@material-ui/core';
+import React, { Component } from 'react';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import Button from '@material-ui/core/Button';
+import { Grid } from '@material-ui/core';
+import CardMedia from '@material-ui/core/CardMedia';
 
 class RewardListItem extends Component {
   componentDidMount() {
@@ -25,47 +25,45 @@ class RewardListItem extends Component {
 
   render() {
     return (
-      //used bootstrap to create grid for movie display
-      <Card className="itemDiv col-4" borderColor="primary.main">
-        <Divider />
-        <CardContent
-          className="movieBox" //container for styling (also allows user to click anywhere in div to access details page)
-          onClick={(event) => this.handleClick(this.props.item.id)}
-        >
-          <Typography
-            className="titleControl"
-            gutterBottom
-            variant="h5"
-            component="h2"
-          >
-            <h3>{this.props.item.reward}</h3>
-          </Typography>
-          <Typography
-            className="image"
-            variant="body2"
-            color="textSecondary"
-            component="p"
-          >
-            <img
-              src={this.props.item.image}
+      <Grid item xs={12} sm={6} md={3} lg={2}>
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              image={this.props.item.image}
               class="rounded"
               alt={this.props.item.description}
             />
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            <h3>{this.props.item.coin_price}</h3>
-          </Typography>
-          <Button
-            variant="outlined"
-            color="primary"
-            type="submit"
-            size="small"
-            onClick={() => this.handleClick(this.props.item.id)} //upon click, function is triggers to direct user to targeted detail page.
-          >
-            <h4>More Deets</h4>
-          </Button>
-        </CardContent>
-      </Card>
+            <CardContent>
+              <Typography gutterBottom variant="h6" component="h2">
+                {this.props.item.reward}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="h2">
+                {this.props.item.coin_price}
+                <Typography gutterBottom variant="h6" component="h2">
+                  <Typography gutterBottom variant="h6" component="h2">
+                    <img src={this.props.item.image}></img>
+                  </Typography>
+                </Typography>
+              </Typography>
+              {/* <Typography gutterBottom variant="h6" component="h2">
+                <img src={this.props.item.icon}></img>
+              </Typography> */}
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button
+              variant="outlined"
+              color="primary"
+              type="submit"
+              size="small"
+              onClick={() => this.handleClick(this.props.item.id)}
+            >
+              {' '}
+              More Details
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
     );
   }
 }

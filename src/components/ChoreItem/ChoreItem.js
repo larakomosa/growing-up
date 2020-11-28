@@ -1,7 +1,7 @@
 import React from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-function FeedbackListItem(props) {
+function ChoreItem(props) {
   return (
     <tr>
       <td>
@@ -25,4 +25,4 @@ function FeedbackListItem(props) {
   );
 }
 
-export default FeedbackListItem;
+export default ChoreItem;

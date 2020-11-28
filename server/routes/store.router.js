@@ -21,12 +21,11 @@ ORDER BY "store".id`;
 });
 
 storeRouter.get('/:child', (req, res) => {
-
-const queryText = `SELECT "store".id, "rewards".id, "rewards".reward, "rewards".coin_price, "rewards".image FROM "rewards"
+  const queryText = `SELECT "store".id, "rewards".id, "rewards".reward, "rewards".coin_price, "rewards".image, "rewards".description FROM "rewards"
 JOIN "store" ON "store".reward_id = "rewards".id 
 JOIN "user" ON "store".child_id = "user".id  
 WHERE "user".id = $1
-ORDER BY "store".id`; 
+ORDER BY "store".id`;
 
   pool
     .query(queryText, [req.user.id])
@@ -41,13 +40,12 @@ ORDER BY "store".id`;
 });
 
 storeRouter.get('/details/:id', (req, res) => {
-
-const queryText = `SELECT "store".id, "rewards".id, "rewards".reward, "rewards".coin_price, "rewards".image FROM "rewards"
+  const queryText = `SELECT "store".id, "rewards".id, "rewards".reward, "rewards".coin_price, "rewards".image, "rewards".description FROM "rewards"
 JOIN "store" ON "store".reward_id = "rewards".id 
 JOIN "user" ON "store".child_id = "user".id  
-WHERE "store".id = $1`
+WHERE "store".id = $1`;
 
-pool
+  pool
     .query(queryText, [req.params.id])
     .then((dbResponse) => {
       console.log(dbResponse);
