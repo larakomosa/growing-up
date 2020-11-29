@@ -106,10 +106,7 @@ const AdminAppBar = (props) => {
               Add
             </MenuItem>
             <MenuItem onClick={() => handleMenuClick('/admin/assign')}>
-              Assign Chores
-            </MenuItem>
-            <MenuItem onClick={() => handleMenuClick('/admin/store')}>
-              Assign Rewards
+              Assign
             </MenuItem>
             <MenuItem onClick={() => handleMenuClick('/admin/emotions')}>
               Emotions

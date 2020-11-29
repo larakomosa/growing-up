@@ -91,9 +91,9 @@ const AdminAssignedList = (props) => {
             <TableRow>
               <TableCell align="left">Chore</TableCell>
               <TableCell align="left" maxWidth="70">
-                Coin Price{' '}
+                Value{' '}
               </TableCell>
-              <TableCell align="left">Description</TableCell>
+              <TableCell align="left">Completed</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>{htmlArray}</TableBody>

@@ -2,11 +2,11 @@ const express = require('express');
 const pool = require('../modules/pool');
 const emotionsRouter = express.Router();
 
-emotionsRouter.get('/', (req, res) => {
-  const queryText = 'SELECT * FROM "emotions" ORDER BY "id" DESC;';
-
+emotionsRouter.get('/:Id', (req, res) => {
+  const queryText = `SELECT * FROM "emotions" ORDER BY "id" DESC
+WHERE "user".id = $1`;
   pool
-    .query(queryText)
+    .query(queryText, [req.params.Id])
     .then((dbResponse) => {
       console.log(dbResponse);
       res.send(dbResponse.rows);

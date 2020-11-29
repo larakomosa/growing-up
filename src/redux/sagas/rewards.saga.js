@@ -5,7 +5,7 @@ function* getRewards(action) {
   console.log('Child Reward saga');
   try {
     yield put({ type: 'ERROR_RESET' });
-    const response = yield axios.get(`/api/store/child`);
+    const response = yield axios.get(`/api/store/${action.payload}`);
     console.log(response.data);
     // version of a dispatch = put
     yield put({

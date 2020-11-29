@@ -1,11 +1,11 @@
-const adminStore1 = (state = [], action) => {
+const adminStore = (state = [], action) => {
   console.log('saga');
   switch (action.type) {
-    case 'SET_ADMIN_STORE1':
+    case 'SET_ADMIN_STORE':
       return action.payload;
     default:
       return state;
   }
 };
 
-export default adminStore1;
+export default adminStore;

@@ -11,7 +11,7 @@ function AdminChoreItem(props) {
         <h5>{props.item.coin_value}</h5>
       </td>
       <td>
-        <h5>{props.item.description}</h5>
+        <h5>{props.item.completion_status.toString()}</h5>
       </td>
       {/* <td>
         <button onClick={props.onClick(props.item.id)}>

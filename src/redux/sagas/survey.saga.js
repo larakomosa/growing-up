@@ -22,8 +22,27 @@ function* postSurvey(action) {
   }
 }
 
+function* getEmotions(action) {
+  console.log('selected', action);
+  try {
+    console.log('selected', action);
+    const selected = yield axios.get(`/api/emotions/${action.payload}`);
+    yield put({
+      type: 'SET_SURVEY',
+      payload: selected.data,
+    });
+  } catch (err) {
+    console.log(err);
+    yield put({
+      type: 'SET_ERROR',
+      payload: 'Could not get Movie Details!!!',
+    });
+  }
+}
+
 function* surveySaga() {
   yield takeLatest('POST_SURVEY', postSurvey);
+  yield takeLatest('GET_SURVEY', getEmotions);
 }
 
 export default surveySaga;

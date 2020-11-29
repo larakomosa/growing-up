@@ -10,9 +10,9 @@ import survey from './survey.reducer';
 import chores from './chores.reducer';
 import userList from './user.list.reducer';
 import adminRewards from './adminRewards.reducer';
-import adminStore1 from './adminStore1.reducer';
-import adminStore2 from './adminStore2.reducer';
+import adminStore from './adminStore.reducer';
 import adminAssigned from './adminAssigned.reducer';
+import adminEmotions from './adminEmotions.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -32,9 +32,9 @@ const rootReducer = combineReducers({
   chores,
   userList,
   adminRewards,
-  adminStore1,
-  adminStore2,
+  adminStore,
   adminAssigned,
+  adminEmotions,
 });
 
 export default rootReducer;
