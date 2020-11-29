@@ -1,4 +1,4 @@
-const list = (state = [], action) => {
+const userList = (state = [], action) => {
   switch (action.type) {
     case 'SET_USERS':
       return action.payload;
@@ -11,4 +11,4 @@ const list = (state = [], action) => {
 
 // user will be on the redux state at:
 // state.user
-export default list;
+export default userList;

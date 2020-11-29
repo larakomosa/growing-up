@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
-import UserItem from '../../components/UserItem/UserItem.js';
+import AdminChoreItem from '../AdminChoreItem/AdminChoreItem.js';
+import '../AdminChoreItem/AdminChoreItem.css';
+import { withStyles, createStyles } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -24,21 +26,21 @@ const useStyles = makeStyles({
 
 const columns = [
   {
-    id: 'id',
+    id: 'chore',
     label: 'Chore',
     minWidth: 170,
     align: 'right',
     colSpan: 3,
   },
   {
-    id: 'username',
+    id: 'category_id',
     label: 'category_id',
     minWidth: 170,
     align: 'right',
     colSpan: 1,
   },
   {
-    id: 'page_role',
+    id: 'coin_value',
     label: 'Coin_Value',
     minWidth: 170,
     align: 'right',
@@ -53,7 +55,7 @@ const columns = [
   },
 ];
 
-const UserList = (props) => {
+const AdminChoreList = (props) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const classes = useStyles();
@@ -68,37 +70,37 @@ const UserList = (props) => {
   };
 
   let htmlArray = null;
-  if (props.store.userList) {
-    const htmlArray = props.store.userList.map((item, index) => {
-      return <UserItem key={index} item={item} />;
+  if (props.store.chores) {
+    htmlArray = props.store.chores.map((item, index) => {
+      return <AdminChoreItem key={index} item={item} />;
     });
-
-    return (
-      <Paper className={classes.root}>
-        <TableContainer className={classes.container}>
-          <Table stickyHeader aria-label="sticky table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="left">ID</TableCell>
-                <TableCell align="left">Username</TableCell>
-                <TableCell align="left">Page_Role</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>{htmlArray}</TableBody>
-          </Table>
-        </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[10, 25, 100]}
-          count={props.store.userList.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          component="div"
-          onChangePage={handleChangePage}
-          onChangeRowsPerPage={handleChangeRowsPerPage}
-        />
-      </Paper>
-    );
   }
+
+  return (
+    <Paper className={classes.root}>
+      <TableContainer className={classes.container}>
+        <Table stickyHeader aria-label="sticky table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="left">Chore</TableCell>
+              <TableCell align="left">Coin Value </TableCell>
+              <TableCell align="left">Description</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>{htmlArray}</TableBody>
+        </Table>
+      </TableContainer>
+      <TablePagination
+        rowsPerPageOptions={[10, 25, 100]}
+        count={props.store.chores.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        component="div"
+        onChangePage={handleChangePage}
+        onChangeRowsPerPage={handleChangeRowsPerPage}
+      />
+    </Paper>
+  );
 };
 
 const mapStoreToProps = (store) => ({
@@ -109,7 +111,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     componentDidMount: () =>
       dispatch({
-        type: 'GET_USERS',
+        type: 'GET_CHORES',
       }),
   };
 };
@@ -117,4 +119,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStoreToProps,
   mapDispatchToProps
-)(withRouter(UserList));
+)(withRouter(AdminChoreList));

@@ -32,10 +32,10 @@ import RewardsPage from '../../childpages/RewardsPage/RewardsPage';
 import DetailsPage from '../../childpages/DetailsPage/DetailsPage';
 import GoodbyePage from '../../childpages/GoodbyePage/GoodbyePage';
 
-import AddChoresPage from '../../adminpages/ChoresPage/ChoresPage';
+import AddPage from '../../adminpages/AddPage/AddPage';
 import AssignPage from '../../adminpages/AssignPage/AssignPage';
 import EmotionsPage from '../../adminpages/EmotionsPage/EmotionsPage';
-import AddRewardsPage from '../../adminpages/RewardsPage/RewardsPage';
+import AdminUserPage from '../../adminpages/UserPage/UserPage';
 import StorePage from '../../adminpages/StorePage/StorePage';
 
 import './App.css';
@@ -119,31 +119,27 @@ class App extends Component {
             <ProtectedRoute exact path="/thoughts" component={ThoughtsPage} />
             <ProtectedRoute
               exact
-              path="/childwelcome"
+              path="/child/welcome"
               component={WelcomePage}
             />
-            <ProtectedRoute exact path="/childchores" component={ChoresPage} />
+            <ProtectedRoute exact path="/child/chores" component={ChoresPage} />
             <ProtectedRoute
               exact
-              path="/childrewards"
+              path="/child/rewards"
               component={RewardsPage}
             />
 
+            <ProtectedRoute exact path="/admin/add" component={AddPage} />
+            <ProtectedRoute exact path="/admin/assign" component={AssignPage} />
             <ProtectedRoute
               exact
-              path="/adminchores"
-              component={AddChoresPage}
+              path="/admin/users"
+              component={AdminUserPage}
             />
-            <ProtectedRoute exact path="/adminassign" component={AssignPage} />
+            <ProtectedRoute exact path="/admin/store" component={StorePage} />
             <ProtectedRoute
               exact
-              path="/adminrewards"
-              component={AddRewardsPage}
-            />
-            <ProtectedRoute exact path="/adminstore" component={StorePage} />
-            <ProtectedRoute
-              exact
-              path="/adminemotions"
+              path="/admin/emotions"
               component={EmotionsPage}
             />
             <ProtectedRoute exact path="/details/:id" component={DetailsPage} />

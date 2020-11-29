@@ -2,14 +2,16 @@ const express = require('express');
 const pool = require('../modules/pool');
 const assignedRouter = express.Router();
 
-assignedRouter.get('/', (req, res) => {
+assignedRouter.get('/:Id', (req, res) => {
+  assignedId = req.params.Id;
+  console.log('help', req.params.Id);
   const queryText = `SELECT "assigned".id, "user".username, "chores".chore, "chores".coin_value, "chores".description,"assigned".completion_status FROM "assigned"
 JOIN "chores" ON "assigned".chore_id = "chores".id
 JOIN "user" ON "assigned".child_id = "user".id
-ORDER BY "assigned".id`;
+WHERE "assigned".child_id = $1`;
 
   pool
-    .query(queryText)
+    .query(queryText, [assignedId])
     .then((dbResponse) => {
       console.log(dbResponse);
       res.send(dbResponse.rows);

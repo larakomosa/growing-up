@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 import RewardsList from '../../components/RewardsList/RewardsList.js';
 
 class RewardsPage extends Component {
-
   render() {
     return (
       <div>

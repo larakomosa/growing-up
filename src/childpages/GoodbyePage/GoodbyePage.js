@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Button } from '@material-ui/core';
+import LoginForm from '../../components/LoginForm/LoginForm';
 
 class GoodbyePage extends Component {
   handleSubmit = (event) => {
@@ -13,6 +14,7 @@ class GoodbyePage extends Component {
     return (
       <div>
         <h2>GoodBye</h2>
+        <LoginForm />
 
         <Button
           variant="outlined"

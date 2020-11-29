@@ -6,7 +6,7 @@ class RegisterForm extends Component {
   state = {
     username: '',
     password: '',
-    page_role_id: ''
+    page_role_id: '',
   };
 
   componentDidMount() {
@@ -26,7 +26,11 @@ class RegisterForm extends Component {
         page_role_id: this.state.page_role_id,
       },
     });
-    console.log(this.state.username, this.state.username,this.state.page_role_id)
+    console.log(
+      this.state.username,
+      this.state.username,
+      this.state.page_role_id
+    );
   }; // end registerUser
 
   handleInputChangeFor = (propertyName) => (event) => {
@@ -68,10 +72,13 @@ class RegisterForm extends Component {
             />
           </label>
         </div>
-        <div> 
+        <div>
           <label htmlFor="role">
-            Choese Role:
-            <select onChange={this.handleInputChangeFor('page_role_id')} required>
+            Choose Role:
+            <select
+              onChange={this.handleInputChangeFor('page_role_id')}
+              required
+            >
               <option value="">Select a Role</option>
               {this.props.store.roles.map((item, index) => {
                 return (

@@ -6,13 +6,6 @@ import AdminWelcomePage from '../../adminpages/AdminWelcomePage/AdminWelcomePage
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class UserPage extends Component {
-  componentDidMount() {
-    //"GETS" movies on page load
-    this.props.dispatch({
-      type: 'GET_NOTE',
-    });
-  }
-  // this component doesn't do much to start, just renders some user info to the DOM
   render() {
     return (
       <div>

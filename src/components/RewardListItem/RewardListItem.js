@@ -25,7 +25,14 @@ class RewardListItem extends Component {
 
   render() {
     return (
-      <Grid item xs={12} sm={6} md={3} lg={2}>
+      <Grid
+        item
+        xs={12}
+        sm={6}
+        md={3}
+        lg={2}
+        onClick={() => this.handleClick(this.props.item.id)}
+      >
         <Card>
           <CardActionArea>
             <CardMedia

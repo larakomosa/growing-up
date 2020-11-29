@@ -1,17 +1,16 @@
 import React from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-function ChoreItem(props) {
+function AdminRewardsItem(props) {
+  console.log(props.item.selected);
+  console.log(props.item.reward);
   return (
     <tr>
       <td>
-        <h5>{props.item.chore}</h5>
+        <h5>{props.item.reward}</h5>
       </td>
       <td>
-        <h5>{props.item.category_id}</h5>
-      </td>
-      <td>
-        <h5>{props.item.coin_value}</h5>
+        <h5>{props.item.coin_price}</h5>
       </td>
       <td>
         <h5>{props.item.description}</h5>
@@ -25,4 +24,4 @@ function ChoreItem(props) {
   );
 }
 
-export default ChoreItem;
+export default AdminRewardsItem;

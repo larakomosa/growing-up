@@ -1,37 +1,42 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import AdminStoreList1 from '../../components/AdminStoreList/AdminStoreList1.js';
-import AdminStoreList2 from '../../components/AdminStoreList/AdminStoreList2.js';
+import AdminChoreList from '../../components/AdminChoreList/AdminChoreList.js';
+import AdminRewardsList from '../../components/AdminRewardsList/AdminRewardsList.js';
+
+import UserList from '../../components/UserList/UserList.js';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 
-class StorePage extends Component {
+class AddPage extends Component {
   componentDidMount() {
     this.props.dispatch({
-      type: 'GET_ADMIN_STORE1',
+      type: 'GET_CHORES',
     });
-    this.props.dispatch({
-      type: 'GET_ADMIN_STORE2',
-    });
-    console.log('dispatch');
+    {
+      this.props.dispatch({
+        type: 'GET_ADMIN_REWARDS',
+      });
+      console.log('dispatch');
+    }
   }
 
   render() {
     return (
       <Container>
         <section>
-          <h2>AdminStore</h2>
           <Grid container spacing={8}>
             <Grid item xs={12} sm={6}>
+              <h3>Chores</h3>
               <div>
-                <AdminStoreList1 />
+                <AdminChoreList />
               </div>
               <hr />
             </Grid>
             <Grid item xs={12} sm={6}>
+              <h3>Rewards</h3>
               <Typography gutterBottom variant="h5" component="h5"></Typography>
               <Typography gutterBottom variant="body1" component="h6">
-                <AdminStoreList2 />
+                <AdminRewardsList />
               </Typography>
               <hr />
               <div></div>
@@ -47,4 +52,4 @@ const mapStateToProps = (store) => ({
   store,
 });
 
-export default connect(mapStateToProps)(StorePage);
+export default connect(mapStateToProps)(AddPage);

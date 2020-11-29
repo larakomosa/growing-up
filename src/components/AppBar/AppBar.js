@@ -108,7 +108,7 @@ const ChildAppBar = (props) => {
             <MenuItem onClick={() => handleMenuClick('/childrewards')}>
               Rewards
             </MenuItem>
-            <MenuItem onClick={() => handleLog('/goodbye')}>LogOut</MenuItem>
+            <MenuItem onClick={() => handleLog('goodbye')}>LogOut</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>

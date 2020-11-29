@@ -34,15 +34,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const AdminAppBar = props => {
-  const { history } = props
+const AdminAppBar = (props) => {
+  const { history } = props;
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-    const handleHome = (pageURL) => {
-    history.push(pageURL)
+  const handleHome = (pageURL) => {
+    history.push(pageURL);
   };
 
   const handleChange = (event) => {
@@ -53,13 +53,13 @@ const AdminAppBar = props => {
     setAnchorEl(event.currentTarget);
   };
 
-    const handleLog = (pageURL) => {
-    props.dispatch({ type: 'LOGOUT' })
-    history.push(pageURL)
+  const handleLog = (pageURL) => {
+    props.dispatch({ type: 'LOGOUT' });
+    history.push(pageURL);
   };
 
   const handleMenuClick = (pageURL) => {
-    history.push(pageURL)
+    history.push(pageURL);
     setAnchorEl(null);
   };
 
@@ -70,45 +70,60 @@ const AdminAppBar = props => {
           <Typography className={classes.title} variant="h5" noWrap>
             Material-UI
           </Typography>
-            <IconButton
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={() => handleMenuClick('/user')}
-                color="inherit"
-              >
-                <HomeIcon />
-              </IconButton>
-          <IconButton aria-label="display more actions" onClick= {handleMenu} edge="end" color="inherit">
+          <IconButton
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={() => handleMenuClick('/user')}
+            color="inherit"
+          >
+            <HomeIcon />
+          </IconButton>
+          <IconButton
+            aria-label="display more actions"
+            onClick={handleMenu}
+            edge="end"
+            color="inherit"
+          >
             <MenuIcon />
           </IconButton>
-           <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'right',
-                }}
-                open={open}
-                onClose={() => handleMenuClick(null)}
-              >
-                <MenuItem onClick={() => handleMenuClick('/adminchores')}>Add Chores</MenuItem>
-                <MenuItem onClick={() => handleMenuClick('/adminassign')}>Assign Chores</MenuItem>
-                <MenuItem onClick={() => handleMenuClick('/adminrewards')}>Add Rewards</MenuItem>
-                <MenuItem onClick={() => handleMenuClick('/adminstore')}>Reward Store</MenuItem>
-                <MenuItem onClick={() => handleMenuClick('/adminemotions')}>Emotions</MenuItem>
-                <MenuItem onClick={() => handleLog('/user')}>LogOut</MenuItem>
-              </Menu>
+          <Menu
+            id="menu-appbar"
+            anchorEl={anchorEl}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={open}
+            onClose={() => handleMenuClick(null)}
+          >
+            <MenuItem onClick={() => handleMenuClick('/admin/add')}>
+              Add
+            </MenuItem>
+            <MenuItem onClick={() => handleMenuClick('/admin/assign')}>
+              Assign Chores
+            </MenuItem>
+            <MenuItem onClick={() => handleMenuClick('/admin/store')}>
+              Assign Rewards
+            </MenuItem>
+            <MenuItem onClick={() => handleMenuClick('/admin/emotions')}>
+              Emotions
+            </MenuItem>
+            <MenuItem onClick={() => handleMenuClick('/admin/users')}>
+              Users
+            </MenuItem>
+            <MenuItem onClick={() => handleLog('/user')}>LogOut</MenuItem>
+          </Menu>
         </Toolbar>
       </AppBar>
     </div>
   );
-}
+};
 
 const mapStoreToProps = (store) => ({
   store,

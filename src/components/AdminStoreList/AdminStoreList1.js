@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
-import UserItem from '../../components/UserItem/UserItem.js';
+import AdminStoreItem from '../AdminStoreItem/AdminStoreItem.js';
+// import '../AdminChoreItem/ChoreItem.css';
+import { withStyles, createStyles } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -24,23 +26,23 @@ const useStyles = makeStyles({
 
 const columns = [
   {
-    id: 'id',
+    id: 'chore',
     label: 'Chore',
     minWidth: 170,
     align: 'right',
     colSpan: 3,
   },
   {
-    id: 'username',
+    id: 'category_id',
     label: 'category_id',
     minWidth: 170,
     align: 'right',
     colSpan: 1,
   },
   {
-    id: 'page_role',
+    id: 'coin_value',
     label: 'Coin_Value',
-    minWidth: 170,
+    minWidth: 70,
     align: 'right',
     colSpan: 1,
   },
@@ -51,9 +53,16 @@ const columns = [
     minWidth: 170,
     align: 'right',
   },
+  {
+    colSpan: 1,
+    id: 'purchased',
+    label: 'Purchased',
+    minWidth: 170,
+    align: 'right',
+  },
 ];
 
-const UserList = (props) => {
+const AdminStoreList1 = (props) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const classes = useStyles();
@@ -68,37 +77,39 @@ const UserList = (props) => {
   };
 
   let htmlArray = null;
-  if (props.store.userList) {
-    const htmlArray = props.store.userList.map((item, index) => {
-      return <UserItem key={index} item={item} />;
+  if (props.store.adminStore1) {
+    htmlArray = props.store.adminStore1.map((item, index) => {
+      return <AdminStoreItem key={index} item={item} />;
     });
-
-    return (
-      <Paper className={classes.root}>
-        <TableContainer className={classes.container}>
-          <Table stickyHeader aria-label="sticky table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="left">ID</TableCell>
-                <TableCell align="left">Username</TableCell>
-                <TableCell align="left">Page_Role</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>{htmlArray}</TableBody>
-          </Table>
-        </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[10, 25, 100]}
-          count={props.store.userList.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          component="div"
-          onChangePage={handleChangePage}
-          onChangeRowsPerPage={handleChangeRowsPerPage}
-        />
-      </Paper>
-    );
   }
+
+  return (
+    <Paper className={classes.root}>
+      <h3>Gabe</h3>
+      <TableContainer className={classes.container}>
+        <Table stickyHeader aria-label="sticky table">
+          <TableHead>
+            <TableRow>
+              <TableCell align="left">Reward</TableCell>
+              <TableCell align="left">Coin_Price</TableCell>
+              <TableCell align="left">Purchase_Status</TableCell>
+              <TableCell align="left" maxWidth="70"></TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>{htmlArray}</TableBody>
+        </Table>
+      </TableContainer>
+      <TablePagination
+        rowsPerPageOptions={[5, 25, 100]}
+        count={props.store.adminStore1.length}
+        rowsPerPage={rowsPerPage}
+        page={page}
+        component="div"
+        onChangePage={handleChangePage}
+        onChangeRowsPerPage={handleChangeRowsPerPage}
+      />
+    </Paper>
+  );
 };
 
 const mapStoreToProps = (store) => ({
@@ -109,7 +120,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     componentDidMount: () =>
       dispatch({
-        type: 'GET_USERS',
+        type: 'GET_ADMIN_STORE1',
       }),
   };
 };
@@ -117,4 +128,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStoreToProps,
   mapDispatchToProps
-)(withRouter(UserList));
+)(withRouter(AdminStoreList1));

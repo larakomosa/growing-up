@@ -30,8 +30,7 @@ class Selected extends Component {
                 alt={this.props.store.selected.description}
               />
               <Typography gutterBottom variant="h5" component="h5">
-                <h5> Coin Price: </h5>
-                {this.props.store.selected.coin_price}
+                <h5> Coin Price: </h5>${this.props.store.selected.coin_price}
               </Typography>
               <Button
                 variant="outlined"
@@ -61,7 +60,7 @@ class Selected extends Component {
                 onClick={() => this.handleHome}
               >
                 {' '}
-                Buy This Now!!
+                Back to List!
               </Button>
             </Grid>
           </Grid>

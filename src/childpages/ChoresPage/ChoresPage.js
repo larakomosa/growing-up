@@ -9,13 +9,13 @@ class ChoresPage extends Component {
     this.props.dispatch({
       type: 'GET_ASSIGNED',
     });
-    console.log ('dispatch')
+    console.log('dispatch');
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.history.push('/childrewards'); //moves user to next page
-  }
+  };
   render() {
     return (
       <div>

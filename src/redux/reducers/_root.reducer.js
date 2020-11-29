@@ -8,7 +8,11 @@ import rewards from './rewards.reducer';
 import selected from './selected.reducer';
 import survey from './survey.reducer';
 import chores from './chores.reducer';
-import list from './user.list.reducer';
+import userList from './user.list.reducer';
+import adminRewards from './adminRewards.reducer';
+import adminStore1 from './adminStore1.reducer';
+import adminStore2 from './adminStore2.reducer';
+import adminAssigned from './adminAssigned.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -26,7 +30,11 @@ const rootReducer = combineReducers({
   selected,
   survey,
   chores,
-  list,
+  userList,
+  adminRewards,
+  adminStore1,
+  adminStore2,
+  adminAssigned,
 });
 
 export default rootReducer;
