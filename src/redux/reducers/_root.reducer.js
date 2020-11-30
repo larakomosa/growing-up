@@ -8,6 +8,7 @@ import rewards from './rewards.reducer';
 import selected from './selected.reducer';
 import survey from './survey.reducer';
 import chores from './chores.reducer';
+import category from './category.reducer';
 import userList from './user.list.reducer';
 import adminRewards from './adminRewards.reducer';
 import adminStore from './adminStore.reducer';
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
   selected,
   survey,
   chores,
+  category,
   userList,
   adminRewards,
   adminStore,

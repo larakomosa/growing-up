@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import AdminAssignedList from '../../components/AdminAssignedList/AdminAssignedList.js';
+import AdminThoughts from '../../components/AdminThoughtsList/AdminThoughtsList.js';
 // import  from '../../components/AdminStoreList/AdminStoreList.js';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
+import { LineChart } from 'react-chartkick';
+import 'chart.js';
 
 class EmotionsPage extends Component {
   state = {
@@ -83,12 +85,14 @@ class EmotionsPage extends Component {
                     Get Child Info &#x2192;
                   </Button>
                 </label>
+                <AdminThoughts />
               </div>
               <hr />
             </Grid>
             <Grid item xs={12} sm={6}>
               <div>
                 <h3>MoodChart</h3>
+
                 <label htmlFor="role">
                   Select Child:
                   <select onChange={this.handleInputChangeFor2('id')} required>
@@ -112,6 +116,15 @@ class EmotionsPage extends Component {
                   </Button>
                 </label>
               </div>
+              <LineChart
+                data={{
+                  '2020-11-23': 5,
+                  '2020-11-24': 6,
+                  '2020-11-25': 3,
+                  '2020-11-26': 6,
+                  '2020-11-26': 5,
+                }}
+              />
               <hr />
             </Grid>
           </Grid>

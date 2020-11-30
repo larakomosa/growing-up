@@ -3,8 +3,7 @@ const pool = require('../modules/pool');
 const emotionsRouter = express.Router();
 
 emotionsRouter.get('/:Id', (req, res) => {
-  const queryText = `SELECT * FROM "emotions" ORDER BY "id" DESC
-WHERE "user".id = $1`;
+  const queryText = `SELECT * FROM "emotions" WHERE "emotions".child_id = $1  ORDER BY "id" DESC `;
   pool
     .query(queryText, [req.params.Id])
     .then((dbResponse) => {

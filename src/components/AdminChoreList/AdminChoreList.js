@@ -24,37 +24,6 @@ const useStyles = makeStyles({
   },
 });
 
-const columns = [
-  {
-    id: 'chore',
-    label: 'Chore',
-    minWidth: 170,
-    align: 'right',
-    colSpan: 3,
-  },
-  {
-    id: 'category_id',
-    label: 'category_id',
-    minWidth: 170,
-    align: 'right',
-    colSpan: 1,
-  },
-  {
-    id: 'coin_value',
-    label: 'Coin_Value',
-    minWidth: 170,
-    align: 'right',
-    colSpan: 1,
-  },
-  {
-    colSpan: 1,
-    id: 'description',
-    label: 'Description',
-    minWidth: 170,
-    align: 'right',
-  },
-];
-
 const AdminChoreList = (props) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -91,7 +60,7 @@ const AdminChoreList = (props) => {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
+        rowsPerPageOptions={[4, 25, 100]}
         count={props.store.chores.length}
         rowsPerPage={rowsPerPage}
         page={page}

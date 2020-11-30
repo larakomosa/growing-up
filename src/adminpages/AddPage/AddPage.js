@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import AdminChoreList from '../../components/AdminChoreList/AdminChoreList.js';
 import AdminRewardsList from '../../components/AdminRewardsList/AdminRewardsList.js';
-
+import AdminChoresModal from '../../components/AdminChoresModal/AdminChoresModal.js';
 import UserList from '../../components/UserList/UserList.js';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 
@@ -18,6 +18,9 @@ class AddPage extends Component {
       });
       console.log('dispatch');
     }
+    this.props.dispatch({
+      type: 'GET_CATEGORY',
+    });
   }
 
   render() {
@@ -27,6 +30,7 @@ class AddPage extends Component {
           <Grid container spacing={8}>
             <Grid item xs={12} sm={6}>
               <h3>Chores</h3>
+              <AdminChoresModal />
               <div>
                 <AdminChoreList />
               </div>

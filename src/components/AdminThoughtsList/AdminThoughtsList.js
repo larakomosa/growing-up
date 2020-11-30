@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
-import AdminAssignedItem from '../../components/AdminAssignedItem/AdminAssignedItem.js';
+import AdminThoughtsItem from '../AdminThoughtsItem/AdminThoughtsItem.js';
 // import '../AdminChoreItem/ChoreItem.css';
 import { withStyles, createStyles } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
@@ -24,45 +24,7 @@ const useStyles = makeStyles({
   },
 });
 
-const columns = [
-  {
-    id: 'chore',
-    label: 'Chore',
-    minWidth: 170,
-    align: 'right',
-    colSpan: 3,
-  },
-  {
-    id: 'category_id',
-    label: 'category_id',
-    minWidth: 170,
-    align: 'right',
-    colSpan: 1,
-  },
-  {
-    id: 'coin_value',
-    label: 'Coin_Value',
-    minWidth: 70,
-    align: 'right',
-    colSpan: 1,
-  },
-  {
-    colSpan: 1,
-    id: 'description',
-    label: 'Description',
-    minWidth: 170,
-    align: 'right',
-  },
-  {
-    colSpan: 1,
-    id: 'purchased',
-    label: 'Purchased',
-    minWidth: 170,
-    align: 'right',
-  },
-];
-
-const AdminAssignedList = (props) => {
+const AdminThoughts = (props) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const classes = useStyles();
@@ -78,8 +40,8 @@ const AdminAssignedList = (props) => {
 
   let htmlArray = null;
   if (props.store.adminRewards) {
-    htmlArray = props.store.adminAssigned.map((item, index) => {
-      return <AdminAssignedItem key={index} item={item} />;
+    htmlArray = props.store.adminEmotions.map((item, index) => {
+      return <AdminThoughtsItem key={index} item={item} />;
     });
   }
 
@@ -89,15 +51,8 @@ const AdminAssignedList = (props) => {
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
-              <TableCell colSpan={7} align="left">
-                Chore
-              </TableCell>
-              <TableCell colSpan={2} align="left">
-                Value{' '}
-              </TableCell>
-              <TableCell colSpan={3} align="left">
-                Completed
-              </TableCell>
+              <TableCell align="left">Date</TableCell>
+              <TableCell align="left">Thoughts</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>{htmlArray}</TableBody>
@@ -105,7 +60,7 @@ const AdminAssignedList = (props) => {
       </TableContainer>
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
-        count={props.store.adminRewards.length}
+        count={props.store.adminEmotions.length}
         rowsPerPage={rowsPerPage}
         page={page}
         component="div"
@@ -124,7 +79,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     componentDidMount: () =>
       dispatch({
-        type: 'GET_USERS',
+        type: 'GET_SURVEY',
       }),
   };
 };
@@ -132,4 +87,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStoreToProps,
   mapDispatchToProps
-)(withRouter(AdminAssignedList));
+)(withRouter(AdminThoughts));

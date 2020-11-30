@@ -3,14 +3,12 @@ import Modal from '@material-ui/core/Modal';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-
-function rand() {
-  return Math.round(Math.random() * 20) - 10;
-}
+import { Button } from '@material-ui/core';
+import Form from '../Form/Form.js';
 
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
+  const top = 50;
+  const left = 50;
 
   return {
     top: `${top}%`,
@@ -30,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const StorePage = (props) => {
+const AdminChoreModal = (props) => {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
@@ -46,19 +44,26 @@ const StorePage = (props) => {
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <h2 id="simple-modal-title">Text in a modal</h2>
-      <p id="simple-modal-description">
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-      </p>
+      <h2 id="simple-modal-title">
+        {' '}
+        <Form />
+      </h2>
+      <p id="simple-modal-description"></p>
       <h2>Hello</h2>
     </div>
   );
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        Open Modal
-      </button>
+      <Button
+        variant="outlined"
+        color="primary"
+        size="Medium"
+        type="button"
+        onClick={handleOpen}
+      >
+        Add A Chore
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -79,12 +84,11 @@ const mapDispatchToProps = (dispatch) => {
   return {
     componentDidMount: () =>
       dispatch({
-        type: 'GET_FEELINGS',
+        type: 'GET_CATEGORY',
       }),
   };
 };
-
 export default connect(
   mapStoreToProps,
   mapDispatchToProps
-)(withRouter(StorePage));
+)(withRouter(AdminChoreModal));
