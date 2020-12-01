@@ -2,7 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const storeRouter = express.Router();
 
-storeRouter.get('/:Id', (req, res) => {
+storeRouter.get('/admin/:Id', (req, res) => {
   const queryText = `SELECT "rewards".id, "store".child_id, "user".username, "rewards".selected, "rewards".reward, "rewards".coin_price FROM "rewards"
 JOIN "store" ON "store".reward_id = "rewards".id
 JOIN "user" ON "store".child_id = "user".id
@@ -21,26 +21,7 @@ ORDER BY "store".id`;
     });
 });
 
-storeRouter.get('/b', (req, res) => {
-  const queryText = `SELECT "rewards".id, "store".child_id, "rewards".selected, "user".username, "rewards".reward, "rewards".coin_price FROM "rewards"
-JOIN "store" ON "store".reward_id = "rewards".id
-JOIN "user" ON "store".child_id = "user".id
-WHERE "user".id = 15
-ORDER BY "store".id`;
-
-  pool
-    .query(queryText)
-    .then((dbResponse) => {
-      console.log(dbResponse);
-      res.send(dbResponse.rows);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.sendStatus('Server Side 1 Movie Error', 500);
-    });
-});
-
-storeRouter.get('/:child', (req, res) => {
+storeRouter.get('/child/child', (req, res) => {
   const queryText = `SELECT "store".id, "rewards".id, "rewards".reward, "rewards".coin_price, "rewards".image, "rewards".description FROM "rewards"
 JOIN "store" ON "store".reward_id = "rewards".id 
 JOIN "user" ON "store".child_id = "user".id  

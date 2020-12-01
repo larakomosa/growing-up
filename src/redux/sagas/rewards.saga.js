@@ -5,7 +5,7 @@ function* getRewards(action) {
   console.log('Child Reward saga');
   try {
     yield put({ type: 'ERROR_RESET' });
-    const response = yield axios.get(`/api/store/${action.payload}`);
+    const response = yield axios.get(`/api/store/child/child`);
     console.log(response.data);
     // version of a dispatch = put
     yield put({
@@ -16,7 +16,7 @@ function* getRewards(action) {
     console.log('GET all movies error', err);
     yield put({
       type: 'ERROR_MSG',
-      payload: 'There was a problem getting your movies!! Please try again.',
+      payload: 'There was a problem getting awards.',
     });
   }
 }

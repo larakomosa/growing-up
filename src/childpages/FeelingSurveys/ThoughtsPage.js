@@ -33,7 +33,7 @@ class ThoughtsPage extends Component {
           payload: this.props.store.survey, //sends data to index.js to be stored locally
         });
         console.log('dispatch', this.props.store.survey);
-        this.props.history.push('/childwelcome');
+        this.props.history.push('/child/chores');
         swal('Great! Lets See your Chores!', {
           icon: 'success',
         });

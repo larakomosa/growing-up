@@ -14,11 +14,12 @@ class ChoresPage extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.history.push('/childrewards'); //moves user to next page
+    this.props.history.push('/child/rewards'); //moves user to next page
   };
   render() {
     return (
       <div>
+        <h2>hello</h2>
         <AssignedList />
         <div className="footer"> </div>
       </div>

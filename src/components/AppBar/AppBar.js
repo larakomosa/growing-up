@@ -102,10 +102,10 @@ const ChildAppBar = (props) => {
             open={open}
             onClose={() => handleMenuClick(null)}
           >
-            <MenuItem onClick={() => handleMenuClick('/childchores')}>
+            <MenuItem onClick={() => handleMenuClick('/child/chores')}>
               Chores
             </MenuItem>
-            <MenuItem onClick={() => handleMenuClick('/childrewards')}>
+            <MenuItem onClick={() => handleMenuClick('/child/rewards')}>
               Rewards
             </MenuItem>
             <MenuItem onClick={() => handleLog('goodbye')}>LogOut</MenuItem>

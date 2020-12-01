@@ -5,7 +5,7 @@ function* getAdminStore(action) {
   console.log('selected', action);
   try {
     console.log('selected', action);
-    const selected = yield axios.get(`/api/store/${action.payload}`);
+    const selected = yield axios.get(`/api/store/admin/${action.payload}`);
     yield put({
       type: 'SET_ADMIN_STORE',
       payload: selected.data,

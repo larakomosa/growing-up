@@ -2,7 +2,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* getAssigned(action) {
-  console.log('made it to saga');
+  console.log('made it to assigned saga');
   try {
     yield put({ type: 'ERROR_RESET' });
     const response = yield axios.get(`/api/assigned/child`);
@@ -26,7 +26,7 @@ function* getAdminAssigned(action) {
   console.log(action.payload);
   try {
     yield put({ type: 'ERROR_RESET' });
-    const response = yield axios.get(`/api/assigned/${action.payload}`);
+    const response = yield axios.get(`/api/assigned/admin/${action.payload}`);
     console.log('response', response.data);
     // version of a dispatch = put
     yield put({
