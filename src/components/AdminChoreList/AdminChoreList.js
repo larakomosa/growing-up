@@ -14,6 +14,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TablePagination from '@material-ui/core/TablePagination';
+import Form from '../Forms/ChoreForm.js';
 
 const useStyles = makeStyles({
   root: {
@@ -48,12 +49,12 @@ const AdminChoreList = (props) => {
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead>
             <TableRow>
               <TableCell align="left">Chore</TableCell>
               <TableCell align="left">Coin Value </TableCell>
-              <TableCell align="left">Description</TableCell>
+              {/* <TableCell align="left">Description</TableCell> */}
             </TableRow>
           </TableHead>
           <TableBody>{htmlArray}</TableBody>

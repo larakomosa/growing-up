@@ -12,9 +12,9 @@ function AdminChoreItem(props) {
       <TableCell colSpan={1} align="left">
         <h5>{props.item.coin_value}</h5>
       </TableCell>
-      <TableCell colSpan={1} align="left">
+      {/* <TableCell colSpan={1} align="left">
         <h5>{props.item.description}</h5>
-      </TableCell>
+      </TableCell> */}
       {/* <td>
         <button onClick={props.onClick(props.item.id)}>
           <DeleteIcon />

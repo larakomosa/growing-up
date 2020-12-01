@@ -18,10 +18,25 @@ rewardsRouter.get('/', (req, res) => {
     });
 });
 
+rewardsRouter.get('/conf', (req, res) => {
+  const queryText = 'SELECT * FROM "rewards" ORDER BY "id" DESC;';
+
+  pool
+    .query(queryText)
+    .then((dbResponse) => {
+      console.log(dbResponse);
+      res.send(dbResponse.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus('Server Side 1 Movie Error', 500);
+    });
+});
+
 // create query to insert item
 rewardsRouter.post('/', (req, res) => {
   const rewards = req.body;
-  const queryText = `INSERT INTO "rewards" ("reward", "image", "coin_price", "description", "purchased") 
+  const queryText = `INSERT INTO "rewards" ("reward", "image", "coin_price", "description", "selected") 
     VALUES ($1, $2,$3,$4, false);`;
 
   const queryArray = [

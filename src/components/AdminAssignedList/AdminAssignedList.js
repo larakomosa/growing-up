@@ -19,48 +19,11 @@ const useStyles = makeStyles({
   root: {
     width: '100%',
   },
+  table: { minWidth: 650 },
   container: {
     maxHeight: 440,
   },
 });
-
-const columns = [
-  {
-    id: 'chore',
-    label: 'Chore',
-    minWidth: 170,
-    align: 'right',
-    colSpan: 3,
-  },
-  {
-    id: 'category_id',
-    label: 'category_id',
-    minWidth: 170,
-    align: 'right',
-    colSpan: 1,
-  },
-  {
-    id: 'coin_value',
-    label: 'Coin_Value',
-    minWidth: 70,
-    align: 'right',
-    colSpan: 1,
-  },
-  {
-    colSpan: 1,
-    id: 'description',
-    label: 'Description',
-    minWidth: 170,
-    align: 'right',
-  },
-  {
-    colSpan: 1,
-    id: 'purchased',
-    label: 'Purchased',
-    minWidth: 170,
-    align: 'right',
-  },
-];
 
 const AdminAssignedList = (props) => {
   const [page, setPage] = React.useState(0);
@@ -86,7 +49,7 @@ const AdminAssignedList = (props) => {
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead>
             <TableRow>
               <TableCell colSpan={7} align="left">
@@ -105,7 +68,7 @@ const AdminAssignedList = (props) => {
       </TableContainer>
       <TablePagination
         rowsPerPageOptions={[10, 25, 100]}
-        count={props.store.adminRewards.length}
+        count={props.store.adminAssigned.length}
         rowsPerPage={rowsPerPage}
         page={page}
         component="div"

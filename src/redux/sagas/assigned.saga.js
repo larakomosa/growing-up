@@ -42,6 +42,26 @@ function* getAdminAssigned(action) {
   }
 }
 
+function* assignChore(action) {
+  console.log('made it to reward survey');
+  console.log('payload', action.payload);
+  try {
+    yield put({ type: 'ERROR_RESET' });
+    const response = yield axios.post(`/api/assigned`, action.payload);
+    console.log(response.data);
+    // yield put({
+    //   type: 'SET_ADMIN_REWARDS',
+    //   payload: response.data,
+    // });
+  } catch (err) {
+    console.log('GET all movies error', err);
+    yield put({
+      type: 'ERROR_MSG',
+      payload: 'There was a problem getting your movies!! Please try again.',
+    });
+  }
+}
+
 function* updateAssigned(action) {
   try {
     yield axios.put(`/api/assigned/${action.payload}`);
@@ -55,6 +75,7 @@ function* updateAssigned(action) {
 
 function* assignedSaga() {
   yield takeLatest('GET_ASSIGNED', getAssigned);
+  yield takeLatest('ASSIGN_CHORE', assignChore);
   yield takeLatest('GET_ADMIN_ASSIGNED', getAdminAssigned);
   yield takeLatest('UPDATE_ASSIGNED', updateAssigned);
 }

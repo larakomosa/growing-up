@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
-import AdminRewardsItem from '../../components/AdminRewardsItem/AdminRewardsItem.js';
+import AdminRewardsItem from '../AdminRewardsItem/AdminRewardsItem.js';
 // import '../AdminChoreItem/ChoreItem.css';
 import { withStyles, createStyles } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
@@ -48,7 +48,7 @@ const AdminRewardsList = (props) => {
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead>
             <TableRow>
               <TableCell align="left">Reward</TableCell>

@@ -21,6 +21,26 @@ function* getRewards(action) {
   }
 }
 
+function* getRewardConf(action) {
+  console.log('made it to chore saga');
+  try {
+    yield put({ type: 'ERROR_RESET' });
+    const response = yield axios.get('/api/rewards/conf');
+    console.log(response.data);
+    // version of a dispatch = put
+    yield put({
+      type: 'SET_REWARD_CONF',
+      payload: response.data[0],
+    });
+  } catch (err) {
+    console.log('GET all movies error', err);
+    yield put({
+      type: 'ERROR_MSG',
+      payload: 'There was a problem getting your movies!! Please try again.',
+    });
+  }
+}
+
 function* getAdminRewards(action) {
   console.log('Admin Reward Saga');
   try {
@@ -32,6 +52,26 @@ function* getAdminRewards(action) {
       type: 'SET_ADMIN_REWARDS',
       payload: response.data,
     });
+  } catch (err) {
+    console.log('GET all movies error', err);
+    yield put({
+      type: 'ERROR_MSG',
+      payload: 'There was a problem getting your movies!! Please try again.',
+    });
+  }
+}
+
+function* postReward(action) {
+  console.log('made it to reward survey');
+  console.log('payload', action.payload);
+  try {
+    yield put({ type: 'ERROR_RESET' });
+    const response = yield axios.post(`/api/rewards`, action.payload);
+    console.log(response.data);
+    // yield put({
+    //   type: 'SET_ADMIN_REWARDS',
+    //   payload: response.data,
+    // });
   } catch (err) {
     console.log('GET all movies error', err);
     yield put({
@@ -54,8 +94,9 @@ function* getAdminRewards(action) {
 
 function* rewardsSaga() {
   yield takeLatest('GET_REWARDS', getRewards);
+  yield takeLatest('GET_REWARD_CONF', getRewardConf);
   yield takeLatest('GET_ADMIN_REWARDS', getAdminRewards);
-  // yield takeLatest('UPDATE_ASSIGNED', updateAssigned);
+  yield takeLatest('POST_REWARD', postReward);
 }
 
 export default rewardsSaga;

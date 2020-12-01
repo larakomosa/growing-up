@@ -21,6 +21,26 @@ function* getChores(action) {
   }
 }
 
+function* getChoreConf(action) {
+  console.log('made it to chore saga');
+  try {
+    yield put({ type: 'ERROR_RESET' });
+    const response = yield axios.get('/api/chores/conf');
+    console.log(response.data);
+    // version of a dispatch = put
+    yield put({
+      type: 'SET_CHORE_CONF',
+      payload: response.data[0],
+    });
+  } catch (err) {
+    console.log('GET all movies error', err);
+    yield put({
+      type: 'ERROR_MSG',
+      payload: 'There was a problem getting your movies!! Please try again.',
+    });
+  }
+}
+
 function* getCategory(action) {
   console.log('made it to chore saga');
   try {
@@ -48,7 +68,7 @@ function* postChore(action) {
     yield put({ type: 'ERROR_RESET' });
     const response = yield axios.post(`/api/chores`, action.payload);
     console.log(response.data);
-    // version of a dispatch = put
+
     // yield put({
     //   type: 'SET_CHORES',
     //   payload: response.data,
@@ -64,6 +84,7 @@ function* postChore(action) {
 
 function* choresSaga() {
   yield takeLatest('GET_CHORES', getChores);
+  yield takeLatest('GET_CHORE_CONF', getChoreConf);
   yield takeLatest('GET_CATEGORY', getCategory);
   yield takeLatest('POST_CHORE', postChore);
 }

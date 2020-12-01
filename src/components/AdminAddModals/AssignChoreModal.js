@@ -4,7 +4,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Button } from '@material-ui/core';
-import Form from '../Form/Form.js';
+import AssignChoreForm from '../Forms/AssignChoreForm.js';
+import '../Forms/Form.css';
+import swal from 'sweetalert';
 
 function getModalStyle() {
   const top = 50;
@@ -20,15 +22,16 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    width: 400,
+    minWidth: 200,
+    maxWidth: 400,
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    border: '2px solid blue',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
 }));
 
-const AdminChoreModal = (props) => {
+const AssignChoreModal = (props) => {
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
@@ -40,16 +43,15 @@ const AdminChoreModal = (props) => {
 
   const handleClose = () => {
     setOpen(false);
+    window.location.reload();
   };
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
       <h2 id="simple-modal-title">
         {' '}
-        <Form />
+        <AssignChoreForm callback={handleClose} />
       </h2>
-      <p id="simple-modal-description"></p>
-      <h2>Hello</h2>
     </div>
   );
 
@@ -62,11 +64,10 @@ const AdminChoreModal = (props) => {
         type="button"
         onClick={handleOpen}
       >
-        Add A Chore
+        Assign Chores!
       </Button>
       <Modal
         open={open}
-        onClose={handleClose}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
@@ -84,11 +85,13 @@ const mapDispatchToProps = (dispatch) => {
   return {
     componentDidMount: () =>
       dispatch({
-        type: 'GET_CATEGORY',
+        type: 'GET_CHORES',
+        type: 'GET_USERS',
       }),
   };
 };
+
 export default connect(
   mapStoreToProps,
   mapDispatchToProps
-)(withRouter(AdminChoreModal));
+)(withRouter(AssignChoreModal));

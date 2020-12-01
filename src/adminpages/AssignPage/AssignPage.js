@@ -5,6 +5,8 @@ import AdminAssignedList from '../../components/AdminAssignedList/AdminAssignedL
 import AdminStoreList from '../../components/AdminStoreList/AdminStoreList.js';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
+import AssignChoreModal from '../../components/AdminAddModals/AssignChoreModal.js';
+import AssignRewardModal from '../../components/AdminAddModals/AssignRewardModal.js';
 
 class AssignPage extends Component {
   state = {
@@ -63,7 +65,8 @@ class AssignPage extends Component {
           <Grid container spacing={1}>
             <Grid item xs={12} sm={6}>
               <div>
-                <h3>Chores</h3>
+                <AssignChoreModal />
+                <h3>Current Chore Assignments</h3>
                 <label htmlFor="role">
                   Select Child:
                   <select onChange={this.handleInputChangeFor('id')} required>
@@ -92,9 +95,10 @@ class AssignPage extends Component {
             </Grid>
             <Grid item xs={12} sm={6}>
               <div>
+                <AssignRewardModal />
                 <h3>Rewards</h3>
                 <label htmlFor="role">
-                  Select Child:
+                  Selected Rewards
                   <select onChange={this.handleInputChangeFor2('id')} required>
                     <option value="">Select a Role</option>
                     {this.props.store.userList.map((item, index) => {

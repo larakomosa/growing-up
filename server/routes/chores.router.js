@@ -32,8 +32,26 @@ choresRouter.get('/', (req, res) => {
     });
 });
 
+choresRouter.get('/conf', (req, res) => {
+  const queryText = `SELECT "chores".chore, "chores".coin_value, "category".icon, "chores".description FROM "chores"
+JOIN "category" ON "chores".category_id = "category".id
+ORDER BY "chores".id DESC`;
+
+  pool
+    .query(queryText)
+    .then((dbResponse) => {
+      console.log(dbResponse);
+      res.send(dbResponse.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
 choresRouter.post('/', (req, res) => {
   const chores = req.body;
+  console.log('payload', req.body);
   const queryText = `INSERT INTO "chores" ("chore", "category_id", "coin_value", "description") 
     VALUES ($1, $2,$3,$4);`;
 

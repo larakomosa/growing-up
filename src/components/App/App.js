@@ -36,6 +36,8 @@ import AddPage from '../../adminpages/AddPage/AddPage';
 import AssignPage from '../../adminpages/AssignPage/AssignPage';
 import EmotionsPage from '../../adminpages/EmotionsPage/EmotionsPage';
 import AdminUserPage from '../../adminpages/UserPage/UserPage';
+import ChoreConfirmationPage from '../../adminpages/AddPage/ChoreConfirmationPage';
+import RewardConfirmationPage from '../../adminpages/AddPage/RewardConfirmationPage';
 import StorePage from '../../adminpages/StorePage/StorePage';
 
 import './App.css';
@@ -131,6 +133,16 @@ class App extends Component {
 
             <ProtectedRoute exact path="/admin/add" component={AddPage} />
             <ProtectedRoute exact path="/admin/assign" component={AssignPage} />
+            <ProtectedRoute
+              exact
+              path="/admin/chore/confirmation"
+              component={ChoreConfirmationPage}
+            />
+            <ProtectedRoute
+              exact
+              path="/admin/reward/confirmation"
+              component={RewardConfirmationPage}
+            />
             <ProtectedRoute
               exact
               path="/admin/users"
