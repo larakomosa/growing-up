@@ -9,7 +9,6 @@ class UserPage extends Component {
   render() {
     return (
       <div>
-        <LogOutButton />
         {this.props.store.user.page_role_id === 4 ? (
           <FeelingPage />
         ) : (

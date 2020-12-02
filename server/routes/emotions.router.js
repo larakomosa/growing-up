@@ -41,7 +41,7 @@ emotionsRouter.post('/', (req, res) => {
     });
 });
 
-emotionsRouter.post('/notes', (req, res) => {
+emotionsRouter.post('/child/notes', (req, res) => {
   const notes = req.body;
   const queryText = `INSERT INTO "parentNotes" ("child_id", "admin_id", "message") 
     VALUES ($1, $2,$3)`;
@@ -59,7 +59,7 @@ emotionsRouter.post('/notes', (req, res) => {
     });
 });
 
-emotionsRouter.get('/notes', (req, res) => {
+emotionsRouter.get('/child/notes', (req, res) => {
   console.log('hi', req.user.id);
   const queryText = `SELECT * FROM "parentNotes" WHERE "child_id" = $1 ORDER BY "id" DESC;`;
 

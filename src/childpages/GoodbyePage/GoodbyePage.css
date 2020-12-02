@@ -1,0 +1,16 @@
+/* body {
+  margin-top: 100px;
+  background-image: url(welcome1.jpg);
+  background-position: relative;
+  /* background-position: center; */
+/* background-size: cover;
+  background-repeat: no-repeat;
+*/
+
+.goodbye {
+  text-align: center;
+  background-image: url(goodbye.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

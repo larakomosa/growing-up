@@ -9,13 +9,13 @@ function AdminRewardsItem(props) {
   return (
     <TableRow>
       <TableCell colSpan={1} align="left">
-        <h5>{props.item.reward}</h5>
+        <p>{props.item.reward}</p>
       </TableCell>
       <TableCell colSpan={1} align="left">
-        <h5>{props.item.coin_price}</h5>
+        <p>{props.item.coin_price}</p>
       </TableCell>
       <TableCell colSpan={1} align="left">
-        <h5>{props.item.description}</h5>
+        <p>{props.item.description}</p>
       </TableCell>
       {/* <td>
         <button onClick={props.onClick(props.item.id)}>

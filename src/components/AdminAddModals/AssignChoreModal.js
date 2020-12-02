@@ -42,8 +42,8 @@ const AssignChoreModal = (props) => {
   };
 
   const handleClose = () => {
+    swal('Thank you! This chore has been assigned!');
     setOpen(false);
-    window.location.reload();
   };
 
   const body = (

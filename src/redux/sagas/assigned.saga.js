@@ -49,10 +49,9 @@ function* assignChore(action) {
     yield put({ type: 'ERROR_RESET' });
     const response = yield axios.post(`/api/assigned`, action.payload);
     console.log(response.data);
-    // yield put({
-    //   type: 'SET_ADMIN_REWARDS',
-    //   payload: response.data,
-    // });
+    yield put({
+      type: 'GET_ASSIGNED',
+    });
   } catch (err) {
     console.log('GET all movies error', err);
     yield put({
@@ -66,7 +65,7 @@ function* updateAssigned(action) {
   try {
     yield axios.put(`/api/assigned/${action.payload}`);
     yield put({
-      type: 'SET_ASSIGNED',
+      type: 'GET_ASSIGNED',
     });
   } catch (err) {
     console.log('Error deleting plant:', err);

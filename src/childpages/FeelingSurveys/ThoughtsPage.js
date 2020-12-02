@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import swal from 'sweetalert';
+import '../FeelingSurveys/surveys.css';
+import { Grid } from '@material-ui/core';
 
 class ThoughtsPage extends Component {
   state = {
@@ -23,9 +25,8 @@ class ThoughtsPage extends Component {
     });
     swal({
       title: 'Great Job!',
-      text: 'Are you ready to see your chores?!',
+      text: 'Are you ready to turn in your survey?',
       buttons: true,
-      dangerMode: true,
     }).then((willSubmit) => {
       if (willSubmit) {
         this.props.dispatch({
@@ -33,10 +34,7 @@ class ThoughtsPage extends Component {
           payload: this.props.store.survey, //sends data to index.js to be stored locally
         });
         console.log('dispatch', this.props.store.survey);
-        this.props.history.push('/child/chores');
-        swal('Great! Lets See your Chores!', {
-          icon: 'success',
-        });
+        this.props.history.push('/child/welcome');
       } else {
         swal('Your imaginary file is safe!');
       }
@@ -50,40 +48,54 @@ class ThoughtsPage extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Anything else on your mind?</h2>
-        <form>
-          <TextField
-            className="textField"
-            id="outlined-basic"
-            variant="outlined"
-            margin="normal"
-            size="medium"
-            onChange={(event) => this.handleChangeFor('comments', event)}
-          />
-        </form>
-        <div className="buttons">
-          <Button
-            variant="outlined"
-            color="primary"
-            type="submit"
-            size="small"
-            onClick={this.handleBack}
-          >
-            &#x2190; Back
-          </Button>
-          {'    '}
-          <Button
-            variant="outlined"
-            color="primary"
-            type="submit"
-            size="small"
-            onClick={this.handleSubmit}
-          >
-            Next &#x2192;
-          </Button>
-        </div>
-      </div>
+      <Grid
+        container
+        spacing={0}
+        direction="column"
+        justify="flex-start"
+        alignItems="center"
+        style={{ minHeight: '100vh' }}
+      >
+        <Grid item xs={12} sm={10}>
+          <div classname="welcome1">
+            <h2>Anything else on your mind?</h2>
+            <form>
+              <TextField
+                fullWidth
+                className="textField"
+                id="outlined-basic"
+                variant="outlined"
+                margin="normal"
+                multiline
+                rows={4}
+                size="large"
+                onChange={(event) => this.handleChangeFor('comments', event)}
+              />
+            </form>
+            <div className="button1">
+              <Button
+                variant="outlined"
+                color="primary"
+                type="submit"
+                size="small"
+                onClick={this.handleBack}
+              >
+                &#x2190; Back
+              </Button>
+              {'    '}
+              <Button
+                variant="outlined"
+                color="primary"
+                type="submit"
+                size="small"
+                onClick={this.handleSubmit}
+              >
+                Next &#x2192;
+              </Button>
+            </div>
+          </div>
+        </Grid>
+      </Grid>
     );
   }
 }

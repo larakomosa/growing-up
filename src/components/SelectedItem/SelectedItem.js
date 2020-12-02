@@ -13,7 +13,8 @@ class SelectedItem extends Component {
 
   handleHome = (event) => {
     event.preventDefault();
-    this.props.history.push('/childrewards'); //moves user back to home page
+    console.log('back to list working');
+    this.props.history.push('/child/rewards'); //moves user back to home page
   };
 
   render() {

@@ -28,10 +28,10 @@ class RewardConfirmation extends Component {
                 className="image1"
                 src={this.props.store.rewardConf.image}
                 class="rounded"
-                alt={this.props.store.rewardConf.description}
+                // alt={this.props.store.rewardConf.description}
               />
               <Typography gutterBottom variant="h5" component="h5">
-                <h5> Coin Price: </h5>${this.props.store.rewardConf.coin_price}
+                <h2> Coin Price: ${this.props.store.rewardConf.coin_price}</h2>
               </Typography>
             </Grid>
             <Grid item xs={12} sm={8}>
@@ -39,7 +39,7 @@ class RewardConfirmation extends Component {
                 <h1>{this.props.store.rewardConf.reward}</h1>
               </Typography>
               <Typography gutterBottom variant="h5" component="h5">
-                <h5> Reward Description</h5>
+                <h2> Reward Description</h2>
               </Typography>
 
               <hr />

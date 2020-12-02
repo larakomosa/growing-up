@@ -1,0 +1,25 @@
+/* body {
+  margin-top: 100px;
+  background-image: url(welcome1.jpg);
+  background-position: relative;
+  /* background-position: center; */
+/* background-size: cover;
+  background-repeat: no-repeat;
+*/
+
+h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+  font-weight: normal;
+  color: #f36f58;
+  font-family: fantasy;
+}
+
+.welcome {
+  text-align: center;
+  background-image: url(goodbye1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: relative;
+}

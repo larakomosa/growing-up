@@ -66,7 +66,7 @@ class AssignPage extends Component {
             <Grid item xs={12} sm={6}>
               <div>
                 <AssignChoreModal />
-                <h3>Current Chore Assignments</h3>
+                <h2>Current Chore Assignments</h2>
                 <label htmlFor="role">
                   Select Child:
                   <select onChange={this.handleInputChangeFor('id')} required>
@@ -96,7 +96,7 @@ class AssignPage extends Component {
             <Grid item xs={12} sm={6}>
               <div>
                 <AssignRewardModal />
-                <h3>Rewards</h3>
+                <h2>Current Reward Assignments</h2>
                 <label htmlFor="role">
                   Selected Rewards
                   <select onChange={this.handleInputChangeFor2('id')} required>

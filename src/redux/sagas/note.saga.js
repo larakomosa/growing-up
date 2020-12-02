@@ -1,12 +1,10 @@
-  
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* getNote(action) {
   try {
-
     yield put({ type: 'ERROR_RESET' });
-    const response = yield axios.get(`/api/emotions/notes`); //get route path
+    const response = yield axios.get(`/api/emotions/child/notes`); //get route path
     console.log('saga', action);
     // version of a dispatch = put
     yield put({

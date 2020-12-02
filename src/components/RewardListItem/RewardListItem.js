@@ -9,6 +9,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
 import CardMedia from '@material-ui/core/CardMedia';
+import Divider from '@material-ui/core/Divider';
 
 class RewardListItem extends Component {
   componentDidMount() {
@@ -25,50 +26,40 @@ class RewardListItem extends Component {
 
   render() {
     return (
-      <Grid
-        item
-        xs={12}
-        sm={6}
-        md={3}
-        lg={2}
-        onClick={() => this.handleClick(this.props.item.id)}
-      >
+      <Grid item xs={12} sm={3} md={3} lg={2}>
         <Card>
           <CardActionArea>
-            <CardMedia
-              image={this.props.item.image}
-              class="rounded"
-              alt={this.props.item.description}
-            />
             <CardContent>
-              <Typography gutterBottom variant="h6" component="h2">
-                {this.props.item.reward}
-              </Typography>
-              <Typography gutterBottom variant="h6" component="h2">
-                {this.props.item.coin_price}
+              <CardMedia image={this.props.item.icon} />
+              <Divider />
+              <div className="titleControl">
                 <Typography gutterBottom variant="h6" component="h2">
-                  <Typography gutterBottom variant="h6" component="h2">
-                    <img src={this.props.item.image}></img>
-                  </Typography>
+                  <h6>{this.props.item.reward}</h6>
                 </Typography>
-              </Typography>
-              {/* <Typography gutterBottom variant="h6" component="h2">
-                <img src={this.props.item.icon}></img>
-              </Typography> */}
+              </div>
+              <img
+                onClick={this.activateToggle}
+                className="imageBox"
+                src={this.props.item.image}
+                alt={this.props.item.description}
+              />
+              <div className="bottom">
+                <Typography gutterBottom variant="h6" component="h2">
+                  <h3>Coin Value ${this.props.item.coin_price}</h3>
+                </Typography>
+                <Button
+                  variant="outlined"
+                  color="default"
+                  type="submit"
+                  size="small"
+                  onClick={() => this.handleClick(this.props.item.id)}
+                >
+                  {' '}
+                  More Details
+                </Button>
+              </div>
             </CardContent>
           </CardActionArea>
-          <CardActions>
-            <Button
-              variant="outlined"
-              color="primary"
-              type="submit"
-              size="small"
-              onClick={() => this.handleClick(this.props.item.id)}
-            >
-              {' '}
-              More Details
-            </Button>
-          </CardActions>
         </Card>
       </Grid>
     );

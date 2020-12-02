@@ -9,7 +9,7 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 
 class LandingPage extends Component {
   state = {
-    heading: 'Class Component',
+    heading: 'Growing Up',
   };
 
   onLogin = (event) => {
@@ -19,47 +19,37 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="container">
-        <h2>{this.state.heading}</h2>
+        <h4>{this.state.heading}</h4>
 
         <div className="grid">
           <div className="grid-col grid-col_8">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra
-              lacus ut ex molestie blandit. Etiam et turpis sit amet risus
-              mollis interdum. Suspendisse et justo vitae metus bibendum
-              fringilla sed sed justo. Aliquam sollicitudin dapibus lectus,
-              vitae consequat odio elementum eget. Praesent efficitur eros vitae
-              nunc interdum, eu interdum justo facilisis. Sed pulvinar nulla ac
-              dignissim efficitur. Quisque eget eros metus. Vestibulum bibendum
-              fringilla nibh a luctus. Duis a sapien metus.
+              Growing up is a fun, kid-friendly parent/child application that
+              assists children in middle childhood (7-11 years old) develop good
+              habits, practice responsibility and acknowledge their own emotions
+              and feelings with positive reinforcement. Admin users assign
+              chores and tasks to a child user who will complete them to earn
+              coins. A Rewards page will display a gallery of (admin input)
+              rewards children can purchase with earned coins.
             </p>
 
             <p>
-              Praesent consectetur orci dui, id elementum eros facilisis id. Sed
-              id dolor in augue porttitor faucibus eget sit amet ante. Nunc
-              consectetur placerat pharetra. Aenean gravida ex ut erat commodo,
-              ut finibus metus facilisis. Nullam eget lectus non urna rhoncus
-              accumsan quis id massa. Curabitur sit amet dolor nisl. Proin
-              euismod, augue at condimentum rhoncus, massa lorem semper lacus,
-              sed lobortis augue mi vel felis. Duis ultrices sapien at est
-              convallis congue.
-            </p>
-
-            <p>
-              Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat.
-              Suspendisse posuere dapibus maximus. Aliquam vitae felis libero.
-              In vehicula sapien at semper ultrices. Vivamus sed feugiat libero.
-              Sed sagittis neque id diam euismod, ut egestas felis ultricies.
-              Nullam non fermentum mauris. Sed in enim ac turpis faucibus
-              pretium in sit amet nisi.
+              An emotion survey page will allow a child the ability to convey
+              their mood, sleep and anxiety levels for the day as well. Surveyed
+              information will be stored on an admin page for pages to track and
+              monitor their children’s mental health. Very often, children feel
+              more comfortable writing or sharing their feelings through
+              non-verbal communication. Middle childhood is an important and
+              sometimes awkward transition! As kids progress towards more
+              independence, this application can be a helpful tool to guide
+              them!
             </p>
           </div>
           <div className="grid-col grid-col_4">
             <RegisterForm />
 
             <center>
-              <h4>Already a Member?</h4>
+              <h3>Already a Member?</h3>
               <button className="btn btn_sizeSm" onClick={this.onLogin}>
                 Login
               </button>

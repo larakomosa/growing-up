@@ -5,6 +5,7 @@ import { Button } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import '../FeelingSurveys/surveys.css';
 
 class SleepPage extends Component {
   state = {
@@ -36,7 +37,7 @@ class SleepPage extends Component {
     return (
       <div>
         <h2>How did you sleep?</h2>
-        <div className="container">
+        <div className="welcome1">
           <form>
             <label>
               <FormControlLabel
@@ -105,11 +106,12 @@ class SleepPage extends Component {
               />
             </label>
           </form>
+        </div>
+        <div className="button1">
           <Button
             variant="outlined"
             color="primary"
             type="submit"
-            size="small"
             onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
           >
             Next &#x2192;

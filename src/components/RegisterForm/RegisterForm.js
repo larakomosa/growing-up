@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
+import { Button } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
+
 class RegisterForm extends Component {
   state = {
     username: '',
@@ -48,48 +51,63 @@ class RegisterForm extends Component {
             {this.props.store.errors.registrationMessage}
           </h3>
         )}
-        <div>
-          <label htmlFor="username">
-            Username:
-            <input
-              type="text"
-              name="username"
-              value={this.state.username}
-              required
-              onChange={this.handleInputChangeFor('username')}
-            />
-          </label>
+        <div className="formField">
+          <TextField
+            fullWidth
+            size="small"
+            id="outlined-helperText"
+            label="Username"
+            value={this.state.username}
+            required
+            placeholder="Username"
+            onChange={this.handleInputChangeFor('username')}
+            variant="outlined"
+          />
         </div>
-        <div>
-          <label htmlFor="password">
-            Password:
-            <input
-              type="password"
-              name="password"
-              value={this.state.password}
-              required
-              onChange={this.handleInputChangeFor('password')}
-            />
-          </label>
+        <div className="formField">
+          <TextField
+            fullWidth
+            size="small"
+            id="outlined-helperText"
+            label="Password"
+            value={this.state.password}
+            required
+            placeholder="Username"
+            onChange={this.handleInputChangeFor('password')}
+            variant="outlined"
+          />
         </div>
-        <div>
-          <label htmlFor="role">
-            Choose Role:
-            <select
-              onChange={this.handleInputChangeFor('page_role_id')}
-              required
-            >
-              <option value="">Select a Role</option>
-              {this.props.store.roles.map((item, index) => {
-                return (
-                  <option key={index} value={item.id}>
-                    {item.page_role}
-                  </option>
-                );
-              })}
-            </select>
-          </label>
-          <input className="btn" type="submit" name="submit" value="Register" />
+        <div className="formField">
+          <TextField
+            fullWidth
+            size="small"
+            id="outlined-select-currency-native"
+            value={this.state.page_role_id}
+            select
+            onChange={this.handleInputChangeFor('page_role_id')}
+            placeholder="Select Role"
+            variant="outlined"
+            SelectProps={{
+              native: true,
+            }}
+          >
+            <option value="">Select Role</option>
+            {this.props.store.roles.map((option) => (
+              <option key={option.value} value={option.id}>
+                {option.page_role}
+              </option>
+            ))}
+          </TextField>
+        </div>
+        <div className="formButton">
+          <Button
+            variant="outlined"
+            color="default"
+            type="submit"
+            size="medium"
+          >
+            Register
+          </Button>
         </div>
       </form>
     );

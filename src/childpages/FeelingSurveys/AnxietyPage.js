@@ -5,6 +5,7 @@ import { Button } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import '../FeelingSurveys/surveys.css';
 
 class AnxietyPage extends Component {
   state = {
@@ -35,8 +36,8 @@ class AnxietyPage extends Component {
   render() {
     return (
       <div>
-        <h2>How anxious are you?</h2>
-        <div className="container">
+        <div className="welcome1">
+          <h2>How anxious are you?</h2>
           <form>
             <label>
               <FormControlLabel
@@ -105,11 +106,13 @@ class AnxietyPage extends Component {
               />
             </label>
           </form>
+        </div>
+        <div className="button1">
           <Button
             variant="outlined"
             color="primary"
             type="submit"
-            size="small"
+            size="large"
             onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
           >
             Next &#x2192;

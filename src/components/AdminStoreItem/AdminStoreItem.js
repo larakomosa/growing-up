@@ -8,13 +8,13 @@ function AdminChoreItem(props) {
     <>
       <TableRow>
         <TableCell colSpan={1} align="left">
-          {props.item.reward}
+          <p>{props.item.reward}</p>
         </TableCell>
         <TableCell colSpan={1} align="left">
-          {props.item.coin_price}
+          <p> {props.item.coin_price}</p>
         </TableCell>
         <TableCell colSpan={1} align="left">
-          <h5>{props.item.selected.toString()}</h5>
+          <p> {props.item.selected.toString()}</p>
         </TableCell>
         {/* <td>
         <button onClick={props.onClick(props.item.id)}>

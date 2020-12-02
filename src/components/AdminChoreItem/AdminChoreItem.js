@@ -7,10 +7,10 @@ function AdminChoreItem(props) {
   return (
     <TableRow>
       <TableCell colSpan={1} align="left">
-        <h5>{props.item.chore}</h5>
+        <p>{props.item.chore}</p>
       </TableCell>
       <TableCell colSpan={1} align="left">
-        <h5>{props.item.coin_value}</h5>
+        <p>{props.item.coin_value}</p>
       </TableCell>
       {/* <TableCell colSpan={1} align="left">
         <h5>{props.item.description}</h5>

@@ -25,8 +25,16 @@ const useStyles = makeStyles({
 });
 
 const AdminStoreList = (props) => {
+  const adjustRows = (start, rowCount) => {
+    const newRows = props.store.adminStore.slice(
+      start - 1,
+      rowCount - 1 + start - 1
+    );
+    return newRows;
+  };
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [rowsDisplayed, setRowsDisplayed] = React.useState(adjustRows(0, 10));
   const classes = useStyles();
 
   const handleChangePage = (event, newPage) => {
@@ -39,8 +47,8 @@ const AdminStoreList = (props) => {
   };
 
   let htmlArray = null;
-  if (props.store.adminStore) {
-    htmlArray = props.store.adminStore.map((item, index) => {
+  if (rowsDisplayed) {
+    htmlArray = rowsDisplayed.map((item, index) => {
       return <AdminStoreItem key={index} item={item} />;
     });
   }

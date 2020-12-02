@@ -32,7 +32,7 @@ class AddPage extends Component {
         <section>
           <Grid container spacing={8}>
             <Grid item xs={12} sm={6}>
-              <h3>Chores</h3>
+              <h2>Chore List</h2>
               <AdminChoresModal />
               <div>
                 <AdminChoreList refresh={this.handleRefresh} />
@@ -40,7 +40,7 @@ class AddPage extends Component {
               <hr />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <h3>Rewards</h3>
+              <h2>Rewards</h2>
               <AdminRewardModal />
               <div>
                 <AdminRewardsList />

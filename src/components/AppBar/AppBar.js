@@ -28,9 +28,17 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(2),
   },
+  home: {
+    minHeight: 50,
+    paddingTop: theme.spacing(4),
+    alignItems: 'flex-start',
+  },
   title: {
     flexGrow: 1,
     alignSelf: 'flex-end',
+    paddingBottom: theme.spacing(5),
+    fontFamily: 'Nerko One',
+    color: '#524C61',
   },
 }));
 
@@ -67,23 +75,25 @@ const ChildAppBar = (props) => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
-          <Typography className={classes.title} variant="h5" noWrap>
-            Material-UI
-          </Typography>
           <IconButton
+            className="home"
             aria-label="account of current user"
-            aria-controls="menu-appbar"
+            edge="start"
             aria-haspopup="true"
-            onClick={() => handleMenuClick('/childwelcome')}
-            color="inherit"
+            onClick={() => handleMenuClick('/child/welcome')}
+            color="secondary"
           >
             <HomeIcon />
           </IconButton>
+          <Typography className={classes.title} variant="h4" noWrap>
+            ...GROWING UP
+          </Typography>
+
           <IconButton
             aria-label="display more actions"
             onClick={handleMenu}
             edge="end"
-            color="inherit"
+            color="secondary"
           >
             <MenuIcon />
           </IconButton>

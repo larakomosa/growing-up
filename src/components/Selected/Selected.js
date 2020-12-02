@@ -14,7 +14,7 @@ class Selected extends Component {
 
   handleHome = (event) => {
     event.preventDefault();
-    this.props.history.push('/childrewards'); //moves user back to home page
+    this.props.history.push('/child/rewards'); //moves user back to home page
   };
 
   render() {
@@ -30,37 +30,25 @@ class Selected extends Component {
                 alt={this.props.store.selected.description}
               />
               <Typography gutterBottom variant="h5" component="h5">
-                <h5> Coin Price: </h5>${this.props.store.selected.coin_price}
+                <h6> Coin Price: ${this.props.store.selected.coin_price}</h6>
               </Typography>
+            </Grid>
+            <Grid item xs={12} sm={8}>
+              <Typography gutterBottom variant="h5" component="h5">
+                <h4>{this.props.store.selected.reward}</h4>
+              </Typography>
+
+              <hr />
+              <h6>{this.props.store.selected.description}</h6>
               <Button
                 variant="outlined"
-                color="primary"
+                color="default"
                 type="submit"
                 size="medium"
                 onClick={() => this.handleClick(this.props.item.id)}
               >
                 {' '}
-                Buy This Now!!
-              </Button>
-            </Grid>
-            <Grid item xs={12} sm={8}>
-              <Typography gutterBottom variant="h5" component="h5">
-                <h5> More Details</h5>
-              </Typography>
-
-              <hr />
-              <h2>{this.props.store.selected.description}</h2>
-
-              <div></div>
-              <Button
-                variant="outlined"
-                color="primary"
-                type="submit"
-                size="medium"
-                onClick={() => this.handleHome}
-              >
-                {' '}
-                Back to List!
+                CONNECT PUT FUNCTION
               </Button>
             </Grid>
           </Grid>

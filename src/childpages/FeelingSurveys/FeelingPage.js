@@ -5,6 +5,9 @@ import { Button } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import swal from 'sweetalert';
+import '../FeelingSurveys/surveys.css';
+import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
 
 class FeelingPage extends Component {
   componentDidMount() {
@@ -42,8 +45,9 @@ class FeelingPage extends Component {
     return (
       <div>
         <h2>How are you feeling today?</h2>
-        <div className="container">
+        <div className="welcome1">
           <form>
+            <SentimentVeryDissatisfiedIcon />
             <label>
               <FormControlLabel
                 control={<Radio color="primary" />}
@@ -110,12 +114,15 @@ class FeelingPage extends Component {
                 onChange={this.handleOptionChange}
               />
             </label>
+            <InsertEmoticonIcon />
           </form>
+        </div>
+        <div className="button1">
           <Button
             variant="outlined"
             color="primary"
             type="submit"
-            size="small"
+            size="large"
             onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
           >
             Next &#x2192;

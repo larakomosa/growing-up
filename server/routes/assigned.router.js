@@ -5,7 +5,7 @@ const assignedRouter = express.Router();
 assignedRouter.get('/admin/:Id', (req, res) => {
   assignedId = req.params.Id;
   console.log('help', req.params.Id);
-  const queryText = `SELECT "assigned".id, "user".username, "chores".chore, "chores".coin_value, "chores".description,"assigned".completion_status FROM "assigned"
+  const queryText = `SELECT "assigned".id, "user".username, "chores".chore, "chores".coin_value, "chores".description, "assigned".completion_status FROM "assigned"
 JOIN "chores" ON "assigned".chore_id = "chores".id
 JOIN "user" ON "assigned".child_id = "user".id
 WHERE "assigned".child_id = $1`;
@@ -23,7 +23,7 @@ WHERE "assigned".child_id = $1`;
 });
 
 assignedRouter.get('/child', (req, res) => {
-  const queryText = `SELECT "chores".chore, "assigned".id , "chores".coin_value, "category".icon, "chores".description FROM "chores"
+  const queryText = `SELECT "chores".chore, "assigned".id , "chores".coin_value, "category".icon, "assigned".completion_status, "chores".description FROM "chores"
 JOIN "assigned" ON "assigned".chore_id = "chores".id
 JOIN "category" ON "chores".category_id = "category".id
 WHERE "assigned".child_id = $1`;

@@ -57,7 +57,7 @@ class App extends Component {
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />
 
-            <Route exact path="/goodbye" component={GoodbyePage} />
+            <Route exact path="/child/goodbye" component={GoodbyePage} />
 
             {/* Visiting localhost:3000/about will show the about page. */}
             <Route

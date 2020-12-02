@@ -28,11 +28,11 @@ class ChoreConfirmation extends Component {
               <img src={this.props.store.choreConf.icon}></img>
             </Grid>
             <Grid item xs={12} sm={8}>
-              <Typography gutterBottom variant="h5" component="h5">
-                <h1> {this.props.store.choreConf.chore}</h1>{' '}
+              <Typography>
+                <h4> {this.props.store.choreConf.chore}</h4>{' '}
               </Typography>
               <Typography gutterBottom variant="h5" component="h5">
-                <h5> Coin Value: ${this.props.store.choreConf.coin_value}</h5>
+                <h2> Coin Value: ${this.props.store.choreConf.coin_value}</h2>
               </Typography>
               <hr />
               <h3>{this.props.store.choreConf.description}</h3>

@@ -7,13 +7,13 @@ function AdminChoreItem(props) {
   return (
     <TableRow>
       <TableCell colSpan={7} align="left">
-        <h5>{props.item.chore}</h5>
+        <p>{props.item.chore}</p>
       </TableCell>
       <TableCell colSpan={2} align="left">
-        <h5>{props.item.coin_value}</h5>
+        <p>{props.item.coin_value}</p>
       </TableCell>
       <TableCell colSpan={3} align="left">
-        <h5>{props.item.completion_status.toString()}</h5>
+        <p>{props.item.completion_status.toString()}</p>
       </TableCell>
       {/* <td>
         <button onClick={props.onClick(props.item.id)}>

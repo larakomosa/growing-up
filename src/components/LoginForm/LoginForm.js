@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
+import { Button } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
+
 class LoginForm extends Component {
   state = {
     username: '',
@@ -39,32 +42,41 @@ class LoginForm extends Component {
             {this.props.store.errors.loginMessage}
           </h3>
         )}
-        <div>
-          <label htmlFor="username">
-            Username:
-            <input
-              type="text"
-              name="username"
-              required
-              value={this.state.username}
-              onChange={this.handleInputChangeFor('username')}
-            />
-          </label>
+        <div className="formField">
+          <TextField
+            fullWidth
+            size="small"
+            id="outlined-helperText"
+            label="Username"
+            value={this.state.username}
+            required
+            placeholder="Username"
+            onChange={this.handleInputChangeFor('username')}
+            variant="outlined"
+          />
         </div>
-        <div>
-          <label htmlFor="password">
-            Password:
-            <input
-              type="password"
-              name="password"
-              required
-              value={this.state.password}
-              onChange={this.handleInputChangeFor('password')}
-            />
-          </label>
+        <div className="formField">
+          <TextField
+            fullWidth
+            size="small"
+            id="outlined-helperText"
+            label="Password"
+            value={this.state.password}
+            required
+            placeholder="Username"
+            onChange={this.handleInputChangeFor('password')}
+            variant="outlined"
+          />
         </div>
-        <div>
-          <input className="btn" type="submit" name="submit" value="Log In" />
+        <div className="formButton2">
+          <Button
+            variant="outlined"
+            color="default"
+            type="submit"
+            size="medium"
+          >
+            Login
+          </Button>
         </div>
       </form>
     );
