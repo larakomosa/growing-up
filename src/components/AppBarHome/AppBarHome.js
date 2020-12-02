@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     alignSelf: 'flex-end',
+    paddingBottom: theme.spacing(5),
+    fontFamily: 'Nerko One',
+    color: '#524C61',
   },
 }));
 
@@ -54,8 +57,8 @@ const AppBarHome = (props) => {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.toolbar}>
-          <Typography className={classes.title} variant="h5" noWrap>
-            Material-UI
+          <Typography className={classes.title} variant="h4" noWrap>
+            ...Growing Up
           </Typography>
           <IconButton
             aria-label="account of current user"

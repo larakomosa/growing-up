@@ -33,7 +33,7 @@ class DetailsPage extends Component {
             <Button
               variant="outlined"
               color="default"
-              size="large"
+              size="small"
               onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
             >
               Back to Rewards

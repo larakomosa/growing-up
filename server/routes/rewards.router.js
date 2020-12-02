@@ -74,20 +74,5 @@ rewardsRouter.delete('/:Id', (req, res) => {
 });
 
 // PUT - updates purchase status on a specific reward
-rewardsRouter.put('/:Id', (req, res) => {
-  const rewardsId = req.params.Id;
-  // const status = req.body;
-  const queryText = `UPDATE "rewards" SET "purchased"=true WHERE "id"=$1;`;
-
-  pool
-    .query(queryText, [rewardsId])
-    .then(() => {
-      res.sendStatus(200);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.sendStatus(500);
-    });
-});
 
 module.exports = rewardsRouter;

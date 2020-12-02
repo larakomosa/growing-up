@@ -29,7 +29,7 @@ class RewardListItem extends Component {
       <Grid item xs={12} sm={3} md={3} lg={2}>
         <Card>
           <CardActionArea>
-            <CardContent>
+            <CardContent onClick={() => this.handleClick(this.props.item.id)}>
               <CardMedia image={this.props.item.icon} />
               <Divider />
               <div className="titleControl">
@@ -44,8 +44,8 @@ class RewardListItem extends Component {
                 alt={this.props.item.description}
               />
               <div className="bottom">
-                <Typography gutterBottom variant="h6" component="h2">
-                  <h3>Coin Value ${this.props.item.coin_price}</h3>
+                <Typography gutterBottom variant="p" component="h2">
+                  <p>Coin Value ${this.props.item.coin_price}</p>
                 </Typography>
                 <Button
                   variant="outlined"
@@ -55,7 +55,7 @@ class RewardListItem extends Component {
                   onClick={() => this.handleClick(this.props.item.id)}
                 >
                   {' '}
-                  More Details
+                  ..See More
                 </Button>
               </div>
             </CardContent>

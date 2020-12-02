@@ -39,9 +39,21 @@ function* assignStore(action) {
   }
 }
 
+function* updateSelected(action) {
+  try {
+    yield axios.put(`/api/store/${action.payload}`);
+    yield put({
+      type: 'GET_SELECTED',
+    });
+  } catch (err) {
+    console.log('Error deleting plant:', err);
+  }
+}
+
 function* storeSaga() {
   yield takeLatest('ASSIGN_STORE', assignStore);
   yield takeLatest('GET_ADMIN_STORE', getAdminStore);
+  yield takeLatest('UPDATE_SELECTED', updateSelected);
 }
 
 export default storeSaga;

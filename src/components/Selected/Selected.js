@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-
+import swal from 'sweetalert';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 
 class Selected extends Component {
@@ -12,9 +12,23 @@ class Selected extends Component {
     });
   }
 
-  handleHome = (event) => {
-    event.preventDefault();
-    this.props.history.push('/child/rewards'); //moves user back to home page
+  handleClick = (id) => {
+    console.log('id', this.props.store.selected.id);
+    swal({
+      title: 'Great Choice!',
+      text: 'Are you sure your ready to buy this?',
+      buttons: true,
+    }).then((willSubmit) => {
+      if (willSubmit) {
+        this.props.dispatch({
+          type: 'UPDATE_SELECTED',
+          payload: this.props.store.selected.id,
+        });
+        swal('Success!! Your reward was purchased!');
+      } else {
+        swal('Your imaginary file is safe!');
+      }
+    });
   };
 
   render() {
@@ -45,10 +59,10 @@ class Selected extends Component {
                 color="default"
                 type="submit"
                 size="medium"
-                onClick={() => this.handleClick(this.props.item.id)}
+                onClick={() => this.handleClick(this.props.store.selected.id)}
               >
                 {' '}
-                CONNECT PUT FUNCTION
+                BUY THIS NOW!
               </Button>
             </Grid>
           </Grid>

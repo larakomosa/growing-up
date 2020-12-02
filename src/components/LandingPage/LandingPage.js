@@ -9,7 +9,7 @@ import RegisterForm from '../RegisterForm/RegisterForm';
 
 class LandingPage extends Component {
   state = {
-    heading: 'Growing Up',
+    heading: 'Growing Up Application',
   };
 
   onLogin = (event) => {
@@ -32,7 +32,7 @@ class LandingPage extends Component {
               coins. A Rewards page will display a gallery of (admin input)
               rewards children can purchase with earned coins.
             </p>
-
+            <br />
             <p>
               An emotion survey page will allow a child the ability to convey
               their mood, sleep and anxiety levels for the day as well. Surveyed
@@ -49,7 +49,7 @@ class LandingPage extends Component {
             <RegisterForm />
 
             <center>
-              <h3>Already a Member?</h3>
+              <h6>Already a Member?</h6>
               <button className="btn btn_sizeSm" onClick={this.onLogin}>
                 Login
               </button>
