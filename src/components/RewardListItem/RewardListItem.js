@@ -24,6 +24,46 @@ class RewardListItem extends Component {
     this.props.history.push(`/details/${this.props.item.id}`);
   };
 
+  togglingDisplay2 = () => {
+    //Function renders element based on state
+    if (this.props.item.purchase_status === false) {
+      return (
+        <div>
+          <img
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/2c2d847c-2150-41b3-a193-598694c35274_loupe.svg"
+            className="finishLine"
+            onClick={() => this.handleClick(this.props.item.id)}
+          ></img>
+          <Typography
+            gutterBottom
+            variant="p"
+            style={{ color: '#ee8673' }}
+            component="h2"
+          >
+            {this.props.item.coin_price} Coins
+          </Typography>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <img
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/903b467f-16fd-4e41-9c8a-4b130f407cd8_balloons.svg"
+            className="finishLine"
+          ></img>
+          <Typography
+            gutterBottom
+            variant="p"
+            style={{ color: '#ee8673' }}
+            component="h2"
+          >
+            Purchased
+          </Typography>
+        </div>
+      );
+    }
+  };
+
   render() {
     return (
       <Grid item xs={12} sm={3} md={3} lg={2}>
@@ -43,21 +83,7 @@ class RewardListItem extends Component {
                 src={this.props.item.image}
                 alt={this.props.item.description}
               />
-              <div className="bottom">
-                <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/2c2d847c-2150-41b3-a193-598694c35274_loupe.svg"
-                  className="learnMore"
-                  onClick={() => this.handleClick(this.props.item.id)} //next button dispatches data to index.js and moves user to next page
-                ></img>
-                <Typography
-                  gutterBottom
-                  variant="p"
-                  style={{ color: '#ee8673' }}
-                  component="h2"
-                >
-                  {this.props.item.coin_price} Coins
-                </Typography>
-              </div>
+              <div className="bottom">{this.togglingDisplay2()}</div>
             </CardContent>
           </CardActionArea>
         </Card>

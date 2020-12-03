@@ -11,9 +11,8 @@ import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
 import CardMedia from '@material-ui/core/CardMedia';
 import Divider from '@material-ui/core/Divider';
-import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
-import CheckIcon from '@material-ui/icons/Check';
-import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
+import Bank from '../../components/Bank/Bank.js';
+import swal from 'sweetalert';
 
 class AssignedListItem extends Component {
   state = {
@@ -21,6 +20,13 @@ class AssignedListItem extends Component {
     imageDisplay: true,
     buttonDisplay: false,
   };
+
+  componentDidMount() {
+    //"GETS" movies on page load
+    this.props.dispatch({
+      type: 'GET_ASSIGNED',
+    });
+  }
 
   activateToggle = () => {
     //changes state when an image is clicked
@@ -85,7 +91,23 @@ class AssignedListItem extends Component {
       type: 'UPDATE_ASSIGNED',
       payload: this.props.item.id,
     });
-    alert('Completed Status Changed/ PUT Successful');
+    swal({
+      title: 'Great Job!',
+      text: 'This chore has been completed?',
+      buttons: true,
+    }).then((willSubmit) => {
+      if (willSubmit) {
+        this.props.dispatch({
+          type: 'GET_BANK_CHORES',
+        });
+        this.props.dispatch({
+          type: 'GET_BANK_REWARDS',
+        });
+        swal('Success!! Your reward was purchased!');
+      } else {
+        swal('Your imaginary file is safe!');
+      }
+    });
   };
 
   render() {

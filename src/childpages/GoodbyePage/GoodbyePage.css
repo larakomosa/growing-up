@@ -9,8 +9,14 @@
 
 .goodbye {
   text-align: center;
-  background-image: url(goodbye.jpg);
+  background-image: url(7.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.goodbyeHome {
+  height: 70px;
+  width: 70px;
+  margin-top: -10px;
 }

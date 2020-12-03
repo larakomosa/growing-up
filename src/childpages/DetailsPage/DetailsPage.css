@@ -19,6 +19,13 @@ h5 {
 .details {
   padding-top: 40px;
 }
+
+.footer {
+  background-image: url(footer.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: relative;
+}
 /* 
 .welcome2 {
   padding-top: 20px;

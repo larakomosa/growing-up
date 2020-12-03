@@ -12,6 +12,10 @@ image {
   height: 20px;
 }
 
+.titleControl {
+  height: 40px;
+}
+
 .learnMore {
   height: 50px;
   width: 50px;

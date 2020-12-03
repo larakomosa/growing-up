@@ -39,101 +39,103 @@ class AnxietyPage extends Component {
 
   render() {
     return (
-      <div className="background">
-        <Grid
-          container
-          spacing={0}
-          direction="column"
-          justify="flex-start"
-          alignItems="center"
-          style={{ minHeight: '100vh' }}
-        >
-          <div className="welcome1">
-            <h2>How calm do you feel today?</h2>
-            <form>
-              <label>
-                <FormControlLabel
-                  control={<Radio color="primary" />}
-                  label={
-                    <img
-                      src="https://primebucket2020.s3.us-east-2.amazonaws.com/2b98d42a-8474-4b82-b7de-f02cfe860804_dogA.svg"
-                      className="finishLine1"
-                    ></img>
-                  }
-                  labelPlacement="top"
-                  type="radio"
-                  value="1"
-                  checked={this.state.anxiety === '1'}
-                  onChange={this.handleOptionChange}
-                />
-              </label>
-              <label>
-                <FormControlLabel
-                  control={<Radio color="primary" />}
-                  label={<div className="finishLine3"></div>}
-                  labelPlacement="top"
-                  type="radio"
-                  value="2"
-                  checked={this.state.anxiety === '2'}
-                  onChange={this.handleOptionChange}
-                />
-              </label>
-              <label>
-                <FormControlLabel
-                  control={<Radio color="primary" />}
-                  label={
-                    <img
-                      src="https://primebucket2020.s3.us-east-2.amazonaws.com/45265a8d-af83-48e8-8f5c-584d8ba1ecb2_dogB.svg"
-                      className="finishLine"
-                    ></img>
-                  }
-                  labelPlacement="top"
-                  type="radio"
-                  value="3"
-                  checked={this.state.anxiety === '3'}
-                  onChange={this.handleOptionChange}
-                />
-              </label>
-              <label>
-                <FormControlLabel
-                  control={<Radio color="primary" />}
-                  label={<div className="finishLine3"></div>}
-                  labelPlacement="top"
-                  type="radio"
-                  value="4"
-                  checked={this.state.anxiety === '4'}
-                  onChange={this.handleOptionChange}
-                />
-              </label>
-              <label>
-                <FormControlLabel
-                  control={<Radio color="primary" />}
-                  label={
-                    <img
-                      src="https://primebucket2020.s3.us-east-2.amazonaws.com/6b2fa935-5871-4776-bd02-4a1875f28a72_dogC.svg"
-                      className="finishLine2"
-                    ></img>
-                  }
-                  labelPlacement="top"
-                  type="radio"
-                  value="5"
-                  checked={this.state.anxiety === '5'}
-                  onChange={this.handleOptionChange}
-                />
-              </label>
-              <img
-                src="https://primebucket2020.s3.us-east-2.amazonaws.com/91b14ab3-070f-4eaf-8785-02676daeb6da_arrowcopy.svg"
-                className="nextArrow"
-                onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
-              ></img>
-              <img
-                src="https://primebucket2020.s3.us-east-2.amazonaws.com/0ec2a0fe-07a1-435f-98bf-54d872edd6de_arrow.svg"
-                className="backArrow"
-                onClick={this.handleSubmit2} //next button dispatches data to index.js and moves user to next page
-              ></img>
-            </form>
-          </div>
-        </Grid>
+      <div className="fixed">
+        <div className="background">
+          <Grid
+            container
+            spacing={0}
+            direction="column"
+            justify="flex-start"
+            alignItems="center"
+            style={{ minHeight: '100vh' }}
+          >
+            <div className="welcome1">
+              <h2>How calm do you feel today?</h2>
+              <form>
+                <label>
+                  <FormControlLabel
+                    control={<Radio color="primary" />}
+                    label={
+                      <img
+                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/eef3686c-b8d6-47cd-bd7c-78fb765c00b7_thunder1.svg"
+                        className="finishLine1"
+                      ></img>
+                    }
+                    labelPlacement="top"
+                    type="radio"
+                    value="1"
+                    checked={this.state.anxiety === '1'}
+                    onChange={this.handleOptionChange}
+                  />
+                </label>
+                <label>
+                  <FormControlLabel
+                    control={<Radio color="primary" />}
+                    label={<div className="finishLine3"></div>}
+                    labelPlacement="top"
+                    type="radio"
+                    value="2"
+                    checked={this.state.anxiety === '2'}
+                    onChange={this.handleOptionChange}
+                  />
+                </label>
+                <label>
+                  <FormControlLabel
+                    control={<Radio color="primary" />}
+                    label={
+                      <img
+                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/8e951e91-1640-4001-a1b2-b2af4736aded_cloud.svg"
+                        className="finishLine"
+                      ></img>
+                    }
+                    labelPlacement="top"
+                    type="radio"
+                    value="3"
+                    checked={this.state.anxiety === '3'}
+                    onChange={this.handleOptionChange}
+                  />
+                </label>
+                <label>
+                  <FormControlLabel
+                    control={<Radio color="primary" />}
+                    label={<div className="finishLine3"></div>}
+                    labelPlacement="top"
+                    type="radio"
+                    value="4"
+                    checked={this.state.anxiety === '4'}
+                    onChange={this.handleOptionChange}
+                  />
+                </label>
+                <label>
+                  <FormControlLabel
+                    control={<Radio color="primary" />}
+                    label={
+                      <img
+                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/4d657412-a2eb-49b9-a381-bb2e4782b673_flower1copy.svg"
+                        className="finishLine2"
+                      ></img>
+                    }
+                    labelPlacement="top"
+                    type="radio"
+                    value="5"
+                    checked={this.state.anxiety === '5'}
+                    onChange={this.handleOptionChange}
+                  />
+                </label>
+                <img
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/91b14ab3-070f-4eaf-8785-02676daeb6da_arrowcopy.svg"
+                  className="nextArrow"
+                  onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
+                ></img>
+                <img
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/0ec2a0fe-07a1-435f-98bf-54d872edd6de_arrow.svg"
+                  className="backArrow"
+                  onClick={this.handleSubmit2} //next button dispatches data to index.js and moves user to next page
+                ></img>
+              </form>
+            </div>
+          </Grid>
+        </div>
       </div>
     );
   }

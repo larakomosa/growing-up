@@ -16,6 +16,9 @@ import adminAssigned from './adminAssigned.reducer';
 import adminEmotions from './adminEmotions.reducer';
 import choreConf from './choreConf.reducer';
 import rewardConf from './rewardConf.reducer';
+import bankChores from './bankChores.reducer';
+import bankRewards from './bankRewards.reducer';
+import total from './total.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -41,6 +44,8 @@ const rootReducer = combineReducers({
   adminEmotions,
   choreConf,
   rewardConf,
+  bankChores,
+  bankRewards,
 });
 
 export default rootReducer;

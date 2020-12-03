@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import LogOutButton from '../../components/LogOutButton/LogOutButton';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Bank from '../../components/Bank/Bank';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -39,6 +40,7 @@ const Header = (props) => {
     return (
       <div>
         <AppBar />
+        <Bank />
       </div>
     );
   } else if (props.store.user.page_role_id === 5) {

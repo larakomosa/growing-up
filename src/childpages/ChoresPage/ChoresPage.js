@@ -4,6 +4,7 @@ import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 import AssignedList from '../../components/AssignedList/AssignedList.js';
+import Bank from '../../components/Bank/Bank.js';
 
 class ChoresPage extends Component {
   componentDidMount() {
@@ -19,7 +20,7 @@ class ChoresPage extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="fixed">
         <Grid
           container
           spacing={0}
@@ -29,7 +30,10 @@ class ChoresPage extends Component {
           style={{ minHeight: '100vh' }}
         >
           <Grid item xs={12} sm={10}>
-            <h4>My Weekly Chores!</h4>
+            <h4>
+              My Weekly Chores!
+              <Bank />
+            </h4>
           </Grid>
           <AssignedList />
         </Grid>

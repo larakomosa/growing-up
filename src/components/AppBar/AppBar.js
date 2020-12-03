@@ -73,7 +73,7 @@ const ChildAppBar = (props) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar positionSticky>
         <Toolbar className={classes.toolbar}>
           <IconButton
             className="home"
@@ -92,7 +92,7 @@ const ChildAppBar = (props) => {
           <IconButton
             aria-label="display more actions"
             onClick={handleMenu}
-            edge="end"
+            edge="center"
             color="secondary"
           >
             <MenuIcon />
@@ -101,13 +101,13 @@ const ChildAppBar = (props) => {
             id="menu-appbar"
             anchorEl={anchorEl}
             anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
+              vertical: 'bottom',
+              horizontal: 'left',
             }}
             keepMounted
             transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
+              vertical: 'bottom',
+              horizontal: 'left',
             }}
             open={open}
             onClose={() => handleMenuClick(null)}

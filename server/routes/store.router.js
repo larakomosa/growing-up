@@ -22,7 +22,7 @@ ORDER BY "store".id`;
 });
 
 storeRouter.get('/child/child', (req, res) => {
-  const queryText = `SELECT "store".id,"rewards".reward, "rewards".coin_price, "rewards".image, "rewards".description FROM "rewards"
+  const queryText = `SELECT "store".id,"rewards".reward, "store".purchase_status, "rewards".coin_price, "rewards".image, "rewards".description FROM "rewards"
 JOIN "store" ON "store".reward_id = "rewards".id 
 JOIN "user" ON "store".child_id = "user".id  
 WHERE "user".id = $1
@@ -40,10 +40,10 @@ ORDER BY "store".id`;
     });
 });
 
-storeRouter.get('/details/testing/:Id', (req, res) => {
+storeRouter.get('/selected/:Id', (req, res) => {
   console.log('req', req.params.Id);
 
-  const queryText = `SELECT "store".id,"rewards".reward, "rewards".coin_price, "rewards".image, "rewards".description FROM "rewards"
+  const queryText = `SELECT "store".id,"rewards".reward, "store".purchase_status, "rewards".coin_price, "rewards".image, "rewards".description FROM "rewards"
 JOIN "store" ON "store".reward_id = "rewards".id 
 JOIN "user" ON "store".child_id = "user".id  
 WHERE "store".id = $1`;
@@ -56,7 +56,7 @@ WHERE "store".id = $1`;
     })
     .catch((err) => {
       console.log(err);
-      res.sendStatus('Server Side 1 Movie Error', 500);
+      res.sendStatus('Selected Store Error', 500);
     });
 });
 

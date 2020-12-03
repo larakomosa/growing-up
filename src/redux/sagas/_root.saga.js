@@ -9,6 +9,7 @@ import selectedSaga from './selected.saga';
 import surveySaga from './survey.saga';
 import choresSaga from './chores.saga';
 import storeSaga from './store.saga';
+import bankSaga from './bank.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -29,5 +30,6 @@ export default function* rootSaga() {
     surveySaga(),
     choresSaga(),
     storeSaga(),
+    bankSaga(),
   ]);
 }

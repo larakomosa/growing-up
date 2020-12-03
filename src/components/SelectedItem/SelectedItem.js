@@ -25,11 +25,57 @@ class Selected extends Component {
           type: 'UPDATE_SELECTED',
           payload: this.props.store.selected.id,
         });
+          this.props.dispatch({
+          type: 'GET_BANK_CHORES',
+        });
+        this.props.dispatch({
+          type: 'GET_BANK_REWARDS',
+        });
         swal('Success!! Your reward was purchased!');
       } else {
-        swal('Your imaginary file is safe!');
+        swal('There was a problem with your purchase.  Pleases try again');
       }
     });
+  };
+
+ togglingDisplay2 = () => {
+    //Function renders element based on state
+    if (this.props.item.purchase_status === false) {
+      return (
+        <div>
+          <img
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/2c2d847c-2150-41b3-a193-598694c35274_loupe.svg"
+            className="finishLine"
+            onClick={() => this.handleClick(this.props.item.id)}
+          ></img>
+          <Typography
+            gutterBottom
+            variant="p"
+            style={{ color: '#ee8673' }}
+            component="h2"
+          >
+            {this.props.item.coin_price} Coins
+          </Typography>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <img
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/903b467f-16fd-4e41-9c8a-4b130f407cd8_balloons.svg"
+            className="finishLine"
+          ></img>
+          <Typography
+            gutterBottom
+            variant="p"
+            style={{ color: '#ee8673' }}
+            component="h2"
+          >
+            Purchased
+          </Typography>
+        </div>
+      );
+    }
   };
 
   render() {

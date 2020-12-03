@@ -5,9 +5,7 @@ function* getSelected(action) {
   console.log('selected action', action);
   try {
     console.log('selected action payload', action.payload);
-    const selected = yield axios.get(
-      `/api/store/details/testing/${action.payload}`
-    );
+    const selected = yield axios.get(`/api/store/selected/${action.payload}`);
     yield put({
       type: 'SET_SELECTED',
       payload: selected.data[0],

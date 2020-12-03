@@ -48,45 +48,49 @@ class ThoughtsPage extends Component {
 
   render() {
     return (
-      <div className="background1">
-        <Grid
-          container
-          spacing={0}
-          direction="column"
-          justify="flex-start"
-          alignItems="center"
-          style={{ minHeight: '100vh' }}
-        >
-          <Grid item xs={12} sm={12}>
-            <div className="welcome2">
-              <h2>Anything else on your mind?</h2>
-              <form>
-                <TextField
-                  className="textField1"
-                  fullWidth
-                  label="Thoughts"
-                  id="outlined-basic"
-                  variant="outlined"
-                  margin="normal"
-                  multiline
-                  rows={2}
-                  size="large"
-                  onChange={(event) => this.handleChangeFor('comments', event)}
-                />{' '}
-              </form>
-              <img
-                src="https://primebucket2020.s3.us-east-2.amazonaws.com/91b14ab3-070f-4eaf-8785-02676daeb6da_arrowcopy.svg"
-                className="nextArrow"
-                onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
-              ></img>
-              <img
-                src="https://primebucket2020.s3.us-east-2.amazonaws.com/0ec2a0fe-07a1-435f-98bf-54d872edd6de_arrow.svg"
-                className="backArrow"
-                onClick={this.handleBack} //next button dispatches data to index.js and moves user to next page
-              ></img>
-            </div>
+      <div className="fixed">
+        <div className="background1">
+          <Grid
+            container
+            spacing={0}
+            direction="column"
+            justify="flex-start"
+            alignItems="center"
+            style={{ minHeight: '100vh' }}
+          >
+            <Grid item xs={12} sm={12}>
+              <div className="welcome2">
+                <h2>Anything else on your mind?</h2>
+                <form>
+                  <TextField
+                    className="textField1"
+                    fullWidth
+                    label="Thoughts"
+                    id="outlined-basic"
+                    variant="outlined"
+                    margin="normal"
+                    multiline
+                    rows={2}
+                    size="medium"
+                    onChange={(event) =>
+                      this.handleChangeFor('comments', event)
+                    }
+                  />{' '}
+                  <img
+                    src="https://primebucket2020.s3.us-east-2.amazonaws.com/91b14ab3-070f-4eaf-8785-02676daeb6da_arrowcopy.svg"
+                    className="nextArrow"
+                    onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
+                  ></img>
+                  <img
+                    src="https://primebucket2020.s3.us-east-2.amazonaws.com/0ec2a0fe-07a1-435f-98bf-54d872edd6de_arrow.svg"
+                    className="backArrow"
+                    onClick={this.handleBack} //next button dispatches data to index.js and moves user to next page
+                  ></img>
+                </form>
+              </div>
+            </Grid>
           </Grid>
-        </Grid>
+        </div>
       </div>
     );
   }

@@ -17,14 +17,22 @@ h4 {
 }
 
 .welcome {
-  padding-top: 20px;
   text-align: center;
-  background-image: url(5.png);
+  background-image: url(11.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-size: relative;
 }
 
 .choresButton {
+  padding-bottom: 10px;
   padding-right: 50px;
+}
+
+.note {
+  padding-top: 10px;
+}
+
+.fixed {
+  margin-top: 70px;
 }
