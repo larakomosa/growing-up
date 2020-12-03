@@ -36,7 +36,7 @@ class ThoughtsPage extends Component {
         console.log('dispatch', this.props.store.survey);
         this.props.history.push('/child/welcome');
       } else {
-        swal('Your imaginary file is safe!');
+        swal('You can review your survey now!');
       }
     });
   };
@@ -48,54 +48,46 @@ class ThoughtsPage extends Component {
 
   render() {
     return (
-      <Grid
-        container
-        spacing={0}
-        direction="column"
-        justify="flex-start"
-        alignItems="center"
-        style={{ minHeight: '100vh' }}
-      >
-        <Grid item xs={12} sm={10}>
-          <div classname="welcome1">
-            <h2>Anything else on your mind?</h2>
-            <form>
-              <TextField
-                fullWidth
-                className="textField"
-                id="outlined-basic"
-                variant="outlined"
-                margin="normal"
-                multiline
-                rows={4}
-                size="large"
-                onChange={(event) => this.handleChangeFor('comments', event)}
-              />
-            </form>
-            <div className="button1">
-              <Button
-                variant="outlined"
-                color="primary"
-                type="submit"
-                size="small"
-                onClick={this.handleBack}
-              >
-                &#x2190; Back
-              </Button>
-              {'    '}
-              <Button
-                variant="outlined"
-                color="primary"
-                type="submit"
-                size="small"
-                onClick={this.handleSubmit}
-              >
-                Next &#x2192;
-              </Button>
+      <div className="background1">
+        <Grid
+          container
+          spacing={0}
+          direction="column"
+          justify="flex-start"
+          alignItems="center"
+          style={{ minHeight: '100vh' }}
+        >
+          <Grid item xs={12} sm={12}>
+            <div className="welcome2">
+              <h2>Anything else on your mind?</h2>
+              <form>
+                <TextField
+                  className="textField1"
+                  fullWidth
+                  label="Thoughts"
+                  id="outlined-basic"
+                  variant="outlined"
+                  margin="normal"
+                  multiline
+                  rows={2}
+                  size="large"
+                  onChange={(event) => this.handleChangeFor('comments', event)}
+                />{' '}
+              </form>
+              <img
+                src="https://primebucket2020.s3.us-east-2.amazonaws.com/91b14ab3-070f-4eaf-8785-02676daeb6da_arrowcopy.svg"
+                className="nextArrow"
+                onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
+              ></img>
+              <img
+                src="https://primebucket2020.s3.us-east-2.amazonaws.com/0ec2a0fe-07a1-435f-98bf-54d872edd6de_arrow.svg"
+                className="backArrow"
+                onClick={this.handleBack} //next button dispatches data to index.js and moves user to next page
+              ></img>
             </div>
-          </div>
+          </Grid>
         </Grid>
-      </Grid>
+      </div>
     );
   }
 }

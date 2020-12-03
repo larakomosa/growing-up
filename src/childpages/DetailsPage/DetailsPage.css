@@ -17,5 +17,14 @@ h5 {
 }
 
 .details {
-  margin-top: 40px;
+  padding-top: 40px;
 }
+/* 
+.welcome2 {
+  padding-top: 20px;
+  text-align: center;
+  background-image: url(paints.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: relative;
+} */

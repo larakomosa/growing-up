@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import RewardListItem from '../../components/RewardListItem/RewardListItem.js';
+import '../../components/RewardListItem/RewardListItem.css';
 import { Button } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 

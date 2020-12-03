@@ -140,15 +140,18 @@ h6 {
 }
 h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin-top: px;
+  margin-bottom: 10px;
+  color: #ee8673;
 }
 
 h2 {
   text-align: center;
   font-size: 1.5rem;
   margin-top: 0px;
-  margin-bottom: 0px;
-  color: #f36f58;
+  margin-bottom: 15px;
+  color: #524c61;
 }
 
 h4 {
@@ -156,7 +159,7 @@ h4 {
   margin-bottom: 10px;
   font-size: 2.5rem;
   font-weight: normal;
-  color: #235974;
+  color: #524c61;
 }
 
 h5 {
@@ -168,10 +171,11 @@ h5 {
 }
 
 h3 {
+  font-size: 1.2rem;
+  font-family: 'Nerko One';
   margin-top: 0px;
-  font-size: 2rem;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: blue;
+  margin-bottom: 0px;
+  color: #524c61;
   float: center;
 }
 
@@ -193,4 +197,26 @@ p {
 
 .container {
   margin-top: -10px;
+}
+
+.finishLine {
+  height: 55px;
+  width: 50px;
+}
+
+.finishLine1 {
+  height: 50px;
+  width: 40px;
+}
+
+.finishLine2 {
+  height: 40px;
+  width: 45px;
+  margin-bottom: 5px;
+}
+
+.finishLine3 {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 5px;
 }

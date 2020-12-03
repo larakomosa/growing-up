@@ -17,9 +17,14 @@ h4 {
 }
 
 .welcome {
+  padding-top: 20px;
   text-align: center;
-  background-image: url(pencil3.png);
+  background-image: url(5.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-size: relative;
+}
+
+.choresButton {
+  padding-right: 50px;
 }

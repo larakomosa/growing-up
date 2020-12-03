@@ -7,6 +7,13 @@ import { Grid } from '@material-ui/core';
 import '../DetailsPage/DetailsPage.css';
 
 class DetailsPage extends Component {
+  // componentDidMount() {
+  //   this.props.dispatch({
+  //     type: 'GET_SELECTED',
+  //   });
+  //   console.log('dispatch');
+  // }
+
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.history.push('/child/rewards'); //moves user to next page
@@ -19,7 +26,7 @@ class DetailsPage extends Component {
 
   render() {
     return (
-      <div className="details">
+      <div className="details welcome2">
         <Grid
           container
           spacing={0}
@@ -30,14 +37,7 @@ class DetailsPage extends Component {
         >
           <Grid item xs={12} sm={10}>
             <Selected />
-            <Button
-              variant="outlined"
-              color="default"
-              size="small"
-              onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
-            >
-              Back to Rewards
-            </Button>
+
             {'  '}
           </Grid>
         </Grid>

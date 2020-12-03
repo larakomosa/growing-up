@@ -22,7 +22,7 @@ ORDER BY "store".id`;
 });
 
 storeRouter.get('/child/child', (req, res) => {
-  const queryText = `SELECT "store".id, "rewards".id, "rewards".reward, "rewards".coin_price, "rewards".image, "rewards".description FROM "rewards"
+  const queryText = `SELECT "store".id,"rewards".reward, "rewards".coin_price, "rewards".image, "rewards".description FROM "rewards"
 JOIN "store" ON "store".reward_id = "rewards".id 
 JOIN "user" ON "store".child_id = "user".id  
 WHERE "user".id = $1
@@ -40,14 +40,16 @@ ORDER BY "store".id`;
     });
 });
 
-storeRouter.get('/details/:id', (req, res) => {
-  const queryText = `SELECT "store".id, "rewards".id, "rewards".reward, "rewards".coin_price, "rewards".image, "rewards".description FROM "rewards"
+storeRouter.get('/details/testing/:Id', (req, res) => {
+  console.log('req', req.params.Id);
+
+  const queryText = `SELECT "store".id,"rewards".reward, "rewards".coin_price, "rewards".image, "rewards".description FROM "rewards"
 JOIN "store" ON "store".reward_id = "rewards".id 
 JOIN "user" ON "store".child_id = "user".id  
 WHERE "store".id = $1`;
 
   pool
-    .query(queryText, [req.params.id])
+    .query(queryText, [req.params.Id])
     .then((dbResponse) => {
       console.log(dbResponse);
       res.send(dbResponse.rows);
@@ -55,6 +57,22 @@ WHERE "store".id = $1`;
     .catch((err) => {
       console.log(err);
       res.sendStatus('Server Side 1 Movie Error', 500);
+    });
+});
+
+storeRouter.put('/:Id', (req, res) => {
+  const assignedId = req.params.Id;
+  // const status = req.body;
+  const queryText = `UPDATE "store" SET "purchase_status"=true WHERE "id"=$1;`;
+
+  pool
+    .query(queryText, [assignedId])
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
     });
 });
 
@@ -69,22 +87,6 @@ storeRouter.post('/', (req, res) => {
     .query(queryText, queryArray)
     .then((dbResponse) => {
       res.sendStatus(201);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.sendStatus(500);
-    });
-});
-
-storeRouter.put('/:Id', (req, res) => {
-  const rewardsId = req.params.Id;
-  // const status = req.body;
-  const queryText = `UPDATE "store" SET "purchase_status"= true WHERE "id"=$1;`;
-
-  pool
-    .query(queryText, [rewardsId])
-    .then(() => {
-      res.sendStatus(200);
     })
     .catch((err) => {
       console.log(err);

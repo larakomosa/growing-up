@@ -1,24 +1,36 @@
 import React from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
+import TableCell from '@material-ui/core/TableCell';
+import TableRow from '@material-ui/core/TableRow';
+import Divider from '@material-ui/core/Divider';
 
 function UserItem(props) {
+  // const handleClick = (id) => {
+  //   console.log('hi');
+  //   //   console.log('id', this.props.item.id);
+  //   //   this.props.dispatch({
+  //   //     type: 'DELETE_USER',
+  //   //     payload: this.props.item.id,
+  //   //   });
+  //   //   alert('User Deleted');
+  //   // };
+
   return (
-    <tr>
-      <td>
-        <h5>{props.item.id}</h5>
-      </td>
-      <td>
-        <h5>{props.item.username}</h5>
-      </td>
-      <td>
-        <h5>{props.item.page_role}</h5>
-      </td>
-      {/* <td>
-        <button onClick={props.onClick(props.item.id)}>
-          <DeleteIcon />
-        </button>
-      </td> */}
-    </tr>
+    <TableRow size="small">
+      <TableCell align="left">
+        <p>{props.item.id}</p>
+      </TableCell>
+      <TableCell align="left">
+        <p>{props.item.username}</p>
+      </TableCell>
+      <TableCell align="left">
+        <p>{props.item.page_role}</p>
+      </TableCell>
+      <TableCell align="left">
+        {/* <button onClick={handleClick(props.item.id)}> */}
+        <DeleteIcon />
+      </TableCell>
+    </TableRow>
   );
 }
 

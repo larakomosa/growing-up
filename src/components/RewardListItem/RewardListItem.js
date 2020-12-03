@@ -33,8 +33,8 @@ class RewardListItem extends Component {
               <CardMedia image={this.props.item.icon} />
               <Divider />
               <div className="titleControl">
-                <Typography gutterBottom variant="h6" component="h2">
-                  <h6>{this.props.item.reward}</h6>
+                <Typography>
+                  <h2>{this.props.item.reward}</h2>
                 </Typography>
               </div>
               <img
@@ -44,19 +44,19 @@ class RewardListItem extends Component {
                 alt={this.props.item.description}
               />
               <div className="bottom">
-                <Typography gutterBottom variant="p" component="h2">
-                  <p>Coin Value ${this.props.item.coin_price}</p>
-                </Typography>
-                <Button
-                  variant="outlined"
-                  color="default"
-                  type="submit"
-                  size="small"
-                  onClick={() => this.handleClick(this.props.item.id)}
+                <img
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/2c2d847c-2150-41b3-a193-598694c35274_loupe.svg"
+                  className="learnMore"
+                  onClick={() => this.handleClick(this.props.item.id)} //next button dispatches data to index.js and moves user to next page
+                ></img>
+                <Typography
+                  gutterBottom
+                  variant="p"
+                  style={{ color: '#ee8673' }}
+                  component="h2"
                 >
-                  {' '}
-                  ..See More
-                </Button>
+                  {this.props.item.coin_price} Coins
+                </Typography>
               </div>
             </CardContent>
           </CardActionArea>

@@ -1,0 +1,26 @@
+.itemDiv1 {
+  height: 250px;
+  width: 250px;
+}
+
+.div {
+  height: 100px;
+  width: 100px;
+}
+
+.titleControl1 {
+  height: 20px;
+}
+
+.buyNow {
+  float: left;
+  margin-top: -20px;
+  height: 100px;
+  width: 100px;
+}
+
+.buyNow1 {
+  height: 100px;
+  width: 100px;
+  float: right;
+}

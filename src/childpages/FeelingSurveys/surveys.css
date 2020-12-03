@@ -1,10 +1,66 @@
 .welcome1 {
   text-align: center;
   background-position: center;
-  margin-top: 10px;
+  margin-top: -25px;
   margin-bottom: 10px;
+}
+
+.welcome2 {
+  text-align: center;
+  background-position: center;
+  margin-bottom: -50px;
 }
 
 .button1 {
   text-align: center;
+}
+
+.background {
+  padding-top: 50px;
+  text-align: center;
+  background-image: url(3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: relative;
+}
+
+.background1 {
+  padding-top: 20px;
+  text-align: center;
+  background-image: url(3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: relative;
+}
+
+.nextArrow {
+  height: 70px;
+  width: 70px;
+  margin-top: -10px;
+  float: right;
+}
+
+.nextArrow1 {
+  height: 70px;
+  width: 70px;
+  margin-top: -20px;
+  margin-left: 60px;
+  float: right;
+}
+.backArrow {
+  height: 70px;
+  width: 70px;
+  margin-top: -10px;
+  float: left;
+}
+
+.homeArrow {
+  height: 70px;
+  width: 70px;
+  margin-top: -10px;
+  float: left;
+}
+
+.textField1 {
+  margin-top: -15px;
 }

@@ -12,6 +12,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TablePagination from '@material-ui/core/TablePagination';
+import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles({
   root: {
@@ -22,50 +23,8 @@ const useStyles = makeStyles({
   },
 });
 
-const columns = [
-  {
-    id: 'id',
-    label: 'Chore',
-    minWidth: 170,
-    align: 'right',
-    colSpan: 3,
-  },
-  {
-    id: 'username',
-    label: 'category_id',
-    minWidth: 170,
-    align: 'right',
-    colSpan: 1,
-  },
-  {
-    id: 'page_role',
-    label: 'Coin_Value',
-    minWidth: 170,
-    align: 'right',
-    colSpan: 1,
-  },
-  {
-    colSpan: 1,
-    id: 'description',
-    label: 'Description',
-    minWidth: 170,
-    align: 'right',
-  },
-];
-
 const UserList = (props) => {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const classes = useStyles();
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
 
   let htmlArray = null;
   if (props.store.userList) {
@@ -76,26 +35,28 @@ const UserList = (props) => {
     return (
       <Paper className={classes.root}>
         <TableContainer className={classes.container}>
-          <Table stickyHeader aria-label="sticky table">
+          <Table
+            stickyHeader="primary"
+            aria-label="sticky table"
+            size="small"
+            color="light primary"
+          >
             <TableHead>
               <TableRow>
-                <TableCell align="left">ID</TableCell>
-                <TableCell align="left">Username</TableCell>
-                <TableCell align="left">Page_Role</TableCell>
+                <TableCell align="left">
+                  <h3>User ID</h3>
+                </TableCell>
+                <TableCell align="left">
+                  <h3>Username</h3>
+                </TableCell>
+                <TableCell align="left" colSpan={2}>
+                  <h3>Page_Role</h3>
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>{htmlArray}</TableBody>
           </Table>
         </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[10, 25, 100]}
-          count={props.store.userList.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          component="div"
-          onChangePage={handleChangePage}
-          onChangeRowsPerPage={handleChangeRowsPerPage}
-        />
       </Paper>
     );
   }

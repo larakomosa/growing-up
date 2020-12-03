@@ -14,6 +14,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TablePagination from '@material-ui/core/TablePagination';
+import { borders } from '@material-ui/system';
 
 const useStyles = makeStyles({
   root: {
@@ -47,15 +48,14 @@ const AdminRewardsList = (props) => {
 
   return (
     <Paper className={classes.root}>
-      <TableContainer className={classes.container}>
+      <TableContainer className={classes.container} border>
         <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead>
             <TableRow>
               <TableCell align="left">Reward</TableCell>
               <TableCell align="left" maxWidth="70">
-                Coin Price{' '}
+                Price{' '}
               </TableCell>
-              <TableCell align="left">Description</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>{htmlArray}</TableBody>

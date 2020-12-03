@@ -1,50 +1,81 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom'; //brought in to access page linking
-import Divider from '@material-ui/core/Divider';
+import { withRouter } from 'react-router-dom';
+import swal from 'sweetalert';
+import { Button, Container, Grid, Typography } from '@material-ui/core';
 
-class SelectedItem extends Component {
+class Selected extends Component {
   componentDidMount() {
     this.props.dispatch({
       type: 'GET_SELECTED',
       payload: this.props.match.params.id,
     });
+    console.log('params', this.props.match.params.id);
   }
 
-  handleHome = (event) => {
-    event.preventDefault();
-    console.log('back to list working');
-    this.props.history.push('/child/rewards'); //moves user back to home page
+  handleClick = (id) => {
+    console.log('id', this.props.store.selected.id);
+    swal({
+      title: 'Great Choice!',
+      text: 'Are you sure your ready to buy this?',
+      buttons: true,
+    }).then((willSubmit) => {
+      if (willSubmit) {
+        this.props.dispatch({
+          type: 'UPDATE_SELECTED',
+          payload: this.props.store.selected.id,
+        });
+        swal('Success!! Your reward was purchased!');
+      } else {
+        swal('Your imaginary file is safe!');
+      }
+    });
   };
 
   render() {
+    console.log('id', this.props.store.selected.id);
     return (
-      //bootstrap is used to format page so poster and description are side by side
-      //movie details are accessed from store using "selected" reducer
-      <div className="row">
-        <h2> hi </h2>
-        <div className="div">
-          <img
-            className="image1"
-            src={this.props.store.selected.image}
-            class="rounded"
-            alt={this.props.store.selected.description}
-          />
-          <br />
-          <button
-            type="button"
-            class="btn btn-outline-primary .btm-sm"
-            onClick={this.handleHome}
-          >
-            <h4>Back to List</h4>
-          </button>
-        </div>
-        <div className="description col-8">
-          <h2>{this.props.store.selected.reward}</h2>
-          <Divider />
-          <p>{this.props.store.selected.coin_value}</p>
-        </div>
-      </div>
+         <div className="welcome">
+        <Grid
+          container
+          spacing={0}
+          direction="column"
+          justify="flex-start"
+          alignItems="center"
+          style={{ minHeight: '100vh' }}
+        >
+            <Grid item xs={12} sm={4}>
+              <img
+                className="image1"
+                src={this.props.store.selected.image}
+                class="rounded"
+                alt={this.props.store.selected.description}
+              />
+              <Typography gutterBottom variant="h5" component="h5">
+                <h6> Coin Price: ${this.props.store.selected.coin_price}</h6>
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={8}>
+              <Typography gutterBottom variant="h5" component="h5">
+                <h4>{this.props.store.selected.reward}</h4>
+              </Typography>
+
+              <hr />
+              <h6>{this.props.store.selected.description}</h6>
+              <Button
+                variant="outlined"
+                color="default"
+                type="submit"
+                size="medium"
+                onClick={() => this.handleClick(this.props.store.selected.id)}
+              >
+                {' '}
+                BUY THIS NOW!
+              </Button>
+            </Grid>
+          </Grid>
+        </section>
+      </Container>
     );
   }
 }
@@ -53,4 +84,4 @@ const mapStoreToProps = (store) => ({
   store,
 });
 
-export default withRouter(connect(mapStoreToProps)(SelectedItem));
+export default connect(mapStoreToProps)(withRouter(Selected));

@@ -36,27 +36,22 @@ class AssignedListItem extends Component {
     if (this.props.item.completion_status === false) {
       return (
         <div>
-          <Button
-            variant="outlined"
-            color="link"
-            type="submit"
-            size="small"
+          <img
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/51822841-7e3f-4dc6-8595-48c53d4e0d54_finish-line.svg"
+            className="finishLine"
             onClick={() => this.handleClick(this.props.item.id)}
-          >
-            💰
-            <CheckBoxOutlineBlankIcon />{' '}
-          </Button>
+          ></img>
           <p>Coin Value: ${this.props.item.coin_value}</p>
         </div>
       );
     } else {
       return (
         <div>
-          <Button variant="outlined" color="default" type="submit" size="small">
-            {' '}
-            🎈 <CheckIcon color="primary" />
-          </Button>
-          <p>${this.props.item.coin_value} Coins Earned:</p>
+          <img
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/8f9f7e33-32cc-497e-be75-0846daabf8ee_piggy-bank.svg"
+            className="finishLine"
+          ></img>
+          <p>${this.props.item.coin_value} Coins Earned</p>
         </div>
       );
     }
@@ -95,7 +90,7 @@ class AssignedListItem extends Component {
 
   render() {
     return (
-      <Grid item xs={12} sm={4} md={3} lg={2}>
+      <Grid item xs={12} sm={3} md={3} lg={2}>
         <Card>
           <CardActionArea>
             <CardContent>

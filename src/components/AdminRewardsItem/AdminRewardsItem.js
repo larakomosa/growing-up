@@ -7,21 +7,18 @@ function AdminRewardsItem(props) {
   console.log(props.item.selected);
   console.log(props.item.reward);
   return (
-    <TableRow>
+    <TableRow size="small">
       <TableCell colSpan={1} align="left">
         <p>{props.item.reward}</p>
       </TableCell>
       <TableCell colSpan={1} align="left">
-        <p>{props.item.coin_price}</p>
+        <p>${props.item.coin_price}</p>
       </TableCell>
-      <TableCell colSpan={1} align="left">
-        <p>{props.item.description}</p>
-      </TableCell>
-      {/* <td>
-        <button onClick={props.onClick(props.item.id)}>
-          <DeleteIcon />
-        </button>
-      </td> */}
+      <td>
+        <TableCell colSpan={1} align="left">
+          <DeleteIcon fontSize="small" />
+        </TableCell>
+      </td>
     </TableRow>
   );
 }
