@@ -5,7 +5,7 @@ const assignedRouter = express.Router();
 assignedRouter.get('/admin/:Id', (req, res) => {
   assignedId = req.params.Id;
   console.log('help', req.params.Id);
-  const queryText = `SELECT "assigned".id, "user".username, "chores".chore, "chores".coin_value, "chores".description, "assigned".completion_status FROM "assigned"
+  const queryText = `SELECT "chores".chore, "chores".coin_value, "assigned".completion_status FROM "assigned"
 JOIN "chores" ON "assigned".chore_id = "chores".id
 JOIN "user" ON "assigned".child_id = "user".id
 WHERE "assigned".child_id = $1`;

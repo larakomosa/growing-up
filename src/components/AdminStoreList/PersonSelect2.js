@@ -18,7 +18,7 @@ function PersonSelect(props) {
   function handleChange(event) {
     setPersonSelected(event.target.value);
     dispatch({
-      type: 'GET_ADMIN_ASSIGNED',
+      type: 'GET_ADMIN_STORE',
       payload: `${event.target.value.toUpperCase()}`,
     });
   }

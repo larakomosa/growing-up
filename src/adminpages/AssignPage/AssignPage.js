@@ -8,6 +8,7 @@ import Divider from '@material-ui/core/Divider';
 import AssignChoreModal from '../../components/AdminAddModals/AssignChoreModal.js';
 import AssignRewardModal from '../../components/AdminAddModals/AssignRewardModal.js';
 import PersonSelect from '../../components/AdminStoreList/PersonSelect';
+import PersonSelect2 from '../../components/AdminStoreList/PersonSelect2';
 
 class AssignPage extends Component {
   state = {
@@ -68,29 +69,7 @@ class AssignPage extends Component {
               <div>
                 <AssignChoreModal />
                 <h2>Current Chore Assignments</h2>
-                <label htmlFor="role">
-                  Select Child:
-                  <select onChange={this.handleInputChangeFor('id')} required>
-                    <option value="">Select a Role</option>
-                    {this.props.store.userList.map((item, index) => {
-                      return (
-                        <option key={index} value={item.id}>
-                          {item.username}
-                        </option>
-                      );
-                    })}
-                  </select>
-                  <Button
-                    variant="outlined"
-                    color="primary"
-                    type="submit"
-                    size="small"
-                    onClick={this.handleSubmit}
-                  >
-                    Get Child Info &#x2192;
-                  </Button>
-                </label>
-                <AdminAssignedList />
+                <PersonSelect /> <AdminAssignedList />
               </div>
               <hr />
             </Grid>
@@ -98,28 +77,16 @@ class AssignPage extends Component {
               <div>
                 <AssignRewardModal />
                 <h2>Current Reward Assignments</h2>
-                <label htmlFor="role">
-                  Selected Rewards
-                  <select onChange={this.handleInputChangeFor2('id')} required>
-                    <option value="">Select a Role</option>
-                    {this.props.store.userList.map((item, index) => {
-                      return (
-                        <option key={index} value={item.id}>
-                          {item.username}
-                        </option>
-                      );
-                    })}
-                  </select>
-                  <Button
-                    variant="outlined"
-                    color="primary"
-                    type="submit"
-                    size="small"
-                    onClick={this.handleSubmit2}
-                  >
-                    See Info &#x2192;
-                  </Button>
-                </label>
+                <PersonSelect2 />
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  type="submit"
+                  size="small"
+                  onClick={this.handleSubmit2}
+                >
+                  See Info &#x2192;
+                </Button>
                 <AdminStoreList />
               </div>
               <hr />

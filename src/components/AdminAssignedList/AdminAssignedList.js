@@ -1,35 +1,54 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Button } from '@material-ui/core';
-import { withRouter } from 'react-router-dom';
-import AdminAssignedItem from '../../components/AdminAssignedItem/AdminAssignedItem.js';
-import PersonSelect from '../../components/AdminStoreList/PersonSelect';
-// import '../AdminChoreItem/ChoreItem.css';
-import { withStyles, createStyles } from '@material-ui/core/styles';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import TablePagination from '@material-ui/core/TablePagination';
+import React, { useEffect } from 'react';
+import { useDispatch, connect } from 'react-redux';
+
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+} from '@material-ui/core';
+import blueGrey from '@material-ui/core/colors/blueGrey';
+
+import AdminAssignedItem from '../AdminAssignedItem/AdminAssignedItem';
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
+    padding: '16px 0 0',
   },
-  table: { minWidth: 650 },
   container: {
-    maxHeight: 440,
+    maxHeight: 290,
   },
 });
 
-const AdminAssignedList = (props) => {
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: blueGrey['700'],
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
+
+function AdminAssignedList(props) {
+  // hooks for react-redux
+  const dispatch = useDispatch();
+  // hooks for material-ui styling
+  const classes = useStyles();
+  // hooks for local state
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-  const classes = useStyles();
+
+  // hooks componentDidMount equivalent
+  useEffect(() => {
+    dispatch({ type: 'GET_ADMIN_ASSIGNED' });
+  }, []);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -40,61 +59,56 @@ const AdminAssignedList = (props) => {
     setPage(0);
   };
 
-  let htmlArray = null;
-  if (props.store.adminRewards) {
-    htmlArray = props.store.adminAssigned.map((item, index) => {
-      return <AdminAssignedItem key={index} item={item} />;
-    });
-  }
+  // set up function to limit rows from full set of data
+  const filterRowsForDisplay = (originList, numOfRows, pgNum) => {
+    if (originList.length === 0) {
+      return [];
+    }
+
+    const posStart = numOfRows * pgNum;
+    const posTo = posStart + numOfRows;
+
+    return originList.slice(posStart, posTo);
+  };
+  // make rows for display in table
+  const rowsDisplayed = filterRowsForDisplay(
+    props.store.adminAssigned,
+    rowsPerPage,
+    page
+  );
 
   return (
     <Paper className={classes.root}>
-      <PersonSelect />
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table" size="small">
+        <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
-              <TableCell colSpan={7} align="left">
-                Chore
-              </TableCell>
-              <TableCell colSpan={2} align="left">
-                Value{' '}
-              </TableCell>
-              <TableCell colSpan={3} align="left">
-                Completed
-              </TableCell>
+              <StyledTableCell align="left">Chore</StyledTableCell>
+              <StyledTableCell align="left">Value</StyledTableCell>
+              <StyledTableCell align="left">Complete</StyledTableCell>
             </TableRow>
           </TableHead>
-          <TableBody>{htmlArray}</TableBody>
+          <TableBody>
+            {rowsDisplayed.map((row, index) => {
+              return <AdminAssignedItem rowData={row} key={index} />;
+            })}
+          </TableBody>
         </Table>
       </TableContainer>
+
       <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
+        rowsPerPageOptions={[3, 5, 10]}
+        component="div"
         count={props.store.adminAssigned.length}
         rowsPerPage={rowsPerPage}
         page={page}
-        component="div"
         onChangePage={handleChangePage}
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
     </Paper>
   );
-};
+}
 
-const mapStoreToProps = (store) => ({
-  store,
-});
+const mapStoreToProps = (store) => ({ store });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    componentDidMount: () =>
-      dispatch({
-        type: 'GET_USERS',
-      }),
-  };
-};
-
-export default connect(
-  mapStoreToProps,
-  mapDispatchToProps
-)(withRouter(AdminAssignedList));
+export default connect(mapStoreToProps)(AdminAssignedList);

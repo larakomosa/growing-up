@@ -3,7 +3,7 @@ const pool = require('../modules/pool');
 const storeRouter = express.Router();
 
 storeRouter.get('/admin/:Id', (req, res) => {
-  const queryText = `SELECT "rewards".id, "store".child_id, "user".username, "rewards".selected, "rewards".reward, "rewards".coin_price FROM "rewards"
+  const queryText = `SELECT "rewards".id, "store".child_id, "user".username, "rewards".reward, "rewards".coin_price FROM "rewards"
 JOIN "store" ON "store".reward_id = "rewards".id
 JOIN "user" ON "store".child_id = "user".id
 WHERE "user".id = $1

@@ -22,7 +22,7 @@ function* getAssigned(action) {
 }
 
 function* getAdminAssigned(action) {
-  console.log('made it to saga');
+  console.log('assigned saga payload', action.payload);
   console.log(action.payload);
   try {
     yield put({ type: 'ERROR_RESET' });
