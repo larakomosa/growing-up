@@ -17,10 +17,24 @@ choresRouter.get('/category', (req, res) => {
     });
 });
 
-choresRouter.get('/', (req, res) => {
+choresRouter.get('/table', (req, res) => {
   const queryText =
     'SELECT "chores".chore, "chores".coin_value, "chores".description FROM "chores" ORDER BY "id" DESC;';
 
+  pool
+    .query(queryText)
+    .then((dbResponse) => {
+      console.log(dbResponse);
+      res.send(dbResponse.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
+choresRouter.get('/', (req, res) => {
+  const queryText = 'SELECT * FROM "chores" ORDER BY "id" DESC;';
   pool
     .query(queryText)
     .then((dbResponse) => {

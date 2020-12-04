@@ -24,9 +24,10 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     minHeight: 128,
-    alignItems: 'flex-start',
+    alignItems: 'flex-end',
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(2),
+    color: '#524C61',
   },
   title: {
     flexGrow: 1,
@@ -60,15 +61,6 @@ const AppBarHome = (props) => {
           <Typography className={classes.title} variant="h4" noWrap>
             ...Growing Up
           </Typography>
-          <IconButton
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={() => handleMenuClick('/home')}
-            color="inherit"
-          >
-            <HomeIcon />
-          </IconButton>
           <IconButton
             aria-label="display more actions"
             onClick={handleMenu}

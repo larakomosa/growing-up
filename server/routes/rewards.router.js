@@ -2,10 +2,25 @@ const express = require('express');
 const pool = require('../modules/pool');
 const rewardsRouter = express.Router();
 
-// GET - retrieve all rewards from DB
 rewardsRouter.get('/', (req, res) => {
+  const queryText = 'SELECT * FROM "rewards" ORDER BY "id" DESC;';
+
+  pool
+    .query(queryText)
+    .then((dbResponse) => {
+      console.log(dbResponse);
+      res.send(dbResponse.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
+// GET - retrieve all rewards from DB
+rewardsRouter.get('/table', (req, res) => {
   const queryText =
-    'SELECT "rewards".reward, "rewards".coin_price, "rewards".description FROM "rewards" ORDER BY "id" DESC;';
+    'SELECT "rewards".reward, "rewards".reward, "rewards".coin_price, "rewards".description FROM "rewards" ORDER BY "id" DESC;';
 
   pool
     .query(queryText)

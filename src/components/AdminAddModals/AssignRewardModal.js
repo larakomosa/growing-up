@@ -7,6 +7,7 @@ import { Button } from '@material-ui/core';
 import AssignRewardForm from '../Forms/AssignRewardForm.js';
 import '../Forms/Form.css';
 import swal from 'sweetalert';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 function getModalStyle() {
   const top = 50;
@@ -59,13 +60,21 @@ const AssignRewardModal = (props) => {
     <div>
       <Button
         variant="outlined"
-        color="primary"
         size="Medium"
+        align="center"
         type="button"
         onClick={handleOpen}
+        style={{
+          backgroundColor: blueGrey['700'],
+          fontFamily: 'nunito',
+          color: 'white',
+          marginBottom: '5px',
+          width: '380px',
+          marginTop: '15px',
+        }}
       >
-        Assign Rewards!
-      </Button>
+        Assign Rewards Here
+      </Button>{' '}
       <Modal
         open={open}
         aria-labelledby="simple-modal-title"

@@ -9,6 +9,7 @@ import AssignChoreModal from '../../components/AdminAddModals/AssignChoreModal.j
 import AssignRewardModal from '../../components/AdminAddModals/AssignRewardModal.js';
 import PersonSelect from '../../components/AdminStoreList/PersonSelect';
 import PersonSelect2 from '../../components/AdminStoreList/PersonSelect2';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 class AssignPage extends Component {
   state = {
@@ -23,7 +24,7 @@ class AssignPage extends Component {
       type: 'GET_ADMIN_ASSIGNED',
     });
     this.props.dispatch({
-      type: 'GET_ADMIN_STORE',
+      type: 'GET_ADMIN_SELECTED',
     });
   }
 
@@ -68,7 +69,19 @@ class AssignPage extends Component {
             <Grid item xs={12} sm={6}>
               <div>
                 <AssignChoreModal />
-                <h2>Current Chore Assignments</h2>
+                <Typography
+                  gutterBottom
+                  variant="p"
+                  style={{
+                    color: blueGrey,
+                    fontSize: 28,
+                    fontFamily: 'nunito',
+                    fontWeight: 'bold',
+                  }}
+                  component="h2"
+                >
+                  Current Chore Assignments
+                </Typography>
                 <PersonSelect /> <AdminAssignedList />
               </div>
               <hr />
@@ -76,17 +89,20 @@ class AssignPage extends Component {
             <Grid item xs={12} sm={6}>
               <div>
                 <AssignRewardModal />
-                <h2>Current Reward Assignments</h2>
-                <PersonSelect2 />
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  type="submit"
-                  size="small"
-                  onClick={this.handleSubmit2}
+                <Typography
+                  gutterBottom
+                  variant="p"
+                  style={{
+                    color: blueGrey,
+                    fontSize: 28,
+                    fontFamily: 'nunito',
+                    fontWeight: 'bold',
+                  }}
+                  component="h2"
                 >
-                  See Info &#x2192;
-                </Button>
+                  Currently Selected Rewards
+                </Typography>
+                <PersonSelect2 />
                 <AdminStoreList />
               </div>
               <hr />

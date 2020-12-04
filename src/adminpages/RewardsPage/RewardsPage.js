@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import AdminChoreList from '../../components/AdminChoreList/AdminChoreList.js';
 import AdminRewardsList from '../../components/AdminRewardsList/AdminRewardsList.js';
-import AdminChoresModal from '../../components/AdminAddModals/AddChoreModal.js';
 import AdminRewardModal from '../../components/AdminAddModals/AddRewardModal.js';
-import UserList from '../../components/UserList/UserList.js';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 class AddPage extends Component {
   componentDidMount() {
@@ -15,7 +13,7 @@ class AddPage extends Component {
     });
     {
       this.props.dispatch({
-        type: 'GET_ADMIN_REWARDS',
+        type: 'GET_REWARDS_TABLE',
       });
       console.log('dispatch');
     }
@@ -41,14 +39,18 @@ class AddPage extends Component {
             </Grid> */}
             <Grid item xs={12} sm={12}>
               <Typography
+                gutterBottom
+                variant="p"
                 style={{
-                  marginTop: 10,
-                  textAlign: 'center',
-                  fontFamily: 'Nunito',
+                  color: blueGrey,
+                  fontSize: 28,
+                  marginTop: 15,
+                  fontFamily: 'nunito',
+                  fontWeight: 'bold',
                 }}
-                component="h4"
+                component="h2"
               >
-                <h4> Current Rewards </h4>
+                Reward Database
               </Typography>
               <AdminRewardModal className="modal" />
               <div>

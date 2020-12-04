@@ -43,7 +43,7 @@ const AdminRewardsList = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: 'GET_ADMIN_REWARDS' });
+    dispatch({ type: 'GET_REWARD_TABLE' });
   }, []);
 
   const handleChangePage = (event, newPage) => {
@@ -67,15 +67,15 @@ const AdminRewardsList = (props) => {
   };
 
   const rowsDisplayed = filterRowsForDisplay(
-    props.store.adminRewards,
+    props.store.rewardTable,
     rowsPerPage,
     page
   );
 
   return (
     <Paper className={classes.root}>
-      <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table">
+      <TableContainer className={classes.container} size="small">
+        <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead>
             <TableRow>
               <StyledTableCell align="left">Reward</StyledTableCell>
@@ -94,7 +94,7 @@ const AdminRewardsList = (props) => {
       <TablePagination
         rowsPerPageOptions={[3, 5, 10]}
         component="div"
-        count={props.store.adminRewards.length}
+        count={props.store.rewardTable.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onChangePage={handleChangePage}

@@ -19,7 +19,7 @@ import AdminAssignedItem from '../AdminAssignedItem/AdminAssignedItem';
 const useStyles = makeStyles({
   root: {
     width: '100%',
-    padding: '16px 0 0',
+    padding: '8px 0 0',
   },
   container: {
     maxHeight: 290,
@@ -80,7 +80,7 @@ function AdminAssignedList(props) {
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead>
             <TableRow>
               <StyledTableCell align="left">Chore</StyledTableCell>

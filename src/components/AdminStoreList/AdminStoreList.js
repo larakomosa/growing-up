@@ -1,41 +1,50 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Button } from '@material-ui/core';
+import React, { useEffect } from 'react';
+import { useDispatch, connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import AdminStoreItem from '../AdminStoreItem/AdminStoreItem.js';
 // import '../AdminChoreItem/ChoreItem.css';
-import { withStyles, createStyles } from '@material-ui/core/styles';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import TablePagination from '@material-ui/core/TablePagination';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+} from '@material-ui/core';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
+    padding: '8px 0 0',
   },
   container: {
-    maxHeight: 440,
+    maxHeight: 290,
   },
 });
 
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: blueGrey['700'],
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
+
 const AdminStoreList = (props) => {
-  const adjustRows = (start, rowCount) => {
-    const newRows = props.store.adminStore.slice(
-      start - 1,
-      rowCount - 1 + start - 1
-    );
-    return newRows;
-  };
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
-  const [rowsDisplayed, setRowsDisplayed] = React.useState(adjustRows(0, 10));
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'GET_ADMIN_STORE' });
+  }, []);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -46,34 +55,53 @@ const AdminStoreList = (props) => {
     setPage(0);
   };
 
-  let htmlArray = null;
-  if (rowsDisplayed) {
-    htmlArray = rowsDisplayed.map((item, index) => {
-      return <AdminStoreItem key={index} item={item} />;
-    });
-  }
+  const filterRowsForDisplay = (originList, numOfRows, pgNum) => {
+    if (originList.length === 0) {
+      return [];
+    }
+
+    const posStart = numOfRows * pgNum;
+    const posTo = posStart + numOfRows;
+
+    return originList.slice(posStart, posTo);
+  };
+
+  const rowsDisplayed = filterRowsForDisplay(
+    props.store.adminStore,
+    rowsPerPage,
+    page
+  );
 
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table" size="small">
+        <Table
+          stickyHeader
+          aria-label="sticky table"
+          size="small"
+          marginTop="5px"
+        >
           <TableHead>
             <TableRow>
-              <TableCell align="left">Reward</TableCell>
-              <TableCell align="left">Price</TableCell>
-              <TableCell align="left">Purchased</TableCell>
-              <TableCell align="left" maxWidth="70"></TableCell>
+              <StyledTableCell align="left">Reward</StyledTableCell>
+              <StyledTableCell align="left">Value</StyledTableCell>
+              <StyledTableCell align="left">Purchased</StyledTableCell>
             </TableRow>
           </TableHead>
-          <TableBody>{htmlArray}</TableBody>
+          <TableBody>
+            {rowsDisplayed.map((row, index) => {
+              return <AdminStoreItem rowData={row} key={index} />;
+            })}
+          </TableBody>
         </Table>
       </TableContainer>
+
       <TablePagination
-        rowsPerPageOptions={[5, 25, 100]}
+        rowsPerPageOptions={[3, 5, 10]}
+        component="div"
         count={props.store.adminStore.length}
         rowsPerPage={rowsPerPage}
         page={page}
-        component="div"
         onChangePage={handleChangePage}
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
@@ -81,20 +109,6 @@ const AdminStoreList = (props) => {
   );
 };
 
-const mapStoreToProps = (store) => ({
-  store,
-});
+const mapStoreToProps = (store) => ({ store });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    componentDidMount: () =>
-      dispatch({
-        type: 'GET_ADMIN_STORE',
-      }),
-  };
-};
-
-export default connect(
-  mapStoreToProps,
-  mapDispatchToProps
-)(withRouter(AdminStoreList));
+export default connect(mapStoreToProps)(AdminStoreList);

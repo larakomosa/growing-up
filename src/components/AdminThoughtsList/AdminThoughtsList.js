@@ -59,7 +59,7 @@ const AdminThoughts = (props) => {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
+        rowsPerPageOptions={[5, 25, 100]}
         count={props.store.adminEmotions.length}
         rowsPerPage={rowsPerPage}
         page={page}

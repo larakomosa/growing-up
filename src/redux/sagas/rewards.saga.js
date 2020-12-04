@@ -61,6 +61,26 @@ function* getAdminRewards(action) {
   }
 }
 
+function* getRewardTable(action) {
+  console.log('Admin Reward Saga');
+  try {
+    yield put({ type: 'ERROR_RESET' });
+    const response = yield axios.get(`/api/rewards/table`);
+    console.log(response.data);
+    // version of a dispatch = put
+    yield put({
+      type: 'SET_REWARD_TABLE',
+      payload: response.data,
+    });
+  } catch (err) {
+    console.log('GET all movies error', err);
+    yield put({
+      type: 'ERROR_MSG',
+      payload: 'There was a problem getting your movies!! Please try again.',
+    });
+  }
+}
+
 function* postReward(action) {
   console.log('made it to reward survey');
   console.log('payload', action.payload);
@@ -95,6 +115,7 @@ function* postReward(action) {
 function* rewardsSaga() {
   yield takeLatest('GET_REWARDS', getRewards);
   yield takeLatest('GET_REWARD_CONF', getRewardConf);
+  yield takeLatest('GET_REWARD_TABLE', getRewardTable);
   yield takeLatest('GET_ADMIN_REWARDS', getAdminRewards);
   yield takeLatest('POST_REWARD', postReward);
 }

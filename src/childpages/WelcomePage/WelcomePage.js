@@ -50,15 +50,11 @@ class WelcomePage extends Component {
                 className="welcomeButtons"
                 variant="outlined"
                 color="primary"
-                size="medium"
-                style={{ backgroundColor: '#F7F182', marginRight: 20 }}
+                size="small"
+                style={{ marginRight: 20, marginTop: 2 }}
                 onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
               >
-                <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/cb88f6f6-fee3-4f1c-93b9-6b46592227b0_note.svg"
-                  className="finishLine"
-                ></img>
-                <h3>See Chores</h3>
+                <h6>Chores</h6>
               </Button>
 
               {'  '}
@@ -67,17 +63,11 @@ class WelcomePage extends Component {
                 variant="outlined"
                 color="primary"
                 type="submit"
-                size="medium"
-                style={{ backgroundColor: '#F7F182', marginLeft: 20 }}
+                size="small"
+                style={{ marginLeft: 20 }}
                 onClick={this.handleSubmit2} //next button dispatches data to index.js and moves user to next page
               >
-                <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/16a8dfcb-57bf-4483-a711-3c9d277f516b_badge.svg"
-                  className="finishLine"
-                ></img>
-                <h3>
-                  <b>See Rewards</b>
-                </h3>
+                <h6>Rewards</h6>
               </Button>
               <br />
             </Grid>

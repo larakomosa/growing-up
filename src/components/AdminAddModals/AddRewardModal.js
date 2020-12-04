@@ -59,7 +59,6 @@ const AddRewardModal = (props) => {
     <div>
       <Button
         variant="outlined"
-        color="primary"
         size="Medium"
         align="center"
         type="button"

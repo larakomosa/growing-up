@@ -18,7 +18,8 @@ import choreConf from './choreConf.reducer';
 import rewardConf from './rewardConf.reducer';
 import bankChores from './bankChores.reducer';
 import bankRewards from './bankRewards.reducer';
-import total from './total.reducer';
+import choreTable from './choreTable.reducer';
+import rewardTable from './rewardsTable.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -46,6 +47,8 @@ const rootReducer = combineReducers({
   rewardConf,
   bankChores,
   bankRewards,
+  choreTable,
+  rewardTable,
 });
 
 export default rootReducer;

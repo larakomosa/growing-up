@@ -11,14 +11,14 @@ import {
   MenuItem,
 } from '@material-ui/core';
 
-function PersonSelect(props) {
+function PersonSelect3(props) {
   const dispatch = useDispatch();
   const [personSelected, setPersonSelected] = useState('John');
 
   function handleChange(event) {
     setPersonSelected(event.target.value);
     dispatch({
-      type: 'GET_ADMIN_ASSIGNED',
+      type: 'GET_SURVEY',
       payload: `${event.target.value.toUpperCase()}`,
     });
   }
@@ -50,4 +50,4 @@ function PersonSelect(props) {
   );
 }
 
-export default PersonSelect;
+export default PersonSelect3;

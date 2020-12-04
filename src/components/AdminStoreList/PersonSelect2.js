@@ -44,9 +44,7 @@ function PersonSelect(props) {
         </FormControl>
       </Grid>
       <Grid item xs={8}>
-        <Box mb={2} mt={2}>
-          <Divider />
-        </Box>
+        <Box mb={2} mt={2}></Box>
       </Grid>
     </Grid>
   );

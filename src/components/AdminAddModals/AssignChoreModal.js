@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import AssignChoreForm from '../Forms/AssignChoreForm.js';
 import '../Forms/Form.css';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 import swal from 'sweetalert';
 
 function getModalStyle() {
@@ -59,13 +60,21 @@ const AssignChoreModal = (props) => {
     <div>
       <Button
         variant="outlined"
-        color="primary"
         size="Medium"
+        align="center"
         type="button"
         onClick={handleOpen}
+        style={{
+          backgroundColor: blueGrey['700'],
+          fontFamily: 'nunito',
+          color: 'white',
+          marginBottom: '5px',
+          width: '380px',
+          marginTop: '15px',
+        }}
       >
-        Assign Chores!
-      </Button>
+        Assign Chores Here
+      </Button>{' '}
       <Modal
         open={open}
         aria-labelledby="simple-modal-title"

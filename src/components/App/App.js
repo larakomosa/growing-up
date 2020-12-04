@@ -36,8 +36,8 @@ import AdminChorePage from '../../adminpages/ChorePage/ChorePage';
 import AdminRewardPage from '../../adminpages/RewardsPage/RewardsPage';
 import AssignPage from '../../adminpages/AssignPage/AssignPage';
 import EmotionsPage from '../../adminpages/EmotionsPage/EmotionsPage';
-import ChoreConfirmationPage from '../../adminpages/AddPage/ChoreConfirmationPage';
-import RewardConfirmationPage from '../../adminpages/AddPage/RewardConfirmationPage';
+import ChoreConfirmationPage from '../../adminpages/ChorePage/ChoreConfirmationPage';
+import RewardConfirmationPage from '../../adminpages/RewardsPage/RewardConfirmationPage';
 import StorePage from '../../adminpages/StorePage/StorePage';
 
 import './App.css';

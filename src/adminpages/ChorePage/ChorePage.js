@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import AdminChoreList from '../../components/AdminChoreList/AdminChoreList.js';
 import AdminChoresModal from '../../components/AdminAddModals/AddChoreModal.js';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 import UserList from '../../components/UserList/UserList.js';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
@@ -26,14 +27,18 @@ class ChorePage extends Component {
           <Grid container spacing={10}>
             <Grid item xs={12} sm={12}>
               <Typography
+                gutterBottom
+                variant="p"
                 style={{
-                  marginTop: 10,
-                  textAlign: 'center',
-                  fontFamily: 'Nunito',
+                  color: blueGrey,
+                  fontSize: 30,
+                  paddingTop: 15,
+                  fontFamily: 'nunito',
+                  fontWeight: 'bold',
                 }}
-                component="h4"
+                component="h2"
               >
-                <h4> Current Chores</h4>
+                Chore Database
               </Typography>
               <AdminChoresModal />
               <div>

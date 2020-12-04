@@ -24,9 +24,10 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     minHeight: 128,
-    alignItems: 'flex-start',
+    alignItems: 'flex-end',
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(2),
+    color: '#524C61',
   },
   title: {
     flexGrow: 1,
@@ -71,18 +72,19 @@ const AdminAppBar = (props) => {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar className={classes.toolbar}>
-            <Typography className={classes.title} variant="h4" nowrap>
-              ...Growing Up
-            </Typography>
             <IconButton
+              className="home"
               aria-label="account of current user"
-              aria-controls="menu-appbar"
+              edge="start"
               aria-haspopup="true"
-              onClick={() => handleMenuClick('/user')}
+              onClick={() => handleMenuClick('/child/welcome')}
               color="inherit"
             >
               <HomeIcon />
             </IconButton>
+            <Typography className={classes.title} variant="h4" nowrap>
+              ...Growing Up
+            </Typography>
             <IconButton
               aria-label="display more actions"
               onClick={handleMenu}
@@ -118,9 +120,7 @@ const AdminAppBar = (props) => {
               <MenuItem onClick={() => handleMenuClick('/admin/emotions')}>
                 Emotions
               </MenuItem>
-              <MenuItem onClick={() => handleMenuClick('/admin/users')}>
-                Users
-              </MenuItem>
+
               <MenuItem onClick={() => handleLog('/user')}>LogOut</MenuItem>
             </Menu>
           </Toolbar>

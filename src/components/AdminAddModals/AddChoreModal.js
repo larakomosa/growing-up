@@ -61,7 +61,6 @@ const AdminChoreModal = (props) => {
     <div>
       <Button
         variant="outlined"
-        color="primary"
         size="Medium"
         align="center"
         type="button"
@@ -73,7 +72,7 @@ const AdminChoreModal = (props) => {
           float: 'right',
         }}
       >
-        Add Rewards
+        Add Chores
       </Button>{' '}
       <Modal
         open={open}

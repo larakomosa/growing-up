@@ -9,7 +9,7 @@ function AdminThoughtsItem(props) {
       <TableRow>
         {' '}
         <TableCell colSpan={1} align="left">
-          {props.item.date.substring(1, 4)}
+          {props.item.date.substring(5, 10)}
         </TableCell>
         <TableCell colSpan={1} align="left">
           {props.item.comment}

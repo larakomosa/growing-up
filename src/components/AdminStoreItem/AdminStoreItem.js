@@ -1,29 +1,28 @@
 import React from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
 
-function AdminChoreItem(props) {
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+} from '@material-ui/core';
+
+function AdminStoreItem(props) {
+  const columnKeys = Object.keys(props.rowData);
   return (
-    <>
-      <TableRow>
-        <TableCell colSpan={1} align="left">
-          <p>{props.item.reward}</p>
-        </TableCell>
-        <TableCell colSpan={1} align="left">
-          <p> {props.item.coin_price}</p>
-        </TableCell>
-        <TableCell colSpan={1} align="left">
-          <p> {props.item.selected.toString()}</p>
-        </TableCell>
-        {/* <td>
-        <button onClick={props.onClick(props.item.id)}>
-          <DeleteIcon />
-        </button>
-      </td> */}
-      </TableRow>
-    </>
+    <TableRow>
+      {columnKeys.map((column, index) => {
+        const value = props.rowData[column];
+
+        return <TableCell key={index}>{value.toString()}</TableCell>;
+      })}
+    </TableRow>
   );
 }
 
-export default AdminChoreItem;
+export default AdminStoreItem;

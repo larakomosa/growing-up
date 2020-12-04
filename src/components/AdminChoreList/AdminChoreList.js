@@ -43,7 +43,7 @@ const AdminChoreList = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: 'GET_CHORES' });
+    dispatch({ type: 'GET_CHORES_TABLE' });
   }, []);
 
   const handleChangePage = (event, newPage) => {
@@ -67,7 +67,7 @@ const AdminChoreList = (props) => {
   };
 
   const rowsDisplayed = filterRowsForDisplay(
-    props.store.chores,
+    props.store.choreTable,
     rowsPerPage,
     page
   );
@@ -75,12 +75,12 @@ const AdminChoreList = (props) => {
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead>
             <TableRow>
               <StyledTableCell align="left">Chore</StyledTableCell>
               <StyledTableCell align="left">Value</StyledTableCell>
-              <StyledTableCell align="left">Description</StyledTableCell>
+              <StyledTableCell align="left">Purchased</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -94,7 +94,7 @@ const AdminChoreList = (props) => {
       <TablePagination
         rowsPerPageOptions={[3, 5, 10]}
         component="div"
-        count={props.store.chores.length}
+        count={props.store.choreTable.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onChangePage={handleChangePage}

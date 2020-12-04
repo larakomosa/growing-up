@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -14,6 +15,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Bank from '../Bank/Bank';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,21 +26,33 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     minHeight: 128,
-    alignItems: 'flex-start',
+    alignItems: 'flex-end',
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(2),
   },
   home: {
     minHeight: 50,
     paddingTop: theme.spacing(4),
-    alignItems: 'flex-start',
   },
   title: {
     flexGrow: 1,
-    alignSelf: 'flex-end',
-    paddingBottom: theme.spacing(5),
+    paddingBottom: 2,
+    color: '#524C61',
+  },
+  heading: {
     fontFamily: 'Nerko One',
     color: '#524C61',
+    paddingBottom: 28,
+    alignItems: 'flex-end',
+  },
+  navBar: {
+    marginLeft: theme.spacing(3),
+    marginBottom: theme.spacing(0),
+  },
+  piggy: {
+    marginBottom: 0,
+    paddingBottom: 0,
+    alignItems: 'flex-end',
   },
 }));
 
@@ -62,6 +76,10 @@ const ChildAppBar = (props) => {
     history.push(pageURL);
   };
 
+  const handleMenu1 = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -69,6 +87,14 @@ const ChildAppBar = (props) => {
   const handleMenuClick = (pageURL) => {
     history.push(pageURL);
     setAnchorEl(null);
+  };
+
+  const handleAlert = () => {
+    alert(
+      <h2>
+        <Bank />
+      </h2>
+    );
   };
 
   return (
@@ -83,19 +109,39 @@ const ChildAppBar = (props) => {
             onClick={() => handleMenuClick('/child/welcome')}
             color="secondary"
           >
-            <HomeIcon />
+            <img
+              src="https://primebucket2020.s3.us-east-2.amazonaws.com/23baa092-a81e-4208-ad8b-fc5508daf27b_home.svg"
+              className="navBar"
+            ></img>
           </IconButton>
-          <Typography className={classes.title} variant="h4" noWrap>
-            ...GROWING UP
-          </Typography>
-
+          <Box className={classes.title}>
+            <IconButton
+              className={classes.piggy}
+              aria-label="display more actions"
+              onClick={() => handleAlert()}
+              edge="center"
+              color="secondary"
+            >
+              <img
+                src="https://primebucket2020.s3.us-east-2.amazonaws.com/8f9f7e33-32cc-497e-be75-0846daabf8ee_piggy-bank.svg"
+                className="piggy"
+              ></img>
+            </IconButton>
+            <Typography className={classes.heading} variant="h4" noWrap>
+              ...GROWING UP
+            </Typography>
+          </Box>
           <IconButton
+            className={classes.navBar}
             aria-label="display more actions"
             onClick={handleMenu}
             edge="center"
             color="secondary"
           >
-            <MenuIcon />
+            <img
+              src="https://primebucket2020.s3.us-east-2.amazonaws.com/72dd90a6-77f6-4caa-807c-a6e80c60a221_doughnut.svg"
+              className="navBar"
+            ></img>
           </IconButton>
           <Menu
             id="menu-appbar"
