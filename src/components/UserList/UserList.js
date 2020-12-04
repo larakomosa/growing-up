@@ -13,13 +13,18 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TablePagination from '@material-ui/core/TablePagination';
 import Divider from '@material-ui/core/Divider';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
   },
   container: {
+    marginTop: 20,
     maxHeight: 440,
+  },
+  head: {
+    backgroundColor: blueGrey['700'],
   },
 });
 
@@ -39,18 +44,18 @@ const UserList = (props) => {
             stickyHeader="primary"
             aria-label="sticky table"
             size="small"
-            color="light primary"
+            color="primary"
           >
-            <TableHead>
+            <TableHead backgroundColor="blueGrey">
               <TableRow>
                 <TableCell align="left">
-                  <h3>User ID</h3>
+                  <h6>User ID</h6>
                 </TableCell>
                 <TableCell align="left">
-                  <h3>Username</h3>
+                  <h6>Username</h6>
                 </TableCell>
                 <TableCell align="left" colSpan={2}>
-                  <h3>Page_Role</h3>
+                  <h6>Page_Role</h6>
                 </TableCell>
               </TableRow>
             </TableHead>

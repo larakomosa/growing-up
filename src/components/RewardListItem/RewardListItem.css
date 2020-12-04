@@ -19,7 +19,16 @@ image {
 .learnMore {
   height: 50px;
   width: 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.rewards {
+  height: 50px;
+  width: 50px;
   margin-top: -10px;
+  margin-bottom: 15px;
   float: left;
 }
 

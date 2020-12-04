@@ -24,7 +24,8 @@
   float: right;
 }
 
-.leftDetailsArrow {
-  height: 100px;
-  width: 100px;
+.detailsLeftArrow {
+  margin-top: -20px;
+  height: 60px;
+  width: 60px;
 }

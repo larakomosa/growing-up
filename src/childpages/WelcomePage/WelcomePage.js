@@ -12,12 +12,12 @@ class WelcomePage extends Component {
     this.props.dispatch({
       type: 'GET_NOTE',
     });
-    this.props.dispatch({
-      type: 'GET_BANK_CHORES',
-    });
-    this.props.dispatch({
-      type: 'GET_BANK_REWARDS',
-    });
+    // this.props.dispatch({
+    //   type: 'GET_BANK_CHORES',
+    // });
+    // this.props.dispatch({
+    //   type: 'GET_BANK_REWARDS',
+    // });
     console.log('dispatch)');
   }
 
@@ -45,13 +45,12 @@ class WelcomePage extends Component {
           >
             <Grid item className="note" xs={12} sm={10}>
               <h4>{this.props.store.note.message}</h4>
-              <Bank />
               <Button
                 spacing={2}
                 className="welcomeButtons"
                 variant="outlined"
                 color="primary"
-                size="large"
+                size="medium"
                 style={{ backgroundColor: '#F7F182', marginRight: 20 }}
                 onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
               >
@@ -68,7 +67,7 @@ class WelcomePage extends Component {
                 variant="outlined"
                 color="primary"
                 type="submit"
-                size="large"
+                size="medium"
                 style={{ backgroundColor: '#F7F182', marginLeft: 20 }}
                 onClick={this.handleSubmit2} //next button dispatches data to index.js and moves user to next page
               >

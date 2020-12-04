@@ -1,5 +1,5 @@
 .textBox {
-  height: 190px;
+  height: 165px;
   width: 150px;
   margin-bottom: 0px;
 }
@@ -16,9 +16,23 @@
 }
 
 .iconControl {
-  margin-bottom: 0px;
+  margin-bottom: -10px;
 }
 
 /* .box {
   height: 200px;
   width: 200px; */
+
+.chores {
+  margin-top: 0px;
+  height: 40px;
+  width: 40px;
+  margin-bottom: 0px;
+}
+
+.chores1 {
+  margin-top: 0px;
+  height: 45px;
+  width: 45px;
+  margin-bottom: 0px;
+}

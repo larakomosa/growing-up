@@ -51,14 +51,12 @@ class Form extends Component {
         payload: this.state.newReward, //sends newMovie values
       });
       swal({
-        title: 'Great Job!',
-        text: 'Would you like to see a child preview?!',
-        buttons: true,
-        dangerMode: true,
+        title: 'Reward Has Been Submitted',
+        text: 'Would you like to see a child preview?',
+        buttons: ['No Thanks', 'Yes Please'],
       }).then((willSubmit) => {
         if (willSubmit) {
           this.props.history.push('/admin/reward/confirmation');
-          swal('Great! Lets take a look!');
         } else {
           this.props.callback();
         }

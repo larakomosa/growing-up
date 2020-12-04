@@ -32,10 +32,10 @@ import RewardsPage from '../../childpages/RewardsPage/RewardsPage';
 import DetailsPage from '../../childpages/DetailsPage/DetailsPage';
 import GoodbyePage from '../../childpages/GoodbyePage/GoodbyePage';
 
-import AddPage from '../../adminpages/AddPage/AddPage';
+import AdminChorePage from '../../adminpages/ChorePage/ChorePage';
+import AdminRewardPage from '../../adminpages/RewardsPage/RewardsPage';
 import AssignPage from '../../adminpages/AssignPage/AssignPage';
 import EmotionsPage from '../../adminpages/EmotionsPage/EmotionsPage';
-import AdminUserPage from '../../adminpages/UserPage/UserPage';
 import ChoreConfirmationPage from '../../adminpages/AddPage/ChoreConfirmationPage';
 import RewardConfirmationPage from '../../adminpages/AddPage/RewardConfirmationPage';
 import StorePage from '../../adminpages/StorePage/StorePage';
@@ -131,7 +131,16 @@ class App extends Component {
               component={RewardsPage}
             />
 
-            <ProtectedRoute exact path="/admin/add" component={AddPage} />
+            <ProtectedRoute
+              exact
+              path="/admin/chores"
+              component={AdminChorePage}
+            />
+            <ProtectedRoute
+              exact
+              path="/admin/rewards"
+              component={AdminRewardPage}
+            />
             <ProtectedRoute exact path="/admin/assign" component={AssignPage} />
             <ProtectedRoute
               exact
@@ -142,11 +151,6 @@ class App extends Component {
               exact
               path="/admin/reward/confirmation"
               component={RewardConfirmationPage}
-            />
-            <ProtectedRoute
-              exact
-              path="/admin/users"
-              component={AdminUserPage}
             />
             <ProtectedRoute exact path="/admin/store" component={StorePage} />
             <ProtectedRoute

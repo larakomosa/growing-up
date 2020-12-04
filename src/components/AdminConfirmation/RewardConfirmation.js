@@ -20,44 +20,41 @@ class RewardConfirmation extends Component {
 
   render() {
     return (
-      <Container>
-        <section>
-          <Grid container spacing={8}>
-            <Grid item xs={12} sm={4}>
-              <img
-                className="image1"
-                src={this.props.store.rewardConf.image}
-                class="rounded"
-                // alt={this.props.store.rewardConf.description}
-              />
-              <Typography gutterBottom variant="h5" component="h5">
-                <h2> Coin Price: ${this.props.store.rewardConf.coin_price}</h2>
-              </Typography>
+      <div className="fixed1">
+        <Container>
+          <section>
+            <Grid container spacing={8}>
+              <Grid item xs={12} sm={4}>
+                <img
+                  className="image1"
+                  src={this.props.store.rewardConf.image}
+                  class="rounded"
+                  alt={this.props.store.rewardConf.description}
+                />
+                <Typography gutterBottom variant="h2" component="h2">
+                  <h4> {this.props.store.rewardConf.coin_price} Coins</h4>
+                </Typography>
+                <img
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/c8318dae-56c1-49b7-ab8b-ee25ecd3323d_left-arrowcopy.svg"
+                  className="detailsLeftArrow"
+                  onClick={this.handleAdd} //next button dispatches data to index.js and moves user to next page
+                ></img>
+              </Grid>
+              <Grid item xs={12} sm={8}>
+                <Typography gutterBottom variant="h4" component="h4">
+                  <h4>{this.props.store.rewardConf.reward}</h4>
+                </Typography>
+                <hr />
+                <h6>{this.props.store.rewardConf.description}</h6>
+                <img
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/cfe439ab-af1b-43c6-9399-a05abc5d9112_button.svg"
+                  className="buyNow1"
+                ></img>
+              </Grid>
             </Grid>
-            <Grid item xs={12} sm={8}>
-              <Typography gutterBottom variant="h5" component="h5">
-                <h1>{this.props.store.rewardConf.reward}</h1>
-              </Typography>
-              <Typography gutterBottom variant="h5" component="h5">
-                <h2> Reward Description</h2>
-              </Typography>
-
-              <hr />
-              <h2>{this.props.store.rewardConf.description}</h2>
-            </Grid>
-            <Button
-              variant="outlined"
-              color="primary"
-              type="submit"
-              size="medium"
-              onClick={this.handleAdd}
-            >
-              {' '}
-              Back to List!
-            </Button>
-          </Grid>
-        </section>
-      </Container>
+          </section>
+        </Container>
+      </div>
     );
   }
 }

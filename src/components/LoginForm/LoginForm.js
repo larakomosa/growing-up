@@ -59,7 +59,7 @@ class LoginForm extends Component {
           <TextField
             fullWidth
             size="small"
-            id="outlined-helperText"
+            id="password"
             label="Password"
             value={this.state.password}
             required

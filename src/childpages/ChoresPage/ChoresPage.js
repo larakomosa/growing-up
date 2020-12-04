@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import AssignedList from '../../components/AssignedList/AssignedList.js';
 import Bank from '../../components/Bank/Bank.js';
 
@@ -30,10 +30,9 @@ class ChoresPage extends Component {
           style={{ minHeight: '100vh' }}
         >
           <Grid item xs={12} sm={10}>
-            <h4>
-              My Weekly Chores!
-              <Bank />
-            </h4>
+            <Typography style={{ marginTop: 20 }} component="h4">
+              <h4> My Weekly Chores! </h4>
+            </Typography>
           </Grid>
           <AssignedList />
         </Grid>

@@ -13,7 +13,7 @@ class FeelingPage extends Component {
   componentDidMount() {
     swal({
       title: 'Good Morning!',
-      text: 'We hope you are having a good day!',
+      text: 'Take this quick survey!',
     });
   }
   state = {
@@ -54,8 +54,8 @@ class FeelingPage extends Component {
             style={{ minHeight: '100vh' }}
           >
             <div className="welcome1">
-              <h2>How do you feel today?</h2>
-              <form>
+              <h3>How do you feel today?</h3>
+              <form className="finishLine4">
                 <label>
                   <FormControlLabel
                     control={<Radio color="primary" />}
@@ -131,11 +131,7 @@ class FeelingPage extends Component {
                   className="nextArrow"
                   onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
                 ></img>
-                <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/2ac3631a-caee-403e-9d4b-d7559456dae8_victory.svg"
-                  className="backArrow"
-                  onClick={this.handleSubmit2} //next button dispatches data to index.js and moves user to next page
-                ></img>
+                <div className="finishLine4"></div>
               </form>
             </div>
           </Grid>

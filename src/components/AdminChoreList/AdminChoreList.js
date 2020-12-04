@@ -1,34 +1,50 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Button } from '@material-ui/core';
+import React, { useEffect } from 'react';
+import { useDispatch, connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import AdminChoreItem from '../AdminChoreItem/AdminChoreItem.js';
-import '../AdminChoreItem/AdminChoreItem.css';
-import { withStyles, createStyles } from '@material-ui/core/styles';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import TablePagination from '@material-ui/core/TablePagination';
-import Form from '../Forms/ChoreForm.js';
+// import '../AdminChoreItem/ChoreItem.css';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+} from '@material-ui/core';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
+    padding: '8px 0 0',
   },
   container: {
-    maxHeight: 440,
+    maxHeight: 290,
   },
 });
+
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: blueGrey['700'],
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
 
 const AdminChoreList = (props) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'GET_CHORES' });
+  }, []);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -39,33 +55,48 @@ const AdminChoreList = (props) => {
     setPage(0);
   };
 
-  let htmlArray = null;
-  if (props.store.chores) {
-    htmlArray = props.store.chores.map((item, index) => {
-      return <AdminChoreItem key={index} item={item} />;
-    });
-  }
+  const filterRowsForDisplay = (originList, numOfRows, pgNum) => {
+    if (originList.length === 0) {
+      return [];
+    }
+
+    const posStart = numOfRows * pgNum;
+    const posTo = posStart + numOfRows;
+
+    return originList.slice(posStart, posTo);
+  };
+
+  const rowsDisplayed = filterRowsForDisplay(
+    props.store.chores,
+    rowsPerPage,
+    page
+  );
 
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table" size="small">
+        <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
-              <TableCell align="left">Chore</TableCell>
-              <TableCell align="left">Coin Value </TableCell>
-              {/* <TableCell align="left">Description</TableCell> */}
+              <StyledTableCell align="left">Chore</StyledTableCell>
+              <StyledTableCell align="left">Value</StyledTableCell>
+              <StyledTableCell align="left">Description</StyledTableCell>
             </TableRow>
           </TableHead>
-          <TableBody>{htmlArray}</TableBody>
+          <TableBody>
+            {rowsDisplayed.map((row, index) => {
+              return <AdminChoreItem rowData={row} key={index} />;
+            })}
+          </TableBody>
         </Table>
       </TableContainer>
+
       <TablePagination
-        rowsPerPageOptions={[4, 25, 100]}
+        rowsPerPageOptions={[3, 5, 10]}
+        component="div"
         count={props.store.chores.length}
         rowsPerPage={rowsPerPage}
         page={page}
-        component="div"
         onChangePage={handleChangePage}
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
@@ -73,20 +104,6 @@ const AdminChoreList = (props) => {
   );
 };
 
-const mapStoreToProps = (store) => ({
-  store,
-});
+const mapStoreToProps = (store) => ({ store });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    componentDidMount: () =>
-      dispatch({
-        type: 'GET_CHORES',
-      }),
-  };
-};
-
-export default connect(
-  mapStoreToProps,
-  mapDispatchToProps
-)(withRouter(AdminChoreList));
+export default connect(mapStoreToProps)(AdminChoreList);

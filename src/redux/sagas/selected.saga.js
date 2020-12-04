@@ -20,8 +20,20 @@ function* getSelected(action) {
   }
 }
 
+function* updateSelected(action) {
+  try {
+    yield axios.put(`/api/store/${action.payload}`);
+    yield put({
+      type: 'GET_SELECTED',
+    });
+  } catch (err) {
+    console.log('Error deleting plant:', err);
+  }
+}
+
 function* selectedSaga() {
   yield takeLatest('GET_SELECTED', getSelected);
+  yield takeLatest('UPDATE_SELECTED', updateSelected);
 }
 
 export default selectedSaga;

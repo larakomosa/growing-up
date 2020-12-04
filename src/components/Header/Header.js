@@ -40,7 +40,6 @@ const Header = (props) => {
     return (
       <div>
         <AppBar />
-        <Bank />
       </div>
     );
   } else if (props.store.user.page_role_id === 5) {

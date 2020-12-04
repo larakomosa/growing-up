@@ -18,26 +18,24 @@ class GoodbyePage extends Component {
 
   render() {
     return (
-      <div className="fixed">
-        <div className="goodbye">
-          <Grid
-            container
-            spacing={0}
-            direction="column"
-            justify="flex-start"
-            alignItems="center"
-            style={{ minHeight: '100vh' }}
-          >
-            <Grid item xs={12} sm={10}>
-              <h5>Goodbye!</h5>
-              <img
-                src="https://primebucket2020.s3.us-east-2.amazonaws.com/029e4541-1772-46a2-a04c-e94b9c789c23_housecopy.svg"
-                className="goodbyeHome"
-                onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
-              ></img>
-            </Grid>
+      <div className="goodbye">
+        <Grid
+          container
+          spacing={0}
+          direction="column"
+          justify="flex-start"
+          alignItems="center"
+          style={{ minHeight: '100vh' }}
+        >
+          <Grid item xs={12} sm={10}>
+            <h5>Goodbye!</h5>
+            <img
+              src="https://primebucket2020.s3.us-east-2.amazonaws.com/029e4541-1772-46a2-a04c-e94b9c789c23_housecopy.svg"
+              className="goodbyeHome"
+              onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
+            ></img>
           </Grid>
-        </div>
+        </Grid>
       </div>
     );
   }

@@ -6,6 +6,10 @@ import swal from 'sweetalert';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 
 class Selected extends Component {
+  state = {
+    //sets initial state
+    buying: false,
+  };
   componentDidMount() {
     this.props.dispatch({
       type: 'GET_SELECTED',
@@ -13,26 +17,35 @@ class Selected extends Component {
     });
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.history.push('/child/rewards');
+  };
+
   handleClick = (id) => {
     console.log('id', this.props.store.selected.id);
+    this.props.dispatch({
+      type: 'UPDATE_SELECTED',
+      payload: this.props.store.selected.id,
+    });
     swal({
-      title: 'Great Choice!',
-      text: 'Are you sure your ready to buy this?',
+      title: 'Success!!',
+      text:
+        'Congratulations! Your purchase was successful?  Would you like to see',
       buttons: true,
     }).then((willSubmit) => {
       if (willSubmit) {
         this.props.dispatch({
-          type: 'UPDATE_SELECTED',
+          type: 'GET_SELECTED',
           payload: this.props.store.selected.id,
         });
-        this.props.dispatch({
-          type: 'GET_BANK_CHORES',
-        });
-        this.props.dispatch({
-          type: 'GET_BANK_REWARDS',
-        });
-        swal('Success!! Your reward was purchased! Continue to browse');
-        this.props.history.push(`/child/rewards`);
+        // this.props.dispatch({
+        //   type: 'GET_BANK_CHORES',
+        // });
+        // this.props.dispatch({
+        //   type: 'GET_BANK_REWARDS',
+        // });
+        console.log('it worked');
       }
     });
   };
@@ -52,14 +65,6 @@ class Selected extends Component {
             className="buyNow1"
             onClick={() => this.handleClick(this.props.store.selected.id)} //next button dispatches data to index.js and moves user to next page
           ></img>
-          <Typography
-            gutterBottom
-            variant="p"
-            style={{ color: '#ee8673' }}
-            component="h2"
-          >
-            {this.props.store.selected.coin_price} Coins
-          </Typography>
         </div>
       );
     } else {
@@ -85,7 +90,7 @@ class Selected extends Component {
   render() {
     console.log('id', this.props.store.selected.id, this.props.store.user.id);
     return (
-      <div className="fixed">
+      <div className="fixed1">
         <Container>
           <section>
             <Grid container spacing={8}>
@@ -102,7 +107,7 @@ class Selected extends Component {
                 <img
                   src="https://primebucket2020.s3.us-east-2.amazonaws.com/c8318dae-56c1-49b7-ab8b-ee25ecd3323d_left-arrowcopy.svg"
                   className="detailsLeftArrow"
-                  onClick={() => this.handleClick2} //next button dispatches data to index.js and moves user to next page
+                  onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
                 ></img>
               </Grid>
               <Grid item xs={12} sm={8}>

@@ -53,7 +53,7 @@ class SleepPage extends Component {
             style={{ minHeight: '100vh' }}
           >
             <div className="welcome1">
-              <h2>How did you sleep last night?</h2>
+              <h3>How did you sleep last night?</h3>
               <form>
                 <label>
                   <FormControlLabel

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button } from '@material-ui/core';
-import { withRouter } from 'react-router-dom';
 import Selected from '../../components/Selected/Selected.js';
 import { Grid } from '@material-ui/core';
 import '../DetailsPage/DetailsPage.css';
@@ -40,7 +38,6 @@ class DetailsPage extends Component {
               <Selected />
               {'  '}
             </Grid>
-            <div className="footer"></div>
           </Grid>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 import AdminAssignedItem from '../../components/AdminAssignedItem/AdminAssignedItem.js';
+import PersonSelect from '../../components/AdminStoreList/PersonSelect';
 // import '../AdminChoreItem/ChoreItem.css';
 import { withStyles, createStyles } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
@@ -48,6 +49,7 @@ const AdminAssignedList = (props) => {
 
   return (
     <Paper className={classes.root}>
+      <PersonSelect />
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead>

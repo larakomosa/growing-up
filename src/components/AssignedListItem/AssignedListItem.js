@@ -44,10 +44,17 @@ class AssignedListItem extends Component {
         <div>
           <img
             src="https://primebucket2020.s3.us-east-2.amazonaws.com/51822841-7e3f-4dc6-8595-48c53d4e0d54_finish-line.svg"
-            className="finishLine"
+            className="chores"
             onClick={() => this.handleClick(this.props.item.id)}
           ></img>
-          <p>Coin Value: ${this.props.item.coin_value}</p>
+          <Typography
+            gutterBottom
+            variant="p"
+            style={{ color: '#ee8673', fontSize: 20, marginBottom: -10 }}
+            component="h2"
+          >
+            Coins Value ${this.props.item.coin_value}
+          </Typography>
         </div>
       );
     } else {
@@ -55,9 +62,16 @@ class AssignedListItem extends Component {
         <div>
           <img
             src="https://primebucket2020.s3.us-east-2.amazonaws.com/8f9f7e33-32cc-497e-be75-0846daabf8ee_piggy-bank.svg"
-            className="finishLine"
+            className="chores"
           ></img>
-          <p>${this.props.item.coin_value} Coins Earned</p>
+          <Typography
+            gutterBottom
+            variant="p"
+            style={{ color: '#ee8673', fontSize: 20, marginBottom: -10 }}
+            component="h2"
+          >
+            ${this.props.item.coin_value} Earned
+          </Typography>
         </div>
       );
     }
@@ -93,7 +107,7 @@ class AssignedListItem extends Component {
     });
     swal({
       title: 'Great Job!',
-      text: 'This chore has been completed?',
+      text: 'Please confirm this chore is completed.',
       buttons: true,
     }).then((willSubmit) => {
       if (willSubmit) {
@@ -103,9 +117,7 @@ class AssignedListItem extends Component {
         this.props.dispatch({
           type: 'GET_BANK_REWARDS',
         });
-        swal('Success!! Your reward was purchased!');
-      } else {
-        swal('Your imaginary file is safe!');
+        swal('Great Job!');
       }
     });
   };
@@ -119,8 +131,8 @@ class AssignedListItem extends Component {
               <CardMedia image={this.props.item.icon} />
               <Divider />
               <div className="titleControl">
-                <Typography gutterBottom variant="h6" component="h2">
-                  <h6>{this.props.item.chore}</h6>
+                <Typography>
+                  <h2>{this.props.item.chore}</h2>
                 </Typography>
               </div>
               <div className="iconControl">

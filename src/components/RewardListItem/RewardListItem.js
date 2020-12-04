@@ -31,13 +31,13 @@ class RewardListItem extends Component {
         <div>
           <img
             src="https://primebucket2020.s3.us-east-2.amazonaws.com/2c2d847c-2150-41b3-a193-598694c35274_loupe.svg"
-            className="finishLine"
+            className="rewards"
             onClick={() => this.handleClick(this.props.item.id)}
           ></img>
           <Typography
             gutterBottom
             variant="p"
-            style={{ color: '#ee8673' }}
+            style={{ color: '#ee8673', fontSize: 20, marginBottom: -10 }}
             component="h2"
           >
             {this.props.item.coin_price} Coins
@@ -49,12 +49,12 @@ class RewardListItem extends Component {
         <div>
           <img
             src="https://primebucket2020.s3.us-east-2.amazonaws.com/903b467f-16fd-4e41-9c8a-4b130f407cd8_balloons.svg"
-            className="finishLine"
+            className="rewards"
           ></img>
           <Typography
             gutterBottom
             variant="p"
-            style={{ color: '#ee8673' }}
+            style={{ color: '#ee8673', fontSize: 20, marginBottom: -10 }}
             component="h2"
           >
             Purchased

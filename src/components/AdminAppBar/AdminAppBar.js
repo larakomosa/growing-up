@@ -67,60 +67,65 @@ const AdminAppBar = (props) => {
   };
 
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar className={classes.toolbar}>
-          <Typography className={classes.title} variant="h4" nowrap>
-            ...Growing Up
-          </Typography>
-          <IconButton
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={() => handleMenuClick('/user')}
-            color="inherit"
-          >
-            <HomeIcon />
-          </IconButton>
-          <IconButton
-            aria-label="display more actions"
-            onClick={handleMenu}
-            edge="end"
-            color="inherit"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Menu
-            id="menu-appbar"
-            anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            open={open}
-            onClose={() => handleMenuClick(null)}
-          >
-            <MenuItem onClick={() => handleMenuClick('/admin/add')}>
-              Add
-            </MenuItem>
-            <MenuItem onClick={() => handleMenuClick('/admin/assign')}>
-              Assign
-            </MenuItem>
-            <MenuItem onClick={() => handleMenuClick('/admin/emotions')}>
-              Emotions
-            </MenuItem>
-            <MenuItem onClick={() => handleMenuClick('/admin/users')}>
-              Users
-            </MenuItem>
-            <MenuItem onClick={() => handleLog('/user')}>LogOut</MenuItem>
-          </Menu>
-        </Toolbar>
-      </AppBar>
+    <div className="adminFixed">
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar className={classes.toolbar}>
+            <Typography className={classes.title} variant="h4" nowrap>
+              ...Growing Up
+            </Typography>
+            <IconButton
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={() => handleMenuClick('/user')}
+              color="inherit"
+            >
+              <HomeIcon />
+            </IconButton>
+            <IconButton
+              aria-label="display more actions"
+              onClick={handleMenu}
+              edge="end"
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={open}
+              onClose={() => handleMenuClick(null)}
+            >
+              <MenuItem onClick={() => handleMenuClick('/admin/rewards')}>
+                Rewards
+              </MenuItem>
+              <MenuItem onClick={() => handleMenuClick('/admin/chores')}>
+                Chores
+              </MenuItem>
+              <MenuItem onClick={() => handleMenuClick('/admin/assign')}>
+                Assign
+              </MenuItem>
+              <MenuItem onClick={() => handleMenuClick('/admin/emotions')}>
+                Emotions
+              </MenuItem>
+              <MenuItem onClick={() => handleMenuClick('/admin/users')}>
+                Users
+              </MenuItem>
+              <MenuItem onClick={() => handleLog('/user')}>LogOut</MenuItem>
+            </Menu>
+          </Toolbar>
+        </AppBar>
+      </div>
     </div>
   );
 };

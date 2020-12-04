@@ -26,7 +26,7 @@ class ThoughtsPage extends Component {
     swal({
       title: 'Great Job!',
       text: 'Are you ready to turn in your survey?',
-      buttons: true,
+      buttons: 'Yes I am!',
     }).then((willSubmit) => {
       if (willSubmit) {
         this.props.dispatch({
@@ -60,7 +60,7 @@ class ThoughtsPage extends Component {
           >
             <Grid item xs={12} sm={12}>
               <div className="welcome2">
-                <h2>Anything else on your mind?</h2>
+                <h3>anything else you'd like to share?</h3>
                 <form>
                   <TextField
                     className="textField1"
@@ -71,7 +71,7 @@ class ThoughtsPage extends Component {
                     margin="normal"
                     multiline
                     rows={2}
-                    size="medium"
+                    size="small"
                     onChange={(event) =>
                       this.handleChangeFor('comments', event)
                     }

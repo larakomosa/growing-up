@@ -1,24 +1,26 @@
 import React from 'react';
 import DeleteIcon from '@material-ui/icons/Delete';
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
+
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TablePagination,
+  TableRow,
+} from '@material-ui/core';
 
 function AdminRewardsItem(props) {
-  console.log(props.item.selected);
-  console.log(props.item.reward);
+  const columnKeys = Object.keys(props.rowData);
   return (
-    <TableRow size="small">
-      <TableCell colSpan={1} align="left">
-        <p>{props.item.reward}</p>
-      </TableCell>
-      <TableCell colSpan={1} align="left">
-        <p>${props.item.coin_price}</p>
-      </TableCell>
-      <td>
-        <TableCell colSpan={1} align="left">
-          <DeleteIcon fontSize="small" />
-        </TableCell>
-      </td>
+    <TableRow>
+      {columnKeys.map((column, index) => {
+        const value = props.rowData[column];
+
+        return <TableCell key={index}>{value}</TableCell>;
+      })}
     </TableRow>
   );
 }

@@ -7,6 +7,7 @@ import { Button, Container, Grid, Typography } from '@material-ui/core';
 import Divider from '@material-ui/core/Divider';
 import AssignChoreModal from '../../components/AdminAddModals/AssignChoreModal.js';
 import AssignRewardModal from '../../components/AdminAddModals/AssignRewardModal.js';
+import PersonSelect from '../../components/AdminStoreList/PersonSelect';
 
 class AssignPage extends Component {
   state = {

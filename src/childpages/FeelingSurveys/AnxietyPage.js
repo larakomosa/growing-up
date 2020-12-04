@@ -50,7 +50,7 @@ class AnxietyPage extends Component {
             style={{ minHeight: '100vh' }}
           >
             <div className="welcome1">
-              <h2>How calm do you feel today?</h2>
+              <h3>How calm do you feel today?</h3>
               <form>
                 <label>
                   <FormControlLabel

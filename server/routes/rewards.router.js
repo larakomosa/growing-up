@@ -4,7 +4,8 @@ const rewardsRouter = express.Router();
 
 // GET - retrieve all rewards from DB
 rewardsRouter.get('/', (req, res) => {
-  const queryText = 'SELECT * FROM "rewards" ORDER BY "id" DESC;';
+  const queryText =
+    'SELECT "rewards".reward, "rewards".coin_price, "rewards".description FROM "rewards" ORDER BY "id" DESC;';
 
   pool
     .query(queryText)
@@ -36,8 +37,8 @@ rewardsRouter.get('/conf', (req, res) => {
 // create query to insert item
 rewardsRouter.post('/', (req, res) => {
   const rewards = req.body;
-  const queryText = `INSERT INTO "rewards" ("reward", "image", "coin_price", "description", "selected") 
-    VALUES ($1, $2,$3,$4, false);`;
+  const queryText = `INSERT INTO "rewards" ("reward", "image", "coin_price", "description") 
+    VALUES ($1, $2,$3,$4);`;
 
   const queryArray = [
     rewards.reward,

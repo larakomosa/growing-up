@@ -7,6 +7,7 @@ import { Button } from '@material-ui/core';
 import Form from '../Forms/ChoreForm.js';
 import '../Forms/Form.css';
 import swal from 'sweetalert';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 function getModalStyle() {
   const top = 50;
@@ -62,11 +63,18 @@ const AdminChoreModal = (props) => {
         variant="outlined"
         color="primary"
         size="Medium"
+        align="center"
         type="button"
         onClick={handleOpen}
+        style={{
+          color: blueGrey['700'],
+          marginBottom: '5px',
+          marginTop: '-40px',
+          float: 'right',
+        }}
       >
-        Add Chore to List!
-      </Button>
+        Add Rewards
+      </Button>{' '}
       <Modal
         open={open}
         aria-labelledby="simple-modal-title"

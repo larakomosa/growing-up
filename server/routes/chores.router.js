@@ -18,7 +18,8 @@ choresRouter.get('/category', (req, res) => {
 });
 
 choresRouter.get('/', (req, res) => {
-  const queryText = 'SELECT * FROM "chores" ORDER BY "id" DESC;';
+  const queryText =
+    'SELECT "chores".chore, "chores".coin_value, "chores".description FROM "chores" ORDER BY "id" DESC;';
 
   pool
     .query(queryText)
