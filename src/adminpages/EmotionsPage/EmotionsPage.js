@@ -88,6 +88,7 @@ class EmotionsPage extends Component {
                 <PersonSelect3 />
               </div>
               <LineChart
+                colors={['', '#666']}
                 data={{
                   '2020-11-23': 5,
                   '2020-11-24': 3,

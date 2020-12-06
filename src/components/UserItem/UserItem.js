@@ -5,15 +5,10 @@ import TableRow from '@material-ui/core/TableRow';
 import Divider from '@material-ui/core/Divider';
 
 function UserItem(props) {
-  // const handleClick = (id) => {
-  //   console.log('hi');
-  //   //   console.log('id', this.props.item.id);
-  //   //   this.props.dispatch({
-  //   //     type: 'DELETE_USER',
-  //   //     payload: this.props.item.id,
-  //   //   });
-  //   //   alert('User Deleted');
-  //   // };
+  const handleClick = (id) => {
+    console.log('id', props.item.id);
+    alert('User Deleted');
+  };
 
   return (
     <TableRow size="small">
@@ -27,8 +22,9 @@ function UserItem(props) {
         <p>{props.item.page_role}</p>
       </TableCell>
       <TableCell align="left">
-        {/* <button onClick={handleClick(props.item.id)}> */}
-        <DeleteIcon />
+        <button onClick={() => handleClick(props.item.id)}>
+          <DeleteIcon />
+        </button>
       </TableCell>
     </TableRow>
   );

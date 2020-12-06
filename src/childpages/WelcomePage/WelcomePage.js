@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import './WelcomePage.css';
-import { Grid } from '@material-ui/core';
-import Bank from '../../components/Bank/Bank.js';
+import { Grid, Typography } from '@material-ui/core';
 
 class WelcomePage extends Component {
   componentDidMount() {
@@ -12,13 +11,6 @@ class WelcomePage extends Component {
     this.props.dispatch({
       type: 'GET_NOTE',
     });
-    // this.props.dispatch({
-    //   type: 'GET_BANK_CHORES',
-    // });
-    // this.props.dispatch({
-    //   type: 'GET_BANK_REWARDS',
-    // });
-    console.log('dispatch)');
   }
 
   handleSubmit = (event) => {
@@ -44,31 +36,32 @@ class WelcomePage extends Component {
             style={{ minHeight: '100vh' }}
           >
             <Grid item className="note" xs={12} sm={10}>
-              <h4>{this.props.store.note.message}</h4>
-              <Button
-                spacing={2}
-                className="welcomeButtons"
-                variant="outlined"
-                color="primary"
-                size="small"
-                style={{ marginRight: 20, marginTop: 2 }}
-                onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
+              <Typography
+                style={{
+                  fontFamily: 'nerko one',
+                  marginBottom: 0,
+                  marginTop: 10,
+                  fontSize: 25,
+                }}
+                component="h2"
               >
-                <h6>Chores</h6>
-              </Button>
+                {this.props.store.note.message}
+              </Typography>
+              <img
+                src="https://primebucket2020.s3.us-east-2.amazonaws.com/45d41b9e-7a26-45eb-ae03-bc4f2cef6e25_186-list-1.svg"
+                className="navBar2"
+                onClick={this.handleSubmit}
+                style={{ marginTop: 2, marginRight: 20 }}
+              ></img>
 
               {'  '}
-              <Button
-                className="welcomeButtons"
-                variant="outlined"
-                color="primary"
-                type="submit"
-                size="small"
-                style={{ marginLeft: 20 }}
-                onClick={this.handleSubmit2} //next button dispatches data to index.js and moves user to next page
-              >
-                <h6>Rewards</h6>
-              </Button>
+              <img
+                src="https://primebucket2020.s3.us-east-2.amazonaws.com/ee8b88d0-7812-49f4-9032-c66fb706e831_200-gift-3.svg"
+                className="navBar4"
+                onClick={this.handleSubmit2}
+                style={{ marginTop: 2, marginLeft: 20 }}
+              ></img>
+
               <br />
             </Grid>
           </Grid>

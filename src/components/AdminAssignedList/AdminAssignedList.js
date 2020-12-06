@@ -86,6 +86,7 @@ function AdminAssignedList(props) {
               <StyledTableCell align="left">Chore</StyledTableCell>
               <StyledTableCell align="left">Value</StyledTableCell>
               <StyledTableCell align="left">Complete</StyledTableCell>
+              <StyledTableCell align="left">Complete</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>

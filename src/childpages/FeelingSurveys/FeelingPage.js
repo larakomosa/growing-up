@@ -58,7 +58,7 @@ class FeelingPage extends Component {
               <form className="finishLine4">
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={
                       <img
                         src="https://primebucket2020.s3.us-east-2.amazonaws.com/519f81da-2b8a-4712-8726-514d1618f5e3_thunder.svg"
@@ -74,7 +74,7 @@ class FeelingPage extends Component {
                 </label>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={<div className="finishLine3"></div>}
                     labelPlacement="top"
                     type="radio"
@@ -85,10 +85,10 @@ class FeelingPage extends Component {
                 </label>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={
                       <img
-                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/b4a8a885-7e8f-49cd-bfb1-33db6a207ced_rainbow.svg"
+                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/28da7762-924b-438b-a5ed-01abd13c7e24_161-rainbow-5.svg"
                         className="finishLine"
                       ></img>
                     }
@@ -101,7 +101,7 @@ class FeelingPage extends Component {
                 </label>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={<div className="finishLine3"></div>}
                     labelPlacement="top"
                     type="radio"
@@ -112,10 +112,10 @@ class FeelingPage extends Component {
                 </label>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={
                       <img
-                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/ab03af9a-4512-49c2-a90b-b3baba63ed6c_sun1copy.svg"
+                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/0af37070-73ea-40e2-9765-e4070baeba2e_163-sun-4.svg"
                         className="finishLine2"
                       ></img>
                     }
@@ -127,7 +127,7 @@ class FeelingPage extends Component {
                   />
                 </label>
                 <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/91b14ab3-070f-4eaf-8785-02676daeb6da_arrowcopy.svg"
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/5d32aaa3-44d3-459b-9f72-bcc59821efe1_171-right-arrows.svg"
                   className="nextArrow"
                   onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
                 ></img>

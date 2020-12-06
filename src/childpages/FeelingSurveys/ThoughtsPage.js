@@ -77,12 +77,12 @@ class ThoughtsPage extends Component {
                     }
                   />{' '}
                   <img
-                    src="https://primebucket2020.s3.us-east-2.amazonaws.com/91b14ab3-070f-4eaf-8785-02676daeb6da_arrowcopy.svg"
+                    src="https://primebucket2020.s3.us-east-2.amazonaws.com/5d32aaa3-44d3-459b-9f72-bcc59821efe1_171-right-arrows.svg"
                     className="nextArrow"
                     onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
                   ></img>
                   <img
-                    src="https://primebucket2020.s3.us-east-2.amazonaws.com/0ec2a0fe-07a1-435f-98bf-54d872edd6de_arrow.svg"
+                    src="https://primebucket2020.s3.us-east-2.amazonaws.com/cc3158c1-2047-48ee-a1f7-759ee3c3f60f_172-right-arrows-1.svg"
                     className="backArrow"
                     onClick={this.handleBack} //next button dispatches data to index.js and moves user to next page
                   ></img>

@@ -29,32 +29,37 @@ class RewardListItem extends Component {
     if (this.props.item.purchase_status === false) {
       return (
         <div>
-          <img
-            src="https://primebucket2020.s3.us-east-2.amazonaws.com/2c2d847c-2150-41b3-a193-598694c35274_loupe.svg"
-            className="rewards"
-            onClick={() => this.handleClick(this.props.item.id)}
-          ></img>
           <Typography
             gutterBottom
             variant="p"
-            style={{ color: '#ee8673', fontSize: 20, marginBottom: -10 }}
+            style={{
+              color: '#FF6E79',
+              fontSize: 20,
+              marginBottom: -25,
+              marginLeft: 20,
+            }}
             component="h2"
           >
             {this.props.item.coin_price} Coins
           </Typography>
+          <img
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/174724ea-c0ea-4e4a-abe9-346a3ef847d7_191-magnifying-glass-1.svg"
+            className="rewards"
+            onClick={() => this.handleClick(this.props.item.id)}
+          ></img>
         </div>
       );
     } else {
       return (
         <div>
           <img
-            src="https://primebucket2020.s3.us-east-2.amazonaws.com/903b467f-16fd-4e41-9c8a-4b130f407cd8_balloons.svg"
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/dfbf830b-6258-4506-aa00-5954bb1856dc_189-balloons-2.svg"
             className="rewards"
           ></img>
           <Typography
             gutterBottom
             variant="p"
-            style={{ color: '#ee8673', fontSize: 20, marginBottom: -10 }}
+            style={{ color: '#FF6E79', fontSize: 20, marginBottom: -10 }}
             component="h2"
           >
             Purchased

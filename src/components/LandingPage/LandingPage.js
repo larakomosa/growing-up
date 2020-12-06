@@ -25,11 +25,11 @@ class LandingPage extends Component {
           <div className="grid-col grid-col_8">
             <p>
               Growing up is a fun, kid-friendly parent/child application that
-              assists children in middle childhood (7-11 years old) develop good
+              assists children in middle childhood (5-9 years old) develop good
               habits, practice responsibility and acknowledge their own emotions
               and feelings with positive reinforcement. Admin users assign
               chores and tasks to a child user who will complete them to earn
-              coins. A Rewards page will display a gallery of (admin input)
+              coins. A rewards page will display a gallery of (admin input)
               rewards children can purchase with earned coins.
             </p>
             <br />

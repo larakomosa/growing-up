@@ -22,7 +22,7 @@ class Bank extends Component {
     let bankChores = this.props.store.bankChores.sum;
     let bankRewards = this.props.store.bankRewards.sum;
     let total = bankChores - bankRewards;
-    return <h1>{total}</h1>;
+    return <h1>{total} Coins</h1>;
   }
 }
 export default connect(mapStoreToProps)(Bank);

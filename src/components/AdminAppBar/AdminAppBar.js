@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: 'flex-end',
     paddingBottom: theme.spacing(5),
     fontFamily: 'Nerko One',
-    color: '#524C61',
+    color: '#698399',
   },
 }));
 
@@ -77,7 +77,7 @@ const AdminAppBar = (props) => {
               aria-label="account of current user"
               edge="start"
               aria-haspopup="true"
-              onClick={() => handleMenuClick('/child/welcome')}
+              onClick={() => handleMenuClick('/user')}
               color="inherit"
             >
               <HomeIcon />

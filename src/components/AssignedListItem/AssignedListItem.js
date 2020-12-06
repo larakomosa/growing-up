@@ -43,17 +43,22 @@ class AssignedListItem extends Component {
       return (
         <div>
           <img
-            src="https://primebucket2020.s3.us-east-2.amazonaws.com/51822841-7e3f-4dc6-8595-48c53d4e0d54_finish-line.svg"
-            className="chores"
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/035d75cb-ae58-4677-a83d-37fa48e407f7_190-finish-line-1.svg"
+            className="rewards"
             onClick={() => this.handleClick(this.props.item.id)}
           ></img>
           <Typography
             gutterBottom
             variant="p"
-            style={{ color: '#ee8673', fontSize: 20, marginBottom: -10 }}
+            style={{
+              color: '#FF6E79',
+              fontSize: 20,
+              marginBottom: -25,
+              marginLeft: 20,
+            }}
             component="h2"
           >
-            Coins Value ${this.props.item.coin_value}
+            {this.props.item.coin_value} Coins
           </Typography>
         </div>
       );
@@ -61,16 +66,16 @@ class AssignedListItem extends Component {
       return (
         <div>
           <img
-            src="https://primebucket2020.s3.us-east-2.amazonaws.com/8f9f7e33-32cc-497e-be75-0846daabf8ee_piggy-bank.svg"
-            className="chores"
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/f68b4c94-daad-4d90-b667-28d3bab1ee15_194-money-bag-4.svg"
+            className="rewards"
           ></img>
           <Typography
             gutterBottom
             variant="p"
-            style={{ color: '#ee8673', fontSize: 20, marginBottom: -10 }}
+            style={{ color: '#FF6E79', fontSize: 20, marginBottom: -10 }}
             component="h2"
           >
-            ${this.props.item.coin_value} Earned
+            {this.props.item.coin_value} Earned
           </Typography>
         </div>
       );
@@ -107,7 +112,7 @@ class AssignedListItem extends Component {
     });
     swal({
       title: 'Great Job!',
-      text: 'Please confirm this chore is completed.',
+      text: 'Coins have been added to your piggy bank!',
       buttons: true,
     }).then((willSubmit) => {
       if (willSubmit) {
@@ -117,7 +122,6 @@ class AssignedListItem extends Component {
         this.props.dispatch({
           type: 'GET_BANK_REWARDS',
         });
-        swal('Great Job!');
       }
     });
   };

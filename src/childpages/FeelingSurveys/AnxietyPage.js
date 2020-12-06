@@ -54,10 +54,10 @@ class AnxietyPage extends Component {
               <form>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={
                       <img
-                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/eef3686c-b8d6-47cd-bd7c-78fb765c00b7_thunder1.svg"
+                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/b07396df-afd9-4aa0-baa0-9627f3278f58_164-thunder-2.svg"
                         className="finishLine1"
                       ></img>
                     }
@@ -70,7 +70,7 @@ class AnxietyPage extends Component {
                 </label>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={<div className="finishLine3"></div>}
                     labelPlacement="top"
                     type="radio"
@@ -81,10 +81,10 @@ class AnxietyPage extends Component {
                 </label>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={
                       <img
-                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/8e951e91-1640-4001-a1b2-b2af4736aded_cloud.svg"
+                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/7df37f94-eb8a-4dd8-a6b4-fa4c8a7caf5b_cloud.svg"
                         className="finishLine"
                       ></img>
                     }
@@ -97,7 +97,7 @@ class AnxietyPage extends Component {
                 </label>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={<div className="finishLine3"></div>}
                     labelPlacement="top"
                     type="radio"
@@ -108,10 +108,10 @@ class AnxietyPage extends Component {
                 </label>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={
                       <img
-                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/4d657412-a2eb-49b9-a381-bb2e4782b673_flower1copy.svg"
+                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/e12b1b81-d00b-4524-9816-e5a9d9f4db3d_193-flower-1.svg"
                         className="finishLine2"
                       ></img>
                     }
@@ -123,12 +123,12 @@ class AnxietyPage extends Component {
                   />
                 </label>
                 <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/91b14ab3-070f-4eaf-8785-02676daeb6da_arrowcopy.svg"
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/5d32aaa3-44d3-459b-9f72-bcc59821efe1_171-right-arrows.svg"
                   className="nextArrow"
                   onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
                 ></img>
                 <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/0ec2a0fe-07a1-435f-98bf-54d872edd6de_arrow.svg"
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/cc3158c1-2047-48ee-a1f7-759ee3c3f60f_172-right-arrows-1.svg"
                   className="backArrow"
                   onClick={this.handleSubmit2} //next button dispatches data to index.js and moves user to next page
                 ></img>

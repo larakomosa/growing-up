@@ -14,15 +14,26 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TablePagination from '@material-ui/core/TablePagination';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
   },
   container: {
-    maxHeight: 440,
+    maxHeight: 220,
   },
 });
+
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: blueGrey['700'],
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
 
 const AdminThoughts = (props) => {
   const [page, setPage] = React.useState(0);
@@ -49,24 +60,15 @@ const AdminThoughts = (props) => {
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
-          <TableHead>
+          <TableHead className={classes.head}>
             <TableRow>
-              <TableCell align="left">Date</TableCell>
-              <TableCell align="left">Thoughts</TableCell>
+              <StyledTableCell align="left">Date</StyledTableCell>
+              <StyledTableCell align="left">Thoughts</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>{htmlArray}</TableBody>
         </Table>
       </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[5, 25, 100]}
-        count={props.store.adminEmotions.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        component="div"
-        onChangePage={handleChangePage}
-        onChangeRowsPerPage={handleChangeRowsPerPage}
-      />
     </Paper>
   );
 };

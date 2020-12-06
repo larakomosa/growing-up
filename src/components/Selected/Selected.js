@@ -31,8 +31,8 @@ class Selected extends Component {
     swal({
       title: 'Success!!',
       text:
-        'Congratulations! Your purchase was successful?  Would you like to see',
-      buttons: true,
+        'Congratulations! You will get to enjoy this prize super-duper soon!',
+      buttons: 'YAY!',
     }).then((willSubmit) => {
       if (willSubmit) {
         this.props.dispatch({
@@ -61,7 +61,7 @@ class Selected extends Component {
       return (
         <div>
           <img
-            src="https://primebucket2020.s3.us-east-2.amazonaws.com/cfe439ab-af1b-43c6-9399-a05abc5d9112_button.svg"
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/6b065aaa-1f71-409b-acf6-4870787a3d32_192-buy-2.svg"
             className="buyNow1"
             onClick={() => this.handleClick(this.props.store.selected.id)} //next button dispatches data to index.js and moves user to next page
           ></img>
@@ -71,13 +71,13 @@ class Selected extends Component {
       return (
         <div>
           <img
-            src="https://primebucket2020.s3.us-east-2.amazonaws.com/903b467f-16fd-4e41-9c8a-4b130f407cd8_balloons.svg"
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/4304da7b-86d9-4712-b6b7-dbbbf16e72e2_189-balloons-2.svg"
             className="finishLine"
           ></img>
           <Typography
             gutterBottom
             variant="p"
-            style={{ color: '#ee8673' }}
+            style={{ color: '#ff6e79' }}
             component="h2"
           >
             Purchased
@@ -105,7 +105,7 @@ class Selected extends Component {
                   <h4> {this.props.store.selected.coin_price} Coins</h4>
                 </Typography>
                 <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/c8318dae-56c1-49b7-ab8b-ee25ecd3323d_left-arrowcopy.svg"
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/cc3158c1-2047-48ee-a1f7-759ee3c3f60f_172-right-arrows-1.svg"
                   className="detailsLeftArrow"
                   onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
                 ></img>
@@ -115,13 +115,15 @@ class Selected extends Component {
                   <h4>{this.props.store.selected.reward}</h4>
                 </Typography>
                 <hr />
-                <h6>{this.props.store.selected.description}</h6>
+                <Typography
+                  gutterBottom
+                  variant="p"
+                  style={{ color: '#698399' }}
+                  component="h6"
+                >
+                  {this.props.store.selected.description}
+                </Typography>
                 {this.togglingDisplay2()}
-                {/* <img
-                src="https://primebucket2020.s3.us-east-2.amazonaws.com/cfe439ab-af1b-43c6-9399-a05abc5d9112_button.svg"
-                className="buyNow1"
-                onClick={() => this.handleClick(this.props.store.selected.id)} //next button dispatches data to index.js and moves user to next page
-              ></img> */}
               </Grid>
             </Grid>
           </section>

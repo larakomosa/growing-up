@@ -19,8 +19,17 @@ class RewardsPage extends Component {
             style={{ minHeight: '100vh' }}
           >
             <Grid item xs={12} sm={10}>
-              <Typography style={{ marginTop: 20 }} component="h4">
-                <h4> Check Out These Rewards </h4>
+              <Typography
+                style={{
+                  marginTop: 20,
+                  color: '#FF6E79',
+                  fontFamily: 'Nerko One',
+                  fontSize: 35,
+                  marginBottom: 5,
+                }}
+                component="h4"
+              >
+                Prize Shop
               </Typography>
             </Grid>
             <RewardsList />

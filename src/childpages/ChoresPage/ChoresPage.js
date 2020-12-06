@@ -30,8 +30,17 @@ class ChoresPage extends Component {
           style={{ minHeight: '100vh' }}
         >
           <Grid item xs={12} sm={10}>
-            <Typography style={{ marginTop: 20 }} component="h4">
-              <h4> My Weekly Chores! </h4>
+            <Typography
+              style={{
+                marginTop: 20,
+                color: '#FF6E79',
+                fontFamily: 'Nerko One',
+                fontSize: 30,
+                marginBottom: 5,
+              }}
+              component="h4"
+            >
+              My Weekly Chores!
             </Typography>
           </Grid>
           <AssignedList />

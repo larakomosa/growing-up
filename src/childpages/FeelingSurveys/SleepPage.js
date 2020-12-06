@@ -57,10 +57,10 @@ class SleepPage extends Component {
               <form>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={
                       <img
-                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/c5a9594c-a8d2-4d0f-8b6b-84989f22ba71_night.svg"
+                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/17b83d1c-618d-4ca0-857e-0d573f27e6de_night1.svg"
                         className="finishLine"
                       ></img>
                     }
@@ -73,7 +73,7 @@ class SleepPage extends Component {
                 </label>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={<div className="finishLine3"></div>}
                     labelPlacement="top"
                     type="radio"
@@ -84,10 +84,10 @@ class SleepPage extends Component {
                 </label>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={
                       <img
-                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/a2e518af-f9b2-40e5-92a8-ec483143d159_cloudy.svg"
+                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/13627a04-7e37-4a56-affa-8dad71463a54_162-cloudy-4.svg"
                         className="finishLine"
                       ></img>
                     }
@@ -100,7 +100,7 @@ class SleepPage extends Component {
                 </label>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={<div className="finishLine3"></div>}
                     labelPlacement="top"
                     type="radio"
@@ -111,10 +111,10 @@ class SleepPage extends Component {
                 </label>
                 <label>
                   <FormControlLabel
-                    control={<Radio color="primary" />}
+                    control={<Radio color="default" />}
                     label={
                       <img
-                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/c45fd85f-3240-4771-8406-6485f88f8000_sun1.svg"
+                        src="https://primebucket2020.s3.us-east-2.amazonaws.com/0af37070-73ea-40e2-9765-e4070baeba2e_163-sun-4.svg"
                         className="finishLine"
                       ></img>
                     }
@@ -126,12 +126,12 @@ class SleepPage extends Component {
                   />
                 </label>
                 <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/91b14ab3-070f-4eaf-8785-02676daeb6da_arrowcopy.svg"
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/5d32aaa3-44d3-459b-9f72-bcc59821efe1_171-right-arrows.svg"
                   className="nextArrow"
                   onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
                 ></img>
                 <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/0ec2a0fe-07a1-435f-98bf-54d872edd6de_arrow.svg"
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/cc3158c1-2047-48ee-a1f7-759ee3c3f60f_172-right-arrows-1.svg"
                   className="backArrow"
                   onClick={this.handleSubmit2} //next button dispatches data to index.js and moves user to next page
                 ></img>

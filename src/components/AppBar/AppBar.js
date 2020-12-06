@@ -15,7 +15,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Bank from '../Bank/Bank';
+import BankModal from '../AdminAddModals/BankModal';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    color: 'translucent',
   },
   toolbar: {
     minHeight: 128,
@@ -36,23 +37,22 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    paddingBottom: 2,
+    paddingBottom: theme.spacing(5),
     color: '#524C61',
   },
   heading: {
     fontFamily: 'Nerko One',
-    color: '#524C61',
-    paddingBottom: 28,
-    alignItems: 'flex-end',
+    color: '#698399',
+    paddingBottom: 5,
   },
   navBar: {
     marginLeft: theme.spacing(3),
     marginBottom: theme.spacing(0),
   },
   piggy: {
-    marginBottom: 0,
     paddingBottom: 0,
-    alignItems: 'flex-end',
+    marginBottom: 0,
+    marginBottom: theme.spacing(0),
   },
 }));
 
@@ -89,14 +89,6 @@ const ChildAppBar = (props) => {
     setAnchorEl(null);
   };
 
-  const handleAlert = () => {
-    alert(
-      <h2>
-        <Bank />
-      </h2>
-    );
-  };
-
   return (
     <div className={classes.root}>
       <AppBar positionSticky>
@@ -110,24 +102,45 @@ const ChildAppBar = (props) => {
             color="secondary"
           >
             <img
-              src="https://primebucket2020.s3.us-east-2.amazonaws.com/23baa092-a81e-4208-ad8b-fc5508daf27b_home.svg"
+              src="https://primebucket2020.s3.us-east-2.amazonaws.com/54ebcd62-6c5d-42dc-b301-4dce9540c91b_202-stay-home-7.svg"
               className="navBar"
             ></img>
           </IconButton>
           <Box className={classes.title}>
-            <IconButton
-              className={classes.piggy}
-              aria-label="display more actions"
-              onClick={() => handleAlert()}
-              edge="center"
-              color="secondary"
-            >
-              <img
-                src="https://primebucket2020.s3.us-east-2.amazonaws.com/8f9f7e33-32cc-497e-be75-0846daabf8ee_piggy-bank.svg"
-                className="piggy"
-              ></img>
+            <IconButton>
+              <BankModal />
             </IconButton>
-            <Typography className={classes.heading} variant="h4" noWrap>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              open={open}
+              onClose={() => handleMenuClick(null)}
+            >
+              <MenuItem onClick={() => handleMenuClick()}>
+                <img
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/5d3f4d7c-a544-4190-a9cb-93f5798f2197_141-list.svg"
+                  className="navBar1"
+                ></img>
+              </MenuItem>
+            </Menu>
+            <Typography
+              className={classes.heading}
+              variant="h4"
+              style={{
+                fontFamily: 'Nerko one',
+                color: '#698399',
+              }}
+              noWrap
+            >
               ...GROWING UP
             </Typography>
           </Box>
@@ -139,7 +152,7 @@ const ChildAppBar = (props) => {
             color="secondary"
           >
             <img
-              src="https://primebucket2020.s3.us-east-2.amazonaws.com/72dd90a6-77f6-4caa-807c-a6e80c60a221_doughnut.svg"
+              src="https://primebucket2020.s3.us-east-2.amazonaws.com/d16f507d-d25c-446f-8328-0982b88e3a98_183-doughnut-7.svg"
               className="navBar"
             ></img>
           </IconButton>
@@ -159,12 +172,24 @@ const ChildAppBar = (props) => {
             onClose={() => handleMenuClick(null)}
           >
             <MenuItem onClick={() => handleMenuClick('/child/chores')}>
-              Chores
+              <img
+                src="https://primebucket2020.s3.us-east-2.amazonaws.com/45d41b9e-7a26-45eb-ae03-bc4f2cef6e25_186-list-1.svg"
+                className="navBar1"
+              ></img>
             </MenuItem>
             <MenuItem onClick={() => handleMenuClick('/child/rewards')}>
-              Rewards
+              <img
+                src="https://primebucket2020.s3.us-east-2.amazonaws.com/ee8b88d0-7812-49f4-9032-c66fb706e831_200-gift-3.svg"
+                className="navBar1"
+              ></img>
             </MenuItem>
-            <MenuItem onClick={() => handleLog('goodbye')}>LogOut</MenuItem>
+            <MenuItem onClick={() => handleLog('goodbye')}>
+              {' '}
+              <img
+                src="https://primebucket2020.s3.us-east-2.amazonaws.com/d08e29f3-645b-4448-b7b7-a59ad9e6df90_188-bye-2.svg"
+                className="navBar1"
+              ></img>
+            </MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>

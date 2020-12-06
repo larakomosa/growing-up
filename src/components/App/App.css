@@ -146,9 +146,9 @@ h6 {
 h1 {
   text-align: center;
   font-size: 2.5rem;
-  margin-top: px;
+  margin-top: 30px;
   margin-bottom: 10px;
-  color: #ee8673;
+  color: #ffda8f;
 }
 
 h2 {
@@ -156,7 +156,7 @@ h2 {
   font-size: 1.5rem;
   margin-top: 0px;
   margin-bottom: 0px;
-  color: #524c61;
+  color: #698399;
 }
 
 h4 {
@@ -164,7 +164,7 @@ h4 {
   margin-top: 10px;
   font-size: 2.5rem;
   font-weight: normal;
-  color: #524c61;
+  color: #698399;
 }
 
 h5 {
@@ -172,7 +172,7 @@ h5 {
   margin-bottom: 10px;
   font-size: 7rem;
   font-weight: normal;
-  color: #0d4b7f;
+  color: #30435b;
 }
 
 h3 {
@@ -180,7 +180,7 @@ h3 {
   font-family: 'Nerko One';
   margin-top: 0px;
   margin-bottom: 10px;
-  color: #524c61;
+  color: #698399;
   float: center;
 }
 
@@ -188,7 +188,7 @@ h6 {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 1.3rem;
-  color: #524c61;
+  color: #374c5e;
   font-family: 'Nunito';
 }
 
@@ -197,7 +197,7 @@ p {
   margin-bottom: 0px;
   font-size: 0.9rem;
   font-family: 'Nunito';
-  color: #524c61;
+  color: #698399;
 }
 
 .container {
@@ -227,11 +227,29 @@ p {
 }
 
 .navBar {
-  height: 30px;
-  width: 30px;
+  height: 37px;
+  width: 37px;
+}
+
+.navBar1 {
+  height: 50px;
+  width: 50px;
+}
+.navBar2 {
+  height: 75px;
+  width: 75px;
+}
+
+.navBar4 {
+  height: 85px;
+  width: 85px;
 }
 
 .piggy {
-  height: 30px;
-  width: 30px;
+  height: 55px;
+  width: 55px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 0px;
 }
