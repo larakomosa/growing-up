@@ -170,13 +170,13 @@ h4 {
 h5 {
   margin-top: 40px;
   margin-bottom: 10px;
-  font-size: 7rem;
+  font-size: 9rem;
   font-weight: normal;
   color: #ffda8f;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-family: 'Nerko One';
   margin-top: 0px;
   margin-bottom: 10px;
@@ -205,24 +205,24 @@ p {
 }
 
 .finishLine {
-  height: 65px;
-  width: 60px;
+  height: 90px;
+  width: 90px;
 }
 
 .finishLine1 {
-  height: 60px;
-  width: 50px;
+  height: 90px;
+  width: 90px;
 }
 
 .finishLine2 {
-  height: 50px;
-  width: 55px;
+  height: 90px;
+  width: 90px;
   margin-bottom: 5px;
 }
 
 .finishLine3 {
-  height: 62px;
-  width: 50px;
+  height: 90px;
+  width: 90px;
   margin-bottom: 5px;
 }
 
@@ -241,8 +241,13 @@ p {
 }
 
 .navBar4 {
-  height: 85px;
-  width: 85px;
+  height: 100px;
+  width: 100px;
+  margin-right: 74px;
+}
+.navBar5 {
+  height: 120px;
+  width: 120px;
 }
 
 .piggy {

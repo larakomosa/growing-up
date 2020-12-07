@@ -41,7 +41,7 @@ class WelcomePage extends Component {
                   fontFamily: 'nerko one',
                   marginBottom: 0,
                   marginTop: 10,
-                  fontSize: 25,
+                  fontSize: 45,
                 }}
                 component="h2"
               >
@@ -49,7 +49,7 @@ class WelcomePage extends Component {
               </Typography>
               <img
                 src="https://primebucket2020.s3.us-east-2.amazonaws.com/45d41b9e-7a26-45eb-ae03-bc4f2cef6e25_186-list-1.svg"
-                className="navBar2"
+                className="navBar4"
                 onClick={this.handleSubmit}
                 style={{ marginTop: 2, marginRight: 20 }}
               ></img>
@@ -57,7 +57,7 @@ class WelcomePage extends Component {
               {'  '}
               <img
                 src="https://primebucket2020.s3.us-east-2.amazonaws.com/ee8b88d0-7812-49f4-9032-c66fb706e831_200-gift-3.svg"
-                className="navBar4"
+                className="navBar5"
                 onClick={this.handleSubmit2}
                 style={{ marginTop: 2, marginLeft: 20 }}
               ></img>

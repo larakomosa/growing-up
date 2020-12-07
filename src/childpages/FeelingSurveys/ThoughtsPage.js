@@ -71,7 +71,7 @@ class ThoughtsPage extends Component {
                     variant="outlined"
                     margin="normal"
                     multiline
-                    rows={2}
+                    rows={4}
                     size="small"
                     onChange={(event) =>
                       this.handleChangeFor('comments', event)

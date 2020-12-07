@@ -74,5 +74,19 @@ emotionsRouter.get('/child/notes', (req, res) => {
       res.sendStatus(500);
     });
 });
+emotionsRouter.delete('/notes/:Id', (req, res) => {
+  const rewardsId = req.params.Id;
+  const queryText = `DELETE FROM "rewards" WHERE "id"=$1;`;
+
+  pool
+    .query(queryText, [rewardsId])
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
 
 module.exports = emotionsRouter;
