@@ -59,6 +59,7 @@ class LoginForm extends Component {
           <TextField
             fullWidth
             size="small"
+            type="password"
             id="password"
             label="Password"
             value={this.state.password}

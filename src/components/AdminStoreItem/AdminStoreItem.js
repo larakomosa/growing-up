@@ -19,7 +19,11 @@ function AdminStoreItem(props) {
       {columnKeys.map((column, index) => {
         const value = props.rowData[column];
 
-        return <TableCell key={index}>{value.toString()}</TableCell>;
+        return (
+          <TableCell key={index}>
+            <p>{value.toString()}</p>
+          </TableCell>
+        );
       })}
     </TableRow>
   );

@@ -27,15 +27,15 @@ class RewardConfirmationPage extends Component {
             gutterBottom
             variant="p"
             style={{
+              color: '#ff6e79',
               fontSize: 30,
-              fontStyle: 'italic',
-              marginTop: '15px',
-              fontFamily: 'Nunito',
-              color: blueGrey,
+              paddingTop: 15,
+              fontFamily: 'nunito',
+              fontWeight: 'bold',
             }}
             component="h2"
           >
-            Child Preview
+            You Reward has been added!
           </Typography>
           <RewardConfirmation />
         </Grid>{' '}

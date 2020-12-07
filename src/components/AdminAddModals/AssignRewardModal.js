@@ -43,7 +43,6 @@ const AssignRewardModal = (props) => {
   };
 
   const handleClose = () => {
-    swal('Thank you! This Reward has been added!');
     setOpen(false);
   };
 
@@ -71,6 +70,7 @@ const AssignRewardModal = (props) => {
           marginBottom: '5px',
           width: '380px',
           marginTop: '15px',
+          marginLeft: '0px',
         }}
       >
         Assign Rewards Here

@@ -8,6 +8,7 @@ import Divider from '@material-ui/core/Divider';
 import { LineChart } from 'react-chartkick';
 import 'chart.js';
 import PersonSelect3 from '../../components/AdminStoreList/PersonSelect3';
+import ParentNote from '../../components/AdminAddModals/ParentNote';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 class EmotionsPage extends Component {
   state = {
@@ -76,32 +77,29 @@ class EmotionsPage extends Component {
           </Typography>
           <Grid container spacing={1}>
             <Grid item xs={2} sm={1}></Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={5}>
               <div>
+                <ParentNote />
                 <PersonSelect3 />
                 <AdminThoughts />
               </div>
               <hr />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={5}>
               <div>
                 <PersonSelect3 />
               </div>
               <LineChart
-                colors={['', '#666']}
+                colors={['#ff6e79', '#698399']}
                 data={{
-                  '2020-11-23': 5,
-                  '2020-11-24': 3,
-                  '2020-11-25': 4,
-                  '2020-11-26': 5,
-                  '2020-11-27': 2,
-                  '2020-11-28': 4,
                   '2020-11-29': 4,
                   '2020-11-30': 5,
                   '2020-12-01': 2,
                   '2020-12-02': 4,
                   '2020-12-03': 4,
                   '2020-12-04': 5,
+                  '2020-12-05': 4,
+                  '2020-12-06': 4,
                 }}
               />
               <hr />

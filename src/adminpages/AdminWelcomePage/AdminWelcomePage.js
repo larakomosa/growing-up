@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import './WelcomePage.css';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import UserList from '../../components/UserList/UserList.js';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 class AdminWelcomePage extends Component {
   componentDidMount() {
@@ -37,7 +38,20 @@ class AdminWelcomePage extends Component {
   render() {
     return (
       <div>
-        <h2>Welcome {this.props.store.user.username}</h2>
+        <Typography
+          gutterBottom
+          variant="p"
+          style={{
+            color: blueGrey,
+            fontSize: 30,
+            paddingTop: 15,
+            fontFamily: 'nunito',
+            fontWeight: 'bold',
+          }}
+          component="h2"
+        >
+          Welcome {this.props.store.user.username}
+        </Typography>
         <Grid container spacing={2} alignContent="center">
           <Grid item xs={6} sm={1}></Grid>
           <Grid item xs={12} sm={4}>

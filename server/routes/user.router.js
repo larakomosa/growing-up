@@ -51,6 +51,7 @@ router.post('/logout', (req, res) => {
 router.get('/list', (req, res) => {
   const queryText = `SELECT "user".id, "user".username, "page_role".page_role FROM "user"
 JOIN "page_role" ON "user".page_role_id = "page_role".id 
+WHERE "user".page_role_id = 4 
 ORDER BY "user".id`;
 
   pool

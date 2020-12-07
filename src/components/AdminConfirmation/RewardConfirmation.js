@@ -35,7 +35,7 @@ class RewardConfirmation extends Component {
                   <h4> {this.props.store.rewardConf.coin_price} Coins</h4>
                 </Typography>
                 <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/c8318dae-56c1-49b7-ab8b-ee25ecd3323d_left-arrowcopy.svg"
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/cc3158c1-2047-48ee-a1f7-759ee3c3f60f_172-right-arrows-1.svg"
                   className="detailsLeftArrow"
                   onClick={this.handleAdd} //next button dispatches data to index.js and moves user to next page
                 ></img>
@@ -47,7 +47,7 @@ class RewardConfirmation extends Component {
                 <hr />
                 <h6>{this.props.store.rewardConf.description}</h6>
                 <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/cfe439ab-af1b-43c6-9399-a05abc5d9112_button.svg"
+                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/6b065aaa-1f71-409b-acf6-4870787a3d32_192-buy-2.svg"
                   className="buyNow1"
                 ></img>
               </Grid>

@@ -15,13 +15,14 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import TablePagination from '@material-ui/core/TablePagination';
 import blueGrey from '@material-ui/core/colors/blueGrey';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
   },
   container: {
-    maxHeight: 220,
+    maxHeight: 300,
   },
 });
 
@@ -29,9 +30,14 @@ const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: blueGrey['700'],
     color: theme.palette.common.white,
+    fontFamily: 'nunito',
   },
   body: {
     fontSize: 14,
+    fontFamily: 'nunito',
+  },
+  cells: {
+    fontFamily: 'nunito',
   },
 }))(TableCell);
 
@@ -59,14 +65,23 @@ const AdminThoughts = (props) => {
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table">
+        <Table
+          stickyHeader
+          aria-label="sticky table"
+          size="small"
+          fontFamily="nunito"
+        >
           <TableHead className={classes.head}>
             <TableRow>
               <StyledTableCell align="left">Date</StyledTableCell>
               <StyledTableCell align="left">Thoughts</StyledTableCell>
+              <StyledTableCell align="left">
+                {' '}
+                <DeleteIcon />
+              </StyledTableCell>
             </TableRow>
           </TableHead>
-          <TableBody>{htmlArray}</TableBody>
+          <TableBody className={classes.cells}>{htmlArray}</TableBody>
         </Table>
       </TableContainer>
     </Paper>
