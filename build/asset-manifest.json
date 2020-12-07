@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0b64f156.chunk.css",
+    "main.js": "/static/js/main.117bc046.chunk.js",
+    "main.js.map": "/static/js/main.117bc046.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ddf8fe10.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ddf8fe10.js.map",
+    "static/js/2.e9d74341.chunk.js": "/static/js/2.e9d74341.chunk.js",
+    "static/js/2.e9d74341.chunk.js.map": "/static/js/2.e9d74341.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.49ef0ff7f9818875e3cb96313d0504d2.js": "/precache-manifest.49ef0ff7f9818875e3cb96313d0504d2.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.0b64f156.chunk.css.map": "/static/css/main.0b64f156.chunk.css.map",
+    "static/js/2.e9d74341.chunk.js.LICENSE.txt": "/static/js/2.e9d74341.chunk.js.LICENSE.txt",
+    "static/media/surveys.css": "/static/media/3.9375494a.png",
+    "static/media/GoodbyePage.css": "/static/media/7.99476a2f.jpg",
+    "static/media/App.css": "/static/media/background.56336a84.jpg",
+    "static/media/WelcomePage.css": "/static/media/final.d3629176.png",
+    "static/media/Header.css": "/static/media/header6.d3f26177.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ddf8fe10.js",
+    "static/js/2.e9d74341.chunk.js",
+    "static/css/main.0b64f156.chunk.css",
+    "static/js/main.117bc046.chunk.js"
+  ]
+}
