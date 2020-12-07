@@ -27,7 +27,7 @@ assignedRouter.get('/child', (req, res) => {
 JOIN "assigned" ON "assigned".chore_id = "chores".id
 JOIN "category" ON "chores".category_id = "category".id
 WHERE "assigned".child_id = $1
-ORDER BY "chores".coin_value`;
+ORDER BY "assigned".id`;
 
   pool
     .query(queryText, [req.user.id])

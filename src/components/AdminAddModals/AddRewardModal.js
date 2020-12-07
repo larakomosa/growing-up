@@ -64,7 +64,7 @@ const AddRewardModal = (props) => {
         type="button"
         onClick={handleOpen}
         style={{
-          color: blueGrey['700'],
+          color: '#ff6e79',
           marginBottom: '5px',
           marginTop: '-40px',
           float: 'right',

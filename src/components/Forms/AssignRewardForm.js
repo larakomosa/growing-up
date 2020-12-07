@@ -60,6 +60,7 @@ class AssignRewardForm extends Component {
     ) {
       swal('Please complete all input fields');
     } else {
+      swal('Thank you! This reward has been assigned!');
       this.props.dispatch({
         type: 'ASSIGN_STORE',
         payload: this.state.storeAssign,

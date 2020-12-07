@@ -65,7 +65,7 @@ const AppBarHome = (props) => {
             aria-label="display more actions"
             onClick={handleMenu}
             edge="end"
-            color="inherit"
+            style={{ color: '#ff6e79' }}
           >
             <MenuIcon />
           </IconButton>

@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 200,
     maxWidth: 400,
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid blue',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
@@ -43,7 +42,6 @@ const AssignChoreModal = (props) => {
   };
 
   const handleClose = () => {
-    swal('Thank you! This chore has been assigned!');
     setOpen(false);
   };
 

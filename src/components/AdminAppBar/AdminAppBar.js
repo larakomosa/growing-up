@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'flex-end',
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(2),
-    color: '#524C61',
+    color: '#ff6e79',
   },
   title: {
     flexGrow: 1,
@@ -109,19 +109,21 @@ const AdminAppBar = (props) => {
               onClose={() => handleMenuClick(null)}
             >
               <MenuItem onClick={() => handleMenuClick('/admin/rewards')}>
-                Rewards
+                <p>Rewards</p>
               </MenuItem>
               <MenuItem onClick={() => handleMenuClick('/admin/chores')}>
-                Chores
+                <p> Chores</p>
               </MenuItem>
               <MenuItem onClick={() => handleMenuClick('/admin/assign')}>
-                Assign
+                <p> Assign</p>
               </MenuItem>
               <MenuItem onClick={() => handleMenuClick('/admin/emotions')}>
-                Emotions
+                <p> Emotions</p>
               </MenuItem>
 
-              <MenuItem onClick={() => handleLog('/user')}>LogOut</MenuItem>
+              <MenuItem onClick={() => handleLog('/user')}>
+                <p>LogOut</p>
+              </MenuItem>
             </Menu>
           </Toolbar>
         </AppBar>

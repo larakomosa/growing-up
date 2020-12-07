@@ -30,6 +30,7 @@ const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: blueGrey['700'],
     color: theme.palette.common.white,
+    fontFamily: 'nunito',
   },
   body: {
     fontSize: 14,

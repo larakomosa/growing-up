@@ -27,8 +27,14 @@ function PersonSelect3(props) {
     <Grid container justify="center">
       <Grid item xs={10}>
         <FormControl fullWidth size="small" variant="outlined">
-          <InputLabel id="person-select-outlined-label">Person</InputLabel>
+          <InputLabel
+            style={{ color: '#ff6e79', fontFamily: 'nunito' }}
+            id="person-select-outlined-label"
+          >
+            Child
+          </InputLabel>
           <Select
+            style={{ color: '#ff6e79', fontFamily: 'nunito' }}
             labelId="person-select-outlined-label"
             id="person-select-outlined"
             value={personSelected}
@@ -36,10 +42,14 @@ function PersonSelect3(props) {
             label="Person"
           >
             <MenuItem value="">
-              <em>Select a Person</em>
+              <p>Select a Child</p>
             </MenuItem>
-            <MenuItem value="15">Gabriel Robert Komosa</MenuItem>
-            <MenuItem value="14">Oliver James Komosa</MenuItem>
+            <MenuItem value="15">
+              <p>Gabriel Robert Komosa</p>
+            </MenuItem>
+            <MenuItem value="14">
+              <p>Oliver James Komosa</p>
+            </MenuItem>
           </Select>
         </FormControl>
       </Grid>

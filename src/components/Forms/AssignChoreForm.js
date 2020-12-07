@@ -60,6 +60,7 @@ class AssignChoreForm extends Component {
     ) {
       swal('Please complete all input fields');
     } else {
+      swal('Thank you! This chore has been assigned!');
       this.props.dispatch({
         type: 'ASSIGN_CHORE',
         payload: this.state.choreAssign,
@@ -76,6 +77,7 @@ class AssignChoreForm extends Component {
           <TextField
             fullWidth
             size="small"
+            style={{ color: '#698399', fontFamily: 'nunito' }}
             id="outlined-select-currency-native"
             value={this.state.choreAssign.child_id}
             select
@@ -98,6 +100,7 @@ class AssignChoreForm extends Component {
           <TextField
             fullWidth
             size="small"
+            style={{ color: '#698399', fontFamily: 'nunito' }}
             id="outlined-select-currency-native"
             value={this.state.choreAssign.chore_id}
             select
@@ -119,7 +122,7 @@ class AssignChoreForm extends Component {
         <div className="buttonControl">
           <Button
             variant="outlined"
-            color="primary"
+            style={{ color: '#698399', fontFamily: 'nunito' }}
             size="Medium"
             type="button"
             onClick={this.handleSubmitting}
@@ -128,8 +131,8 @@ class AssignChoreForm extends Component {
           </Button>{' '}
           <Button
             variant="outlined"
-            color="primary"
             size="Medium"
+            style={{ color: '#698399', fontFamily: 'nunito' }}
             type="button"
             onClick={this.handleCancel}
           >

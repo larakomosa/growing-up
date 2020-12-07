@@ -66,7 +66,7 @@ class AssignedListItem extends Component {
       return (
         <div>
           <img
-            src="https://primebucket2020.s3.us-east-2.amazonaws.com/f68b4c94-daad-4d90-b667-28d3bab1ee15_194-money-bag-4.svg"
+            src="https://primebucket2020.s3.us-east-2.amazonaws.com/a054d7af-7efd-45a9-aa07-5b3613172ca3_money-bag.svg"
             className="rewards"
           ></img>
           <Typography
