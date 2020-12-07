@@ -22,7 +22,7 @@ const useStyles = makeStyles({
     padding: '8px 0 0',
   },
   container: {
-    maxHeight: 290,
+    maxHeight: 900,
   },
 });
 
@@ -30,6 +30,7 @@ const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: blueGrey['700'],
     color: theme.palette.common.white,
+    fontFamily: 'nunito',
   },
   body: {
     fontSize: 14,
@@ -86,7 +87,6 @@ function AdminAssignedList(props) {
               <StyledTableCell align="left">Chore</StyledTableCell>
               <StyledTableCell align="left">Value</StyledTableCell>
               <StyledTableCell align="left">Complete</StyledTableCell>
-              <StyledTableCell align="left">Complete</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -98,7 +98,7 @@ function AdminAssignedList(props) {
       </TableContainer>
 
       <TablePagination
-        rowsPerPageOptions={[3, 5, 10]}
+        rowsPerPageOptions={[3, 5, 15]}
         component="div"
         count={props.store.adminAssigned.length}
         rowsPerPage={rowsPerPage}

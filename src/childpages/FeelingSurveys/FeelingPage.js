@@ -62,7 +62,7 @@ class FeelingPage extends Component {
                     label={
                       <img
                         src="https://primebucket2020.s3.us-east-2.amazonaws.com/519f81da-2b8a-4712-8726-514d1618f5e3_thunder.svg"
-                        className="finishLine1"
+                        className="finishLine"
                       ></img>
                     }
                     labelPlacement="top"
@@ -116,7 +116,7 @@ class FeelingPage extends Component {
                     label={
                       <img
                         src="https://primebucket2020.s3.us-east-2.amazonaws.com/0af37070-73ea-40e2-9765-e4070baeba2e_163-sun-4.svg"
-                        className="finishLine2"
+                        className="finishLine"
                       ></img>
                     }
                     labelPlacement="top"

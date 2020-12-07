@@ -19,7 +19,11 @@ function AdminChoreItem(props) {
       {columnKeys.map((column, index) => {
         const value = props.rowData[column];
 
-        return <TableCell key={index}>{value}</TableCell>;
+        return (
+          <TableCell key={index}>
+            <p>{value}</p>
+          </TableCell>
+        );
       })}
     </TableRow>
   );

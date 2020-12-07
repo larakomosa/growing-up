@@ -65,6 +65,7 @@ class ThoughtsPage extends Component {
                   <TextField
                     className="textField1"
                     fullWidth
+                    style={{ color: '#ff6e79', fontFamily: 'nunito' }}
                     label="Thoughts"
                     id="outlined-basic"
                     variant="outlined"

@@ -30,6 +30,7 @@ const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: blueGrey['700'],
     color: theme.palette.common.white,
+    fontFamily: 'nunito',
   },
   body: {
     fontSize: 14,
@@ -78,7 +79,9 @@ const AdminRewardsList = (props) => {
         <Table stickyHeader aria-label="sticky table" size="small">
           <TableHead>
             <TableRow>
-              <StyledTableCell align="left">Reward</StyledTableCell>
+              <StyledTableCell style={{ width: '20%' }} align="left">
+                Reward
+              </StyledTableCell>
               <StyledTableCell align="left">Value</StyledTableCell>
               <StyledTableCell align="left">Description</StyledTableCell>
             </TableRow>
