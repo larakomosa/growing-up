@@ -16,6 +16,8 @@ const bankRouter = require('./routes/bank.router');
 const assignedRouter = require('./routes/assigned.router');
 const storeRouter = require('./routes/store.router');
 const rolesRouter = require('./routes/roles.router');
+const imageURLRouter = require('./routes/image-router');
+const uploaders3Router = require('react-dropzone-s3-uploader/s3router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -37,6 +39,16 @@ app.use('/api/bank', bankRouter);
 app.use('/api/assigned', assignedRouter);
 app.use('/api/store', storeRouter);
 app.use('/api/roles', rolesRouter);
+app.use('/api/imageurl', imageURLRouter);
+app.use(
+  '/s3',
+  uploaders3Router({
+    bucket: 'primebucket2020', // required
+    region: 'us-east-2', // optional
+    headers: { 'Access-Control-Allow-Origin': '*' }, // optional
+    ACL: `public-read`, // this is the default - set to `public-read` to let anyone view uploads
+  })
+);
 
 // Serve static files
 app.use(express.static('build'));

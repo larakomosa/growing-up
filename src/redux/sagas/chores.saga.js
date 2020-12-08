@@ -88,11 +88,9 @@ function* postChore(action) {
     yield put({ type: 'ERROR_RESET' });
     const response = yield axios.post(`/api/chores`, action.payload);
     console.log(response.data);
-
-    // yield put({
-    //   type: 'SET_CHORES',
-    //   payload: response.data,
-    // });
+    yield put({
+      type: 'GET_CHORES',
+    });
   } catch (err) {
     console.log('GET all movies error', err);
     yield put({

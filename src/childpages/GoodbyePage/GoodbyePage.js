@@ -28,7 +28,7 @@ class GoodbyePage extends Component {
           style={{ minHeight: '100vh' }}
         >
           <Grid item xs={12} sm={10}>
-            <h5>Goodbye!</h5>
+            <h5>Goodbye Gabe!</h5>
             <img
               src="https://primebucket2020.s3.us-east-2.amazonaws.com/54ebcd62-6c5d-42dc-b301-4dce9540c91b_202-stay-home-7.svg"
               className="goodbyeHome"

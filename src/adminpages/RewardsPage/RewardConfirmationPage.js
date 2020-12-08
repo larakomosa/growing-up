@@ -35,7 +35,7 @@ class RewardConfirmationPage extends Component {
             }}
             component="h2"
           >
-            You Reward has been added!
+            Your Reward has been added!
           </Typography>
           <RewardConfirmation />
         </Grid>{' '}

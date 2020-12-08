@@ -10,7 +10,6 @@ function* getBankRewards(action) {
       type: 'SET_BANK_REWARDS',
       payload: selected.data[0],
     });
-    console.log('hi', selected.data[0]);
   } catch (err) {
     console.log(err);
     yield put({
@@ -29,7 +28,6 @@ function* getBankChores(action) {
       type: 'SET_BANK_CHORES',
       payload: selected.data[0],
     });
-    console.log('hi', selected.data[0]);
   } catch (err) {
     console.log(err);
     yield put({

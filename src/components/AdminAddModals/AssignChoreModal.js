@@ -58,7 +58,8 @@ const AssignChoreModal = (props) => {
     <div>
       <Button
         variant="outlined"
-        size="Medium"
+        fullWidth
+        size="medium"
         align="center"
         type="button"
         onClick={handleOpen}
@@ -67,7 +68,6 @@ const AssignChoreModal = (props) => {
           fontFamily: 'nunito',
           color: 'white',
           marginBottom: '5px',
-          width: '380px',
           marginTop: '15px',
         }}
       >

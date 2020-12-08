@@ -1,8 +1,7 @@
-const rewards  = (state = [], action) => {
-  console.log('saga')
+const rewards = (state = [], action) => {
   switch (action.type) {
     case 'SET_REWARDS':
-      return action.payload; 
+      return action.payload;
     default:
       return state;
   }
