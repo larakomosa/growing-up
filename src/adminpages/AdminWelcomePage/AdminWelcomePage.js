@@ -10,12 +10,8 @@ import blueGrey from '@material-ui/core/colors/blueGrey';
 
 class AdminWelcomePage extends Component {
   componentDidMount() {
-    //"GETS" movies on page load
     this.props.dispatch({
-      type: 'GET_NOTE',
-    });
-    this.props.dispatch({
-      type: 'GET_USERS',
+      type: 'GET_FULL_LIST',
     });
     console.log('dispatch)');
   }
@@ -40,7 +36,6 @@ class AdminWelcomePage extends Component {
       <div>
         <Typography
           gutterBottom
-          variant="p"
           style={{
             color: blueGrey,
             fontSize: 30,

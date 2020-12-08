@@ -69,9 +69,9 @@ const AdminAppBar = (props) => {
 
   return (
     <div className="adminFixed">
-      <div className={classes.root}>
+      <div className={classes.root} nowrap>
         <AppBar position="static">
-          <Toolbar className={classes.toolbar}>
+          <Toolbar className={classes.toolbar} nowrap>
             <IconButton
               className="home"
               aria-label="account of current user"

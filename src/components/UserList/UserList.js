@@ -33,7 +33,7 @@ const UserList = (props) => {
 
   let htmlArray = null;
   if (props.store.userList) {
-    const htmlArray = props.store.userList.map((item, index) => {
+    const htmlArray = props.store.fullList.map((item, index) => {
       return <UserItem key={index} item={item} />;
     });
 
@@ -49,13 +49,13 @@ const UserList = (props) => {
             <TableHead backgroundColor="blueGrey">
               <TableRow>
                 <TableCell align="left">
-                  <h6>User ID</h6>
+                  <p>User ID</p>
                 </TableCell>
                 <TableCell align="left">
-                  <h6>Username</h6>
+                  <p>Username</p>
                 </TableCell>
                 <TableCell align="left" colSpan={2}>
-                  <h6>Page_Role</h6>
+                  <p>Page_Role</p>
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -75,7 +75,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     componentDidMount: () =>
       dispatch({
-        type: 'GET_USERS',
+        type: 'GET_FULL_LIST',
       }),
   };
 };

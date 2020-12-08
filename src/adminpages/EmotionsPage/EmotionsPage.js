@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import AdminThoughts from '../../components/AdminThoughtsList/AdminThoughtsList.js';
-// import  from '../../components/AdminStoreList/AdminStoreList.js';
-import { Button, Container, Grid, Typography } from '@material-ui/core';
-import Divider from '@material-ui/core/Divider';
+import { Container, Grid, Typography } from '@material-ui/core';
 import { LineChart } from 'react-chartkick';
 import 'chart.js';
 import PersonSelect3 from '../../components/AdminStoreList/PersonSelect3';

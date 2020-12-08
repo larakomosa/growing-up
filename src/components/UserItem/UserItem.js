@@ -22,9 +22,7 @@ function UserItem(props) {
         <p>{props.item.page_role}</p>
       </TableCell>
       <TableCell align="left">
-        <button onClick={() => handleClick(props.item.id)}>
-          <DeleteIcon />
-        </button>
+        <DeleteIcon onClick={() => handleClick(props.item.id)}></DeleteIcon>
       </TableCell>
     </TableRow>
   );

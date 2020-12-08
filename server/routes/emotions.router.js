@@ -41,12 +41,27 @@ emotionsRouter.post('/', (req, res) => {
     });
 });
 
+emotionsRouter.delete('/:Id', (req, res) => {
+  const surveyId = req.params.Id;
+  const queryText = `DELETE FROM "emotions" WHERE "id"=$1;`;
+
+  pool
+    .query(queryText, [surveyId])
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
 emotionsRouter.post('/child/notes', (req, res) => {
   const notes = req.body;
   const queryText = `INSERT INTO "parentNotes" ("child_id", "admin_id", "message") 
     VALUES ($1, $2,$3)`;
 
-  const queryArray = [notes.child_id, notes.admin_id, notes.message];
+  const queryArray = [notes.child_id, req.user.id, notes.message];
 
   pool
     .query(queryText, queryArray)

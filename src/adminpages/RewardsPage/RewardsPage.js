@@ -29,18 +29,9 @@ class AddPage extends Component {
       <Container>
         <section>
           <Grid container spacing={8}>
-            {/* <Grid item xs={12} sm={}>
-              <h2>Chore List</h2>
-              <AdminChoresModal />
-              <div>
-                <AdminChoreList refresh={this.handleRefresh} />
-              </div>
-              <hr />
-            </Grid> */}
             <Grid item xs={12} sm={12}>
               <Typography
                 gutterBottom
-                variant="p"
                 style={{
                   color: blueGrey,
                   fontSize: 28,

@@ -48,6 +48,23 @@ router.post('/logout', (req, res) => {
   res.sendStatus(200);
 });
 
+router.get('/fullList', (req, res) => {
+  const queryText = `SELECT "user".id, "user".username, "page_role".page_role FROM "user"
+JOIN "page_role" ON "user".page_role_id = "page_role".id 
+ORDER BY "user".id`;
+
+  pool
+    .query(queryText)
+    .then((dbResponse) => {
+      console.log(dbResponse);
+      res.send(dbResponse.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus('Server Side 1 Movie Error', 500);
+    });
+});
+
 router.get('/list', (req, res) => {
   const queryText = `SELECT "user".id, "user".username, "page_role".page_role FROM "user"
 JOIN "page_role" ON "user".page_role_id = "page_role".id 

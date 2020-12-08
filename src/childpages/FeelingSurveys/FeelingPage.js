@@ -55,7 +55,8 @@ class FeelingPage extends Component {
           >
             <div className="welcome1">
               <h3>How do you feel today?</h3>
-              <form className="finishLine4">
+              <form>
+                <div className="finishLine4"> </div>
                 <label>
                   <FormControlLabel
                     control={<Radio color="default" />}
@@ -126,12 +127,14 @@ class FeelingPage extends Component {
                     onChange={this.handleOptionChange}
                   />
                 </label>
-                <img
-                  src="https://primebucket2020.s3.us-east-2.amazonaws.com/5d32aaa3-44d3-459b-9f72-bcc59821efe1_171-right-arrows.svg"
-                  className="nextArrow"
-                  onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
-                ></img>
-                <div className="finishLine4"></div>
+                <div className="finishLine4">
+                  {' '}
+                  <img
+                    src="https://primebucket2020.s3.us-east-2.amazonaws.com/5d32aaa3-44d3-459b-9f72-bcc59821efe1_171-right-arrows.svg"
+                    className="nextArrow"
+                    onClick={this.handleSubmit} //next button dispatches data to index.js and moves user to next page
+                  ></img>
+                </div>
               </form>
             </div>
           </Grid>

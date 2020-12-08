@@ -24,17 +24,29 @@ function* fetchUser() {
   }
 }
 
-function* getUsers(action) {
-  console.log('made it to user saga', action);
+function* getFullList(action) {
   try {
-    console.log('selected', action);
+    const selected = yield axios.get(`/api/user/fullList`);
+    yield put({
+      type: 'SET_FULL_LIST',
+      payload: selected.data,
+    });
+  } catch (err) {
+    yield put({
+      type: 'SET_ERROR',
+      payload: 'Could not get Movie Details!!!',
+    });
+  }
+}
+
+function* getUsers(action) {
+  try {
     const selected = yield axios.get(`/api/user/list`);
     yield put({
       type: 'SET_USERS',
       payload: selected.data,
     });
   } catch (err) {
-    console.log(err);
     yield put({
       type: 'SET_ERROR',
       payload: 'Could not get Movie Details!!!',
@@ -45,6 +57,7 @@ function* getUsers(action) {
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
   yield takeLatest('GET_USERS', getUsers);
+  yield takeLatest('GET_FULL_LIST', getFullList);
 }
 
 export default userSaga;

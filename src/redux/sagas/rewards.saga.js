@@ -56,7 +56,7 @@ function* getAdminRewards(action) {
     console.log('GET all movies error', err);
     yield put({
       type: 'ERROR_MSG',
-      payload: 'There was a problem getting your movies!! Please try again.',
+      payload: 'There was problem getting your rewards.',
     });
   }
 }

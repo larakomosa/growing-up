@@ -61,7 +61,7 @@ const AdminChoreModal = (props) => {
     <div>
       <Button
         variant="outlined"
-        size="Medium"
+        size="medium"
         align="center"
         type="button"
         onClick={handleOpen}

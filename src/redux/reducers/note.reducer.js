@@ -1,8 +1,7 @@
 const note = (state = [], action) => {
-  console.log('saga')
   switch (action.type) {
     case 'SET_NOTE':
-      return action.payload; 
+      return action.payload;
     default:
       return state;
   }

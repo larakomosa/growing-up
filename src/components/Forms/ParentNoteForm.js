@@ -43,8 +43,8 @@ class ParentNoteForm extends Component {
 
     if (
       //requires user to fill all fields
-      this.state.newReward.child_id === '' ||
-      this.state.newReward.message === ''
+      this.state.newNote.child_id === '' ||
+      this.state.newNote.message === ''
     ) {
       swal('Please complete all input fields');
     } else {
