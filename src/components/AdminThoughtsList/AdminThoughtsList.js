@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 import AdminThoughtsItem from '../AdminThoughtsItem/AdminThoughtsItem.js';
 // import '../AdminChoreItem/ChoreItem.css';
-import { withStyles, createStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -13,7 +12,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import TablePagination from '@material-ui/core/TablePagination';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 import DeleteIcon from '@material-ui/icons/Delete';
 
@@ -42,18 +40,7 @@ const StyledTableCell = withStyles((theme) => ({
 }))(TableCell);
 
 const AdminThoughts = (props) => {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const classes = useStyles();
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
 
   let htmlArray = null;
   if (props.store.adminRewards) {

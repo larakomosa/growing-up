@@ -2,30 +2,24 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 function* postSurvey(action) {
-  console.log('made it to survey');
-  console.log('payload', action.payload);
   try {
     yield put({ type: 'ERROR_RESET' });
     const response = yield axios.post(`/api/emotions`, action.payload);
-    console.log(response.data);
-    // version of a dispatch = put
     yield put({
       type: 'SET_SURVEY',
       payload: response.data,
     });
   } catch (err) {
-    console.log('GET all movies error', err);
+    console.log(err);
     yield put({
       type: 'ERROR_MSG',
-      payload: 'There was a problem getting your movies!! Please try again.',
+      payload: 'There was a problem posting your Suvey.',
     });
   }
 }
 
 function* getEmotions(action) {
-  console.log('selected', action);
   try {
-    console.log('selected', action);
     const selected = yield axios.get(`/api/emotions/${action.payload}`);
     yield put({
       type: 'SET_SURVEY',
@@ -35,14 +29,23 @@ function* getEmotions(action) {
     console.log(err);
     yield put({
       type: 'SET_ERROR',
-      payload: 'Could not get Movie Details!!!',
+      payload: 'Could not get Emotions Survey',
     });
+  }
+}
+
+function* deleteSurveyItem(action) {
+  try {
+    const selected = yield axios.delete(`/api/emotions/${action.payload}`);
+  } catch (err) {
+    console.log('Error deleting survey:', err);
   }
 }
 
 function* surveySaga() {
   yield takeLatest('POST_SURVEY', postSurvey);
   yield takeLatest('GET_SURVEY', getEmotions);
+  yield takeLatest('DELETE_SURVEY_ITEM', deleteSurveyItem);
 }
 
 export default surveySaga;

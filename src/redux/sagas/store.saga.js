@@ -20,8 +20,6 @@ function* getAdminStore(action) {
 }
 
 function* assignStore(action) {
-  console.log('made it to reward survey');
-  console.log('payload', action.payload);
   try {
     yield put({ type: 'ERROR_RESET' });
     const response = yield axios.post(`/api/store`, action.payload);

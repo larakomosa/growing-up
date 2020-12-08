@@ -59,16 +59,16 @@ const ParentNote = (props) => {
     <div>
       <Button
         variant="outlined"
-        size="Medium"
+        size="medium"
         align="center"
         type="button"
+        fullWidth
         onClick={handleOpen}
         style={{
           backgroundColor: blueGrey['700'],
           fontFamily: 'nunito',
           color: 'white',
           marginBottom: '20px',
-          width: '320px',
           marginTop: '0px',
         }}
       >
