@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import AdminRewardsItem from '../AdminRewardsItem/AdminRewardsItem.js';
-// import '../AdminChoreItem/ChoreItem.css';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import {
   Paper,
@@ -45,7 +43,7 @@ const AdminRewardsList = (props) => {
 
   useEffect(() => {
     dispatch({ type: 'GET_REWARD_TABLE' });
-  }, []);
+  });
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);

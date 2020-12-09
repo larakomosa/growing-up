@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Grid, Typography } from '@material-ui/core';
-import { withRouter } from 'react-router-dom';
+import { Grid, Typography } from '@material-ui/core';
+
 import RewardConfirmation from '../../components/AdminConfirmation/RewardConfirmation.js';
-import blueGrey from '@material-ui/core/colors/blueGrey';
 
 class RewardConfirmationPage extends Component {
   handleBack = (event) => {

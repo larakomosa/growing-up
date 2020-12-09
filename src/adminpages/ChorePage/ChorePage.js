@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import AdminChoreList from '../../components/AdminChoreList/AdminChoreList.js';
 import AdminChoresModal from '../../components/AdminAddModals/AddChoreModal.js';
 import blueGrey from '@material-ui/core/colors/blueGrey';
-
-import UserList from '../../components/UserList/UserList.js';
-import { Button, Container, Grid, Typography } from '@material-ui/core';
+import { Container, Grid, Typography } from '@material-ui/core';
 
 class ChorePage extends Component {
   componentDidMount() {

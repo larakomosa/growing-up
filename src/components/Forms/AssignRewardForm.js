@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import MenuItem from '@material-ui/core/MenuItem';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { Button, Container, Grid, Typography } from '@material-ui/core';
-import FormControl from '@material-ui/core/FormControl';
+import { Button } from '@material-ui/core';
 import swal from 'sweetalert';
 
 class AssignRewardForm extends Component {

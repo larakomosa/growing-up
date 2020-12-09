@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import MenuItem from '@material-ui/core/MenuItem';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { Button, Container, Grid, Typography } from '@material-ui/core';
-import FormControl from '@material-ui/core/FormControl';
+import { Button, Typography } from '@material-ui/core';
 import swal from 'sweetalert';
 import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
-import { BorderAll } from '@material-ui/icons';
 
 const dropStyles = {
   width: '210px',

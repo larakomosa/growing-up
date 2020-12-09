@@ -1,14 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import Bank from '../Bank/Bank';
 import '../Forms/Form.css';
-import swal from 'sweetalert';
 import blueGrey from '@material-ui/core/colors/blueGrey';
-import { PlayCircleFilledWhite } from '@material-ui/icons';
 
 function getModalStyle() {
   const top = 12;

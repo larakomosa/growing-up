@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import AdminChoreItem from '../AdminChoreItem/AdminChoreItem.js';
 // import '../AdminChoreItem/ChoreItem.css';
 import { makeStyles, withStyles } from '@material-ui/core/styles';

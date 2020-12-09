@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
-import Bank from '../../components/Bank/Bank.js';
-
 import { withRouter } from 'react-router-dom';
 import AssignedListItem from '../../components/AssignedListItem/AssignedListItem.js';
 import '../../components/AssignedListItem/AssignedListItem.css';

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import AdminRewardsList from '../../components/AdminRewardsList/AdminRewardsList.js';
 import AdminRewardModal from '../../components/AdminAddModals/AddRewardModal.js';
-import { Button, Container, Grid, Typography } from '@material-ui/core';
+import { Container, Grid, Typography } from '@material-ui/core';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 
 class AddPage extends Component {
@@ -11,12 +10,9 @@ class AddPage extends Component {
     this.props.dispatch({
       type: 'GET_CHORES',
     });
-    {
-      this.props.dispatch({
-        type: 'GET_REWARDS_TABLE',
-      });
-      console.log('dispatch');
-    }
+    this.props.dispatch({
+      type: 'GET_REWARDS_TABLE',
+    });
   }
 
   handleRefresh = () => {

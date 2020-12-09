@@ -36,7 +36,7 @@ function* getEmotions(action) {
 
 function* deleteSurveyItem(action) {
   try {
-    const selected = yield axios.delete(`/api/emotions/${action.payload}`);
+    yield axios.delete(`/api/emotions/${action.payload}`);
   } catch (err) {
     console.log('Error deleting survey:', err);
   }

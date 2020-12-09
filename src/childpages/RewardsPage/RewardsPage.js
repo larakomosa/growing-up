@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button } from '@material-ui/core';
-import { withRouter } from 'react-router-dom';
 import RewardsList from '../../components/RewardsList/RewardsList.js';
 import { Grid, Typography } from '@material-ui/core';
 

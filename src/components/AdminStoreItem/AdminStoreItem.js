@@ -1,16 +1,5 @@
 import React from 'react';
-import DeleteIcon from '@material-ui/icons/Delete';
-
-import {
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TablePagination,
-  TableRow,
-} from '@material-ui/core';
+import { TableCell, TableRow } from '@material-ui/core';
 
 function AdminStoreItem(props) {
   const columnKeys = Object.keys(props.rowData);

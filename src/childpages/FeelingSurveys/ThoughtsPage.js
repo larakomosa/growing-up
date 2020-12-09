@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import swal from 'sweetalert';
 import '../FeelingSurveys/surveys.css';

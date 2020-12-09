@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { Button } from '@material-ui/core';
 import { withRouter } from 'react-router-dom';
 import UserItem from '../../components/UserItem/UserItem.js';
 import { makeStyles } from '@material-ui/core/styles';
@@ -11,8 +10,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import TablePagination from '@material-ui/core/TablePagination';
-import Divider from '@material-ui/core/Divider';
 import blueGrey from '@material-ui/core/colors/blueGrey';
 
 const useStyles = makeStyles({
@@ -31,7 +28,7 @@ const useStyles = makeStyles({
 const UserList = (props) => {
   const classes = useStyles();
 
-  let htmlArray = null;
+  // let htmlArray = null;
   if (props.store.userList) {
     const htmlArray = props.store.fullList.map((item, index) => {
       return <UserItem key={index} item={item} />;

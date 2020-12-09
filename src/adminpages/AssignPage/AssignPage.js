@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import AdminAssignedList from '../../components/AdminAssignedList/AdminAssignedList.js';
 import AdminStoreList from '../../components/AdminStoreList/AdminStoreList.js';
-import { Button, Container, Grid, Typography } from '@material-ui/core';
-import Divider from '@material-ui/core/Divider';
+import { Container, Grid, Typography } from '@material-ui/core';
 import AssignChoreModal from '../../components/AdminAddModals/AssignChoreModal.js';
 import AssignRewardModal from '../../components/AdminAddModals/AssignRewardModal.js';
 import PersonSelect from '../../components/AdminStoreList/PersonSelect';

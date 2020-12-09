@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { Button } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
@@ -11,7 +10,6 @@ import swal from 'sweetalert';
 
 class SleepPage extends Component {
   state = {
-    //setting state
     sleep: '',
   };
 
