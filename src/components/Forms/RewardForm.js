@@ -89,7 +89,7 @@ class Form extends Component {
 
   render() {
     const uploadOptions = {
-      server: 'http://localhost:5000',
+      server: 'https://growing-up.herokuapp.com',
       // signingUrlQueryParams: { uploadType: 'avatar' },
     };
 
@@ -97,6 +97,7 @@ class Form extends Component {
 
     return (
       <form>
+        git
         <div className="formField">
           <TextField
             fullWidth
@@ -128,7 +129,7 @@ class Form extends Component {
                 }}
                 component="h2"
               >
-                Upload Image Here
+                Testing!
               </Typography>
             }
             onFinish={this.handleFinishedUpload}
