@@ -38,9 +38,9 @@ class WelcomePage extends Component {
             <Grid item className="note" xs={12} sm={10}>
               <Typography
                 style={{
-                  fontFamily: 'nerko one',
+                  fontFamily: 'nunito',
                   marginBottom: 0,
-                  marginTop: 10,
+                  marginTop: 20,
                   fontSize: 45,
                 }}
                 component="h2"

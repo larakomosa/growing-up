@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     padding: '8px 0 0',
   },
   container: {
-    maxHeight: 290,
+    maxHeight: 900,
   },
 });
 
