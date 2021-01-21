@@ -64,7 +64,8 @@ class AssignPage extends Component {
         <section>
           <h2></h2>
           <Grid container spacing={1}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={1}></Grid>
+            <Grid item xs={12} sm={5}>
               <div>
                 <AssignChoreModal />
                 <Typography
@@ -84,7 +85,7 @@ class AssignPage extends Component {
               </div>
               <hr />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={5}>
               <div>
                 <AssignRewardModal />
                 <Typography

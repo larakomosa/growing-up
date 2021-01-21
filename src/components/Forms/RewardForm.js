@@ -89,15 +89,16 @@ class Form extends Component {
 
   render() {
     const uploadOptions = {
-      server: 'https://growing-up.herokuapp.com',
+      server: 'http://localhost:5000',
       // signingUrlQueryParams: { uploadType: 'avatar' },
     };
+    //'https://growing-up.herokuapp.com'
 
     const s3Url = 'https://primebucket2020.s3.amazonaws.com';
 
     return (
       <form>
-        git
+        Add New Reward
         <div className="formField">
           <TextField
             fullWidth
@@ -129,7 +130,7 @@ class Form extends Component {
                 }}
                 component="h2"
               >
-                Testing!
+                Upload Photo Here
               </Typography>
             }
             onFinish={this.handleFinishedUpload}

@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AdminThoughts from '../../components/AdminThoughtsList/AdminThoughtsList.js';
+// import AdminChart from '../../components/AdminThoughtsItem/AdminChart.js';
 import { Container, Grid, Typography } from '@material-ui/core';
 import { LineChart } from 'react-chartkick';
 import 'chart.js';
 import PersonSelect3 from '../../components/AdminStoreList/PersonSelect3';
 import ParentNote from '../../components/AdminAddModals/ParentNote';
 import blueGrey from '@material-ui/core/colors/blueGrey';
+
 class EmotionsPage extends Component {
-  state = {
-    id: '',
-  };
+  // state = {
+  //   // For loop will spread this state and build the anxietyData objet with dates: values,
+  //   dataOne: {
+  //   name: 'Anxiety',
+  //   anxietyData: {},
+  //   },
+  //   // For loop will spread this state and build the feelingsData objet with dates: values,
+  //   dataTwo: {
+  //   name: 'Feelings',
+  //   feelingsData: {},
+  //   },
+  // };
 
   componentDidMount() {
     this.props.dispatch({
@@ -54,6 +65,37 @@ class EmotionsPage extends Component {
   }; // end login
 
   render() {
+    // declare variables so they're available outside the for loop
+    // let date;
+    // let anxiety;
+    // let feelings;
+    // for (let i = 0; i < this.props.store.emotions.length; i++) {
+    //   date = this.props.store.emotions[i].date.substring[(5, 10)];
+    //   anxiety = this.props.store.emotions[i].anxiety;
+    //   feelings = this.props.store.emotions[i].feelings;
+
+    //   // build the object in the local state dataOne
+    //   this.setState({
+    //     anxietyData: {
+    //       ...this.state.anxietyData,
+    //       date: Number(anxiety),
+    //     },
+    //   });
+
+    //   // build the object in the local state dataTwo
+    //   this.setState({
+    //     feelingsData: {
+    //       ...this.state.feelingsData,
+    //       date: Number(feelings),
+    //     },
+    //   });
+    // }
+
+    // After the for loop fills out the local state
+    // create the final array of data for the chart by using the two states
+    // one state for each line
+    // let dataFinal = [this.state.dateOne, this.state.dataTwo];
+
     return (
       <Container>
         <section>
@@ -70,36 +112,16 @@ class EmotionsPage extends Component {
             }}
             component="h2"
           >
-            Moods and Thoughts TESTING 123
+            Moods and Thoughts
           </Typography>
           <Grid container spacing={1}>
             <Grid item xs={2} sm={1}></Grid>
-            <Grid item xs={12} sm={5}>
+            <Grid item xs={10} sm={10}>
               <div>
                 <ParentNote />
                 <PersonSelect3 />
                 <AdminThoughts />
               </div>
-              <hr />
-            </Grid>
-            <Grid item xs={12} sm={5}>
-              <div>
-                <PersonSelect3 />
-              </div>
-              <LineChart
-                colors={['#ff6e79', '#698399']}
-                data={{
-                  '2020-12-02': 4,
-                  '2020-12-03': 3,
-                  '2020-12-04': 5,
-                  '2020-12-05': 4,
-                  '2020-12-06': 4,
-                  '2020-12-07': 3,
-                  '2020-12-08': 5,
-                  '2020-12-09': 4,
-                }}
-              />
-              <hr />
             </Grid>
             <Grid item xs={2} sm={1}></Grid>
           </Grid>

@@ -53,6 +53,19 @@ class AdminWelcomePage extends Component {
             <RegisterForm />
           </Grid>
           <Grid item xs={12} sm={6}>
+            <Typography
+              gutterBottom
+              style={{
+                color: blueGrey,
+                fontSize: 20,
+                paddingTop: 15,
+                fontFamily: 'nunito',
+                fontWeight: 'bold',
+              }}
+              component="h2"
+            >
+              Registered Users
+            </Typography>
             <UserList />
           </Grid>
           <Grid item xs={6} sm={1}></Grid>

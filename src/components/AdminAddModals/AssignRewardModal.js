@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     minWidth: 200,
     maxWidth: 400,
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid blue',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
@@ -63,12 +62,12 @@ const AssignRewardModal = (props) => {
         align="center"
         type="button"
         onClick={handleOpen}
+        block
         style={{
           backgroundColor: blueGrey['700'],
           fontFamily: 'nunito',
           color: 'white',
           marginBottom: '5px',
-          width: '380px',
           marginTop: '15px',
           marginLeft: '0px',
         }}

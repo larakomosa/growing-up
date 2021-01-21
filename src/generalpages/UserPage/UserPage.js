@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FeelingPage from '../../childpages/FeelingSurveys/FeelingPage';
-import EmotionsPage from '../../adminpages/EmotionsPage/EmotionsPage';
+import AdminWelcomePage from '../../adminpages/AdminWelcomePage/AdminWelcomePage';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class UserPage extends Component {
@@ -17,7 +17,7 @@ class UserPage extends Component {
         {this.props.store.user.page_role_id === 4 ? (
           <FeelingPage />
         ) : (
-          <EmotionsPage />
+          <AdminWelcomePage />
         )}
       </div>
     );

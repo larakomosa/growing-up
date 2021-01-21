@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     padding: '8px 0 0',
   },
   container: {
-    maxHeight: 290,
+    maxHeight: 530,
   },
 });
 
@@ -80,7 +80,7 @@ const AdminChoreList = (props) => {
             <TableRow>
               <StyledTableCell align="left">Chore</StyledTableCell>
               <StyledTableCell align="left">Value</StyledTableCell>
-              <StyledTableCell align="left">Purchased</StyledTableCell>
+              <StyledTableCell align="left">Description</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -92,7 +92,7 @@ const AdminChoreList = (props) => {
       </TableContainer>
 
       <TablePagination
-        rowsPerPageOptions={[3, 5, 10]}
+        rowsPerPageOptions={[3, 5, 15]}
         component="div"
         count={props.store.choreTable.length}
         rowsPerPage={rowsPerPage}

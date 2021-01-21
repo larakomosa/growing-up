@@ -61,7 +61,11 @@ const AdminThoughts = (props) => {
           <TableHead className={classes.head}>
             <TableRow>
               <StyledTableCell align="left">Date</StyledTableCell>
+              <StyledTableCell align="left">Feelings</StyledTableCell>
+              <StyledTableCell align="left">Sleep</StyledTableCell>
+              <StyledTableCell align="left">Anxiety</StyledTableCell>
               <StyledTableCell align="left">Thoughts</StyledTableCell>
+
               <StyledTableCell align="left">
                 {' '}
                 <DeleteIcon />
