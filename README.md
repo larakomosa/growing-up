@@ -2,9 +2,6 @@
 # Growing Applications
 This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
 
-## Screenshots
-![image](https://user-images.githubusercontent.com/67838283/105499788-93815880-5c87-11eb-8597-7596ab9dfa0c.png)
-
 
 ## About
 
@@ -12,6 +9,10 @@ Growing up is a fun, kid-friendly parent/child application that assists children
 
 An emotion survey page will allow a child the ability to convey their mood, sleep and anxiety levels for the day as well. Surveyed information will be stored on an admin page for pages to track and monitor their children’s mental health. Very often, children feel more comfortable writing or sharing their feelings through non-verbal communication. Middle childhood is an important and sometimes awkward transition! As kids progress towards more independence, this application can be a helpful tool to guide them!
 
+Video: https://vimeo.com/492727359
+
+## Screenshots
+![image](https://user-images.githubusercontent.com/67838283/105499788-93815880-5c87-11eb-8597-7596ab9dfa0c.png)
 ![image](https://user-images.githubusercontent.com/67838283/105499807-9a0fd000-5c87-11eb-87a6-3505160a7237.png)
 
 ## Prerequisites
