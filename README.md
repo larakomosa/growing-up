@@ -1,13 +1,18 @@
 
-# EDA Project
+# Growing Applications
 This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
 
-We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
+## Screenshots
+![image](https://user-images.githubusercontent.com/67838283/105499788-93815880-5c87-11eb-8597-7596ab9dfa0c.png)
 
-## Use the Template for This Repository (Don't Clone) 
 
-- Don't Fork or Clone. Instead, click the `Use this Template` button, and make a copy to your personal account.
+## About
 
+Growing up is a fun, kid-friendly parent/child application that assists children in middle childhood (5-9 years old) develop good habits, practice responsibility and acknowledge their own emotions and feelings with positive reinforcement. Admin users assign chores and tasks to a child user who will complete them to earn coins. A rewards page will display a gallery of (admin input) rewards children can purchase with earned coins.
+
+An emotion survey page will allow a child the ability to convey their mood, sleep and anxiety levels for the day as well. Surveyed information will be stored on an admin page for pages to track and monitor their children’s mental health. Very often, children feel more comfortable writing or sharing their feelings through non-verbal communication. Middle childhood is an important and sometimes awkward transition! As kids progress towards more independence, this application can be a helpful tool to guide them!
+
+![image](https://user-images.githubusercontent.com/67838283/105499807-9a0fd000-5c87-11eb-87a6-3505160a7237.png)
 
 ## Prerequisites
 
@@ -19,7 +24,7 @@ Before you get started, make sure you have the following software installed on y
 
 ## Create database and table
 
-Create a new database called `prime_app` and create a `user` table:
+Create a new database called `growing_up` and create a `user` table:
 
 ```SQL
 CREATE TABLE "user" (
@@ -31,18 +36,31 @@ CREATE TABLE "user" (
 
 If you would like to name your database something else, you will need to change `prime_app` to the name of your new database name in `server/modules/pool.js`
 
-## Development Setup Instructions
+## INSTALLATION
 
-- Run `npm install`
-- Create a `.env` file at the root of the project and paste this line into the file:
-  ```
-  SERVER_SESSION_SECRET=superDuperSecret
-  ```
-  While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
-- Start postgres if not running already by using `brew services start postgresql`
-- Run `npm run server`
-- Run `npm run client`
-- Navigate to `localhost:3000`
+Create a database named your database name,
+The queries in the tables.sql file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
+Open up your editor of choice and run an npm install
+Run npm run server in your terminal
+Run npm run client in your terminal
+The npm run client command will open up a new browser tab for you!
+
+## Usage
+Steps:
+
+Note: For testing purposes, test accounts and data are currently initialized with the project upon build. These lines can be removed and are not entirely necessary, but may prove helpful as a tool to show off the application
+
+Register and/or login to the application. If you’re creating a new account, register and select your page role.
+
+After logging into an admin account, you see the Landing (Welcome) Page. Note, you can also reach this page by selecting ‘Home’ in the top nav bar.
+
+The Landing Page lists register users and a registration form to add additional child users. 
+
+Using the Navigation Bar, you can view the chores, reward and emotion databases.  You can also assign chores and rewards to each child by selecting their name is the drop down box on the assign page. 
+
+After logging into the child account, the child will be prompted to a brief mental health survey.  Following the survey, they will be directed to a homepage.  For here, they will have the ability to view chores and rewards by clicking on their respective icons.
+
+As chores are completed, they will select the finish buttons and coins will be added to their piggy bank (in the header).  This coins can be redeamed to receive rewards. As rewards are purchase, the coins in the piggy bank will be adjusted accordingly.
 
 ## Debugging
 
@@ -54,68 +72,24 @@ Then make sure `Launch Program` is selected from the dropdown, then click the gr
 
 ![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
 
-## Testing Routes with Postman
+## Built With
+React
+React-redux
+Redux-saga
+Moment.js
+Node.js
+Express
+Amazon S3 API
+PostgreSQL
+Heroku
 
-To use Postman with this repo, you will need to set up requests in Postman to register a user and login a user at a minimum.
+## License
+MIT
 
-Keep in mind that once you using the login route, Postman will manage your session cookie for you just like a browser, ensuring it is sent with each subsequent request. If you delete the `localhost` cookie in Postman, it will effectively log you out.
+## Note, include this only if you have a license file. GitHub will generate one for you if you want!
 
-1. Start the server - `npm run server`
-2. [Import the sample routes JSON file](./PostmanPrimeSoloRoutes.json) by clicking `Import` in Postman. Select the file.
-3. Click `Collections` and `Send` the following three calls in order:
-   1. `POST /api/user/register` registers a new user, see body to change username/password
-   2. `POST /api/user/login` will login a user, see body to change username/password
-   3. `GET /api/user` will get user information, by default it's not very much
+## Acknowledgement
+Thanks to Prime Digital Academy who equipped and helped me to make this application a reality. (Thank your people)
 
-After running the login route above, you can try any other route you've created that requires a logged in user!
-
-## Production Build
-
-Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
-
-- Start postgres if not running already by using `brew services start postgresql`
-- Run `npm start`
-- Navigate to `localhost:5000`
-
-## Lay of the Land
-
-There are a few videos linked below that show a walkthrough the client and sever setup to help acclimatize to the boilerplate. Please take some time to watch the videos in order to get a better understanding of what the boilerplate is like.
-
-- [Initial Set](https://vimeo.com/453297271)
-- [Server Walkthrough](https://vimeo.com/453297212)
-- [Client Walkthrough](https://vimeo.com/453297124)
-
-Directory Structure:
-
-- `src/` contains the React application
-- `public/` contains static assets for the client-side
-- `build/` after you build the project, contains the transpiled code from `src/` and `public/` that will be viewed on the production site
-- `server/` contains the Express App
-
-This code is also heavily commented. We recommend reading through the comments, getting a lay of the land, and becoming comfortable with how the code works before you start making too many changes. If you're wondering where to start, consider reading through component file comments in the following order:
-
-- src/components
-  - App/App
-  - Footer/Footer
-  - Nav/Nav
-  - AboutPage/AboutPage
-  - InfoPage/InfoPage
-  - UserPage/UserPage
-  - LoginPage/LoginPage
-  - RegisterPage/RegisterPage
-  - LogOutButton/LogOutButton
-  - ProtectedRoute/ProtectedRoute
-
-## Deployment
-
-1. Create a new Heroku project
-1. Link the Heroku project to the project GitHub Repo
-1. Create an Heroku Postgres database
-1. Connect to the Heroku Postgres database from Postico
-1. Create the necessary tables
-1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
-1. In the deploy section, select manual deploy
-
-## Update Documentation
-
-Customize this ReadMe and the code comments in this project to read less like a starter repo and more like a project. Here is an example: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+## Support
+If you have suggestions or issues, please email me at youremail@whatever.com
