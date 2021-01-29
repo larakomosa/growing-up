@@ -16,7 +16,7 @@ class ChoreConfirmation extends Component {
   handleHome = (event) => {
     event.preventDefault();
     console.log('hello');
-    this.props.history.push('/admin/add'); //moves user back to home page
+    this.props.history.push('/admin/chores'); //moves user back to home page
   };
 
   render() {

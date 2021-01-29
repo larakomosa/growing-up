@@ -34,7 +34,7 @@ class AddPage extends Component {
                   color: blueGrey,
                   fontSize: 28,
                   marginTop: 0,
-                  marginBottom: -5,
+                  marginBottom: 5,
                   fontFamily: 'nunito',
                   fontWeight: 'bold',
                 }}

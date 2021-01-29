@@ -20,6 +20,7 @@ function* getNote(action) {
 }
 
 function* postNote(action) {
+  console.log('made it to note saga', action);
   try {
     yield put({ type: 'ERROR_RESET' });
     const response = yield axios.post(

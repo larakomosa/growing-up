@@ -129,7 +129,12 @@ class AssignedListItem extends Component {
   render() {
     return (
       <Grid item xs={12} sm={4} md={3} lg={2}>
-        <Card>
+        <Card
+          style={{
+            border: '3px solid #f7fafc',
+            boxShadow: '0 2px 4px #11111150',
+          }}
+        >
           <CardActionArea>
             <CardContent>
               <CardMedia
