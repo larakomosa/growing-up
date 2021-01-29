@@ -26,9 +26,31 @@ router.post('/register', (req, res, next) => {
     VALUES ($1, $2, $3) RETURNING id`;
   pool
     .query(queryText, [username, password, page_role_id])
-    .then(() => res.sendStatus(201))
+    .then((result) => {
+      console.log('New Child Id:', result.rows[0].id); //ID IS HERE!
+      const createdChildId = result.rows[0].id;
+      if (page_role_id == 4) {
+        `
+      INSERT INTO "parent_child" ("parent_id", "child_id")
+      VALUES  ($1, $2);
+      `;
+        // SECOND QUERY MAKES GENRE FOR THAT NEW MOVIE
+        pool
+          .query([req.user.id], [createdChildId])
+          .then((result) => {
+            //Now that both are done, send back success!
+            res.sendStatus(201);
+          })
+          .catch((err) => {
+            // catch for second query
+            console.log(err);
+            res.sendStatus(500);
+          });
+      }
+      // Catch for first query
+    })
     .catch((err) => {
-      console.log('User registration failed: ', err);
+      console.log(err);
       res.sendStatus(500);
     });
 });

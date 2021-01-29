@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import Form from '../Forms/RewardForm.js';
 import '../Forms/Form.css';
+import blueGrey from '@material-ui/core/colors/blueGrey';
 
 function getModalStyle() {
   const top = 50;
@@ -57,16 +58,19 @@ const AddRewardModal = (props) => {
   return (
     <div>
       <Button
+        fullWidth
         variant="outlined"
-        size="medium"
+        size="large"
         align="center"
         type="button"
         onClick={handleOpen}
         style={{
-          color: '#ff6e79',
+          backgroundColor: blueGrey['700'],
+          fontFamily: 'nunito',
+          color: 'white',
           marginBottom: '5px',
-          marginTop: '-40px',
-          float: 'right',
+          marginTop: '15px',
+          marginLeft: '0px',
         }}
       >
         Add Rewards

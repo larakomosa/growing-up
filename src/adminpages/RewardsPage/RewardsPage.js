@@ -25,13 +25,16 @@ class AddPage extends Component {
       <Container>
         <section>
           <Grid container spacing={8}>
-            <Grid item xs={12} sm={12}>
+            <Grid item xs={1} sm={1}></Grid>
+            <Grid item xs={10} sm={10}>
+              <AdminRewardModal className="modal" />
               <Typography
                 gutterBottom
                 style={{
                   color: blueGrey,
                   fontSize: 28,
-                  marginTop: 15,
+                  marginTop: 0,
+                  marginBottom: -5,
                   fontFamily: 'nunito',
                   fontWeight: 'bold',
                 }}
@@ -39,11 +42,10 @@ class AddPage extends Component {
               >
                 Reward Database
               </Typography>
-              <AdminRewardModal className="modal" />
+
               <div>
                 <AdminRewardsList />
               </div>
-              <hr />
               <div></div>
             </Grid>
           </Grid>

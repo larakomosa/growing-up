@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     padding: '8px 0 0',
   },
   container: {
-    maxHeight: 290,
+    maxHeight: 530,
   },
 });
 
@@ -93,7 +93,7 @@ const AdminRewardsList = (props) => {
       </TableContainer>
 
       <TablePagination
-        rowsPerPageOptions={[3, 5, 10]}
+        rowsPerPageOptions={[8, 10, 15]}
         component="div"
         count={props.store.rewardTable.length}
         rowsPerPage={rowsPerPage}

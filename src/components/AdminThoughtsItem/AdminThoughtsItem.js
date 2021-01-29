@@ -22,6 +22,15 @@ class AdminThoughtsItem extends Component {
           <p>{this.props.item.date.substring(5, 10)}</p>
         </TableCell>
         <TableCell align="left">
+          <p>{this.props.item.feelings}</p>
+        </TableCell>
+        <TableCell align="left">
+          <p>{this.props.item.sleep}</p>
+        </TableCell>
+        <TableCell align="left">
+          <p>{this.props.item.anxiety}</p>
+        </TableCell>
+        <TableCell align="left">
           <p>{this.props.item.comment}</p>
         </TableCell>
         <TableCell align="left">

@@ -132,7 +132,10 @@ class AssignedListItem extends Component {
         <Card>
           <CardActionArea>
             <CardContent>
-              <CardMedia image={this.props.item.icon} />
+              <CardMedia
+                image={this.props.item.icon}
+                alt={this.props.item.chore}
+              />
               <Divider />
               <div className="titleControl">
                 <Typography>

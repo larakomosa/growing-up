@@ -21,15 +21,17 @@ class ChorePage extends Component {
     return (
       <Container>
         <section>
-          <Grid container spacing={10}>
-            <Grid item xs={12} sm={12}>
+          <Grid container spacing={8}>
+            <Grid item xs={1} sm={1}></Grid>
+            <Grid item xs={10} sm={10}>
+              <AdminChoresModal />
               <Typography
                 gutterBottom
-                variant="p"
                 style={{
                   color: blueGrey,
-                  fontSize: 30,
-                  paddingTop: 15,
+                  fontSize: 28,
+                  marginTop: 0,
+                  marginBottom: -5,
                   fontFamily: 'nunito',
                   fontWeight: 'bold',
                 }}
@@ -37,7 +39,6 @@ class ChorePage extends Component {
               >
                 Chore Database
               </Typography>
-              <AdminChoresModal />
               <div>
                 <AdminChoreList refresh={this.handleRefresh} />
               </div>
