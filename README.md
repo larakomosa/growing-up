@@ -30,11 +30,12 @@ Create a new database called `growing_up` and create a `user` table:
 CREATE TABLE "user" (
     "id" SERIAL PRIMARY KEY,
     "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL
+    "password" VARCHAR (1000) NOT NULL,
+    "page_role_id" int
 );
 ```
 
-If you would like to name your database something else, you will need to change `prime_app` to the name of your new database name in `server/modules/pool.js`
+If you would like to name your database something else, you will need to change `growing_up` to the name of your new database name in `server/modules/pool.js`
 
 ## INSTALLATION
 
