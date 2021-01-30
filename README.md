@@ -55,7 +55,7 @@ Register and/or login to the application. If you’re creating a new account, re
 
 After logging into an admin account, you see the Landing (Welcome) Page. Note, you can also reach this page by selecting ‘Home’ in the top nav bar.
 
-The Landing Page lists register users and a registration form to add additional child users. 
+The Landing Page lists currently registered users. A registration form gives the option add additional child users. 
 
 Using the Navigation Bar, you can view the chores, reward and emotion databases.  You can also assign chores and rewards to each child by selecting their name is the drop down box on the assign page. 
 
