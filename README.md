@@ -12,8 +12,7 @@ An emotion survey page will allow a child the ability to convey their mood, slee
 Video: https://vimeo.com/492727359
 
 ## Screenshots
-![image](https://user-images.githubusercontent.com/67838283/105499788-93815880-5c87-11eb-8597-7596ab9dfa0c.png)
-![image](https://user-images.githubusercontent.com/67838283/105499807-9a0fd000-5c87-11eb-87a6-3505160a7237.png)
+![image](https://user-images.githubusercontent.com/67838283/106369255-7ac31380-6315-11eb-8d70-c147677a4fa6.png)
 
 ## Prerequisites
 
