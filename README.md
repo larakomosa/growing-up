@@ -74,10 +74,10 @@ Then make sure `Launch Program` is selected from the dropdown, then click the gr
 ![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
 
 ## Built With
+Javascript
 React
 React-redux
 Redux-saga
-Moment.js
 Node.js
 Express
 Amazon S3 API
