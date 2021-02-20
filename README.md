@@ -5,11 +5,11 @@ This version uses React, Redux, Express, Passport, and PostgreSQL (a full list o
 
 ## About
 
-Growing up is a fun, kid-friendly parent/child application that assists children in middle childhood (5-9 years old) develop good habits, practice responsibility and acknowledge their own emotions and feelings with positive reinforcement. Admin users assign chores and tasks to a child user who will complete them to earn coins. A rewards page will display a gallery of (admin input) rewards children can purchase with earned coins.
+Growing up is a fun, kid-friendly parent/child application that assists children in middle childhood (5-9 years old) develop good habits, practice responsibility and acknowledge their own emotions and feelings with positive reinforcement. Admin users assign chores to a child user who will complete them to earn coins. Admin users also have the ability to assigned rewards so they display on a "Store" on the child side of this application. These rewards can purchase using earned coins.
 
-An emotion survey page will allow a child the ability to convey their mood, sleep and anxiety levels for the day as well. Surveyed information will be stored on an admin page for pages to track and monitor their children’s mental health. Very often, children feel more comfortable writing or sharing their feelings through non-verbal communication. Middle childhood is an important and sometimes awkward transition! As kids progress towards more independence, this application can be a helpful tool to guide them!
+As a child opens their application, they are prompted to a brief mental health/emotion survey that gives the child a chance to convey their emotions, sleep and anxiety levels for the day as well. Surveyed information will be stored on an admin page so it can be tracked and monitored. Very often, children feel more comfortable writing or sharing their feelings through non-verbal communication. Middle childhood is an important and sometimes awkward transition! As kids progress towards more independence, this application can be a helpful tool to guide them!
 
-Video: https://vimeo.com/492727359
+To see a full demo of this application, view this video: https://vimeo.com/492727359
 
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/67838283/106369255-7ac31380-6315-11eb-8d70-c147677a4fa6.png)
