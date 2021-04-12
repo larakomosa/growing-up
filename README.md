@@ -90,7 +90,7 @@ MIT
 ## Note, include this only if you have a license file. GitHub will generate one for you if you want!
 
 ## Acknowledgement
-Thanks to Prime Digital Academy who equipped and helped me to make this application a reality. (Thank your people)
+Thanks to Prime Digital Academy who equipped and helped me to make this application a reality.
 
 ## Support
-If you have suggestions or issues, please email me at youremail@whatever.com
+If you have suggestions or issues, please email me at larakomosa@gmail.com
